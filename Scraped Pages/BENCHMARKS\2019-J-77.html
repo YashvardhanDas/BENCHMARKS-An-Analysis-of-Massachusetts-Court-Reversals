@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<!--
+// Copyright (C) 1988-2019 Relational Semantics, Inc. (RSI), Newton MA USA
+// This Module contains Proprietary Information of Relational Semantics, Inc.
+// and should be treated as Confidential. All rights reserved.
+// RSI, PARAGON, and FORECOURT are registered trademarks of Relational Semantics, Inc.
+-->
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="csrf-token" content="ttSirnnB2eOuC81xJsr9RVjVxzGorQjWEZB1YM10">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Mass Appellate Courts - Public Case Search</title>
+		<link rel="shortcut icon"    href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="icon"		     href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+
+		<link href="https://www.ma-appellatecourts.org/css/material.css" rel="stylesheet" type="text/css" />
+
+		            <link href="https://www.ma-appellatecourts.org/css/mysjc.css" rel="stylesheet" type="text/css" />
+		
+        <script src="https://www.ma-appellatecourts.org/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://www.ma-appellatecourts.org/js/popper.min.js"></script>
+        
+        <script src="https://www.ma-appellatecourts.org/js/app.js" ></script>
+        <script src="https://www.ma-appellatecourts.org/js/material.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			
+			<nav id="sidebar">
+
+				
+
+				<div class="sidebar-header text-center">
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><div class="pt-2 pb-2"><img src="https://www.ma-appellatecourts.org/images/seal_comm_gray.png" class="nav-seal" alt="Home"></div></a>
+				</div>
+
+				<ul class="sidenav">
+
+											<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/home.png" alt="Home">Home</li></a>
+					
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/case.png" alt="Case Search">Case Search</li></a>
+						<ul class="sidenav-search">
+							<a target="_top" href="https://www.ma-appellatecourts.org/party" data-context="party"><li><img src="https://www.ma-appellatecourts.org/images/party.png" alt="Party Search"><span>Involved Party</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/docket" data-context="docket"><li><img src="https://www.ma-appellatecourts.org/images/number.png" alt="Docket Number Search"><span>Docket Number</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/attorney" data-context="attorney"><li><img src="https://www.ma-appellatecourts.org/images/attorney.png" alt="Attorney Search"><span>Attorney Appearance</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/ljudge" data-context="ljudge"><li><img src="https://www.ma-appellatecourts.org/images/judge.png" alt="Lower Court Judge Search"><span>Lower Court Judge</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/lcourt" data-context="lcourt"><li><img src="https://www.ma-appellatecourts.org/images/court.png" alt="Lower Court Search"><span>Lower Court</span></li></a>
+						</ul>
+
+					<a target="_top" href="https://www.ma-appellatecourts.org/calendar" data-context="calendar"><li><img src="https://www.ma-appellatecourts.org/images/calendar.png" alt="Court Calendars">Court Calendars</li></a>
+
+						<ul class="sidenav-calendar">
+							<a href="https://www.ma-appellatecourts.org/calendar/fc" data-context="calendarfc"><li><span>SJC Full Court</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/sj" data-context="calendarsj"><li><span>SJC Single Justice</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/ac" data-context="calendarac"><li><span>Appeals Court Panel</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/aj" data-context="calendaraj"><li><span>Appeals Court Single Justice</span></li></a>
+						</ul>
+
+					<a target="_blank" href="https://www.ma-appellatecourts.org/help"><li><img src="https://www.ma-appellatecourts.org/images/menu-help.png" alt="More Help">More Help <img id="help-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="More Help"></li></a>
+				</ul>
+
+				<div class="sidebar-footer">
+					<a class="copyright" target="_blank" href="https://www.rsi.com/state-judicial-solutions/public-access/">&copy; 2019 RSI</a>
+				</div>
+
+			</nav>
+			
+
+			<div id="content">
+
+				<nav class="navbar navbar-full navbar-light text-center py-0" id="header">
+					<div class="my-auto">
+						<button type="button" id="sidebarCollapse" class="btn btn-info">
+							<span>
+								<img src="https://www.ma-appellatecourts.org/images/top-menu.png" title="Menu"  alt="Menu" >
+							</span>
+						</button>
+					</div>
+					<div class="text-center my-auto page-title">
+						<span class="page-title">
+							<a href="https://www.ma-appellatecourts.org" class="page-title">
+																		<h4 class="page-header">
+											<span class="page-title-1 text-nowrap">Massachusetts Appellate Courts</span><br>
+											<span class="page-title-2 text-nowrap">Public Case Search</span>
+										</h4>
+																</a>
+						</span>
+					</div>
+					<div class="text-right my-auto">
+						
+						<a target="_blank" data-toggle="modal" href="#help-modal">
+							<button type="button" id="info_button" class="btn">
+								<span>
+									<img src="https://www.ma-appellatecourts.org/images/top-help.png" title="More Help"  alt="More Help" >
+								</span>
+							</button>
+						</a>
+					</div>
+				</nav>
+
+				<main id='main-content' class="col text-center">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col pl-0">
+								
+							</div>
+							<div class="col-7">
+																	<div class="content-header">
+										
+    <div class="docket-header">
+	
+    	<div class="docket-header-1">
+    	    			APPEALS COURT<br>Single Justice
+    			    	</div>
+    	<div class="docket-header-2">Case Docket</div>
+
+    	<hr class="short">
+
+    	<div class="docket-header-1">TEN DIAMOND STREET WORCESTER REALTY TRUST vs. BRIAN BEEBE &amp; another</div>
+    	    	<div class="docket-header-2">2019-J-0077</div>
+
+    	<hr class="short">
+
+    </div>
+									</div>
+															</div>
+							<div class="col pr-0">
+								 									<div class="page-bottom-link hidden-print">
+										<a href="#bottom"><span class="text-nowrap">Bottom &#9662;</span></a>
+									</div>
+															</div>
+						</div>
+					</div>
+
+					
+					
+					
+					
+					
+					
+
+					<div class="content-body">
+						
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			<span class="align-middle">CASE HEADER</span>
+		</div>
+
+	</div>
+
+	<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Status
+		<span class="flex_rt ds-normal">Disposed: Case Closed</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Status Date
+		<span class="flex_rt ds-normal">02/28/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Nature
+		<span class="flex_rt ds-normal">Motion for MRAP 6(a) stay</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Entry Date
+		<span class="flex_rt ds-normal">02/11/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Pet Role Below
+		<span class="flex_rt ds-normal">Defendant</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Single Justice
+		<span class="flex_rt ds-normal">Milkey, J.</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Status
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Due
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Type
+		<span class="flex_rt ds-normal">Civil</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Number
+		<span class="flex_rt ds-normal"> 
+		</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court
+		<span class="flex_rt ds-normal">Central Housing Court</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court Judge
+		<span class="flex_rt ds-normal">Diana H. Horan, J.</span></span>
+	</div>
+</div>
+
+
+</section>
+
+
+	
+	
+	<section class="docket">
+
+    <div class="row mx-0" id="one_col_title">
+         <div class="col-12 parties_section_title"><span class="flex_span align-middle"><b>PARTY &nbsp;/&nbsp; ATTORNEY</b></span></div>
+    </div>
+    <div class="row mx-0" id="two_col_title">   
+         <div class="col-5 col-sm-6 parties_section_title1"><span class="flex_span align-middle"><b>INVOLVED PARTY</b></span></div>
+         <div class="col-7 col-sm-6 parties_section_title2 pl-4"><span class="flex_span align-middle"><b>ATTORNEY APPEARANCE</b></span></div>
+    </div>
+
+
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Ten Diamond Street Worcester Realty Trust
+                        </b>
+                        <br>
+                        Plaintiff/Respondent
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/688314">Adam D. Schmaelzle,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Brian Beebe
+                        </b>
+                        <br>
+                        Pro Se Defendant/Petitioner
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Samantha Farrar
+                        </b>
+                        <br>
+                        Pro Se Defendant
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Dan Gately
+                        </b>
+                        <br>
+                        Other/respondent
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                                        </div>
+
+        </div>
+    
+</section>
+
+
+	
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+	    <div class="docket_entries_title">
+			<span class="align-middle">DOCKET ENTRIES</span>
+	    </div>
+	</div>
+
+   	<table class="docket_entries">
+
+		<tbody>
+
+			<tr class="subhead">
+				<td nowrap><b>Entry Date</b>&nbsp;</td>
+				<td nowrap><b>Paper 	</b>&nbsp;</td>
+				<td nowrap width=100%><b>Entry Text</b></td>
+			</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/11/2019</td>
+					<td nowrap valign=top>#1</td>
+					<td valign=top>Motion for stay under M.R.A.P. 6(a) filed by Brian Beebe and Samantha Farrar.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/11/2019</td>
+					<td nowrap valign=top>#2</td>
+					<td valign=top>Affidavit of indigency (IMPOUNDED) filed for Brian Beebe.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/12/2019</td>
+					<td nowrap valign=top>#3</td>
+					<td valign=top>Central Housing Court Docket Sheet.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/12/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#2: ALLOWED FORTHWITH. The petitioner's Affidavit of Indigency appears regular and complete on its face, and indicates that the petitioner is indigent. The court hereby allows the Motion to Waive entry fee. Notice Sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/12/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>ORDER: The defendants filed a notice of appeal simultaneously with a motion to vacate the judgment. Their subsequent motion for waiver of an appeal bond was denied as premature. The judge allowed the plaintiff's motion to dismiss the appeal, which was grounded on the argument that the defendants did not timely re-file their appeal after the motion to vacate the judgment was denied.<br><br>The defendants' emergency motion for a stay is allowed pending further order of this Court or a single justice thereof. The plaintiff shall file a response to the defendants' motion for a stay by close of business, February 19, 2019. In that response, the plaintiff shall specifically address the import, if any, of <u>Roch</u> v. <u>Mollica</u>, 481 Mass. 164, 165 n.2 (2019). (Milkey, J.). *Notice/Attest/Horan, J.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/18/2019</td>
+					<td nowrap valign=top>#4</td>
+					<td valign=top>Motion to schedule deadline for rebuttal and clarification of record filed by Brian Beebe and Samantha Farrar.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/19/2019</td>
+					<td nowrap valign=top>#5</td>
+					<td valign=top>Opposition to motion to stay filed for Ten Diamond Street Worcester Realty Trust by Attorney Adam Schmaelzle.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/19/2019</td>
+					<td nowrap valign=top>#6</td>
+					<td valign=top>Appendix filed for Ten Diamond Street Worcester Realty Trust by Attorney Adam Schmaelzle.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/20/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>ORDER: The defendants may file a response to the plaintiff's opposition by the close of business, February 26. Any response should focus principally on the central issue discussed in that opposition, namely, whether the notice of appeal that the defendants filed with respect to the underlying judgment was rendered a nullity by the filing of their motion to vacate that judgment. See Mass. R. App. P. 4(a).<br><br>The petitions in 19-J-75, 19-J-76, and 19-J-77 are hereby consolidated for purposes of filing and decision. All future filings are to be made on 19-J-75 only. The pro se defendants may submit unitary filings provided all defendants sign the filing. ( Milkey, J.) *Notice/Attest/Horan, J.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/20/2019</td>
+					<td nowrap valign=top>#7</td>
+					<td valign=top>MOTION to Strike filed by Brian Beebe and Samantha Farrar.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/22/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#7: Denied. (Milkey, J.) *Notice
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/22/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>ORDER: It is not clear from the limited record before me: 1) what legal interest, if any, each party requesting a stay of the evictions has in the property (e.g., whether they were owner of record prior to the foreclosure sale, or 2) relatedly, what cognizable basis the parties might have to challenge the foreclosure. In their submittal due by the close of business February 26, 2019, the moving parties shall specify their legal relationship to the property and what, if anything, provides each of them standing to raise an issue challenging the foreclosure. The parties are reminded that these cases have been consolidated and all future filings are to be made under 19-J-75. ( Milkey, J.). *Notice/attest
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/28/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top><b>Returned Mail:</b> Notice RE#2 & order entered 2/22/19 sent to Brian Beebe, Pro Se Defendant/Petitioner returned as forward time expired. Notice resent to address on label provided by USPS.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/28/2019</td>
+					<td nowrap valign=top>#8</td>
+					<td valign=top>MEMORANDUM AND ORDER: The plaintiff in the underlying action is the record owner of residential property in Worcester that it acquired post-foreclosure. In August of 2018, it brought a summary process action in Housing Court case against the occupants of the property, one of whom was the mortgagor on the loan that was foreclosed. After a bench trial, a judge entered a judgment of possession for the plaintiff. The defendants filed a notice of appeal within ten days of entry of the judgment. However, they also at the same time filed a motion to vacate the judgment. After the motion to vacate the judgment was denied, the defendants did not file a second notice of appeal within ten days thereafter. On this basis, the plaintiff moved to dismiss the defendants' respective appeals. After the judge allowed that motion, the defendants filed a timely appeal of the order dismissing the original notice of appeal.<br><br>Meanwhile, the plaintiff obtained an execution of the judgment and proceeded to levy on that execution. Apparently after receiving the so-called "48 hour notice," the defendants filed a motion to stay the eviction, which the Housing Court judge denied. The morning of the scheduled eviction, the defendants filed an emergency motion for a stay with me, as single justice. I stayed the scheduled eviction in order that I could review the matter before it became moot, and I invited further filings from the parties. Having considered the parties' submittals, I continue the stay pending resolution of the defendants' pending appeal. I also sua sponte expedite that appeal.<br><br>"An appellant seeking a stay pending appeal must ordinarily meet four tests: (1) the likelihood of appellant's success on the merits; (2) the likelihood of irreparable harm to the appellant if the court denies the stay; (3) the absence of substantial harm to other parties if the stay issues; and (4) the absence of harm to the public interest from granting the stay." C.E. v. J.E., 472 Mass. 1016, 1017 (2015), quoting J.W. Smith & H.P. Zobel, Rules Practice &#167; 62.3, at 409 (2d ed. 2007). As in the analogous context of a request for a preliminary injunction, a particularly strong showing on one element may make up for less strong showing on others. See Packaging Industries Group, Inc. v. Cheney, 380 Mass. 609, 617 n.12, (1980) (if moving party can "demonstrate both that the requested relief is necessary to prevent irreparable harm to it and that granting the injunction poses no substantial risk of such harm to the opposing party, a substantial possibility of success on the merits [rather than a likelihood of success on the merits] warrants issuing the injunction").<br><br>Likelihood of success on the merits. The only appeal currently pending is of the order dismissing the original notice of appeal as ineffective. Certainly, as the plaintiff points out, there is case law to support the proposition that "an appeal founded on a notice of appeal filed prior to disposition of a postjudgment motion [that tolls the appeal period] is a nullity and shall be dismissed." Sawyer v. Sawyer, 66 Mass. App. Ct. 906, 907 (2006)."[2] In addition, the principle on which the defendants' original appeal was dismissed finds support in the express language of Mass. R. App. P. 4(a), which states that "[a] notice of appeal filed before the disposition of [motions to modify a judgment] shall have no effect."[3] Nevertheless, I do not see these obstacles necessarily as immutable. For example, at least some argument can be made that where a party otherwise has filed a timely appeal, she could -- in appropriate circumstances -- be relieved of the effects of Rule 4(a) with regard to her having filed a timely notice to vacate the judgment. See Mass. R. App. P. 2 (generally allowing the suspension of the rules "for good cause shown"). Because I believe the present circumstances present such an occasion, I grant such relief to the extent it is within my power to do so.<br><br>The summary process statute requires that appeals be filed within a mere ten days of the judgment of possession. G. L. c. 239, &#167; 5.[4] Notwithstanding that the defendants -- like so many other tenants facing eviction -- were representing themselves, they met this statutory deadline when they filed their original notice of appeal. What they apparently failed to appreciate was the counterintuitive effect that their motion to vacate the judgment had on their original -- otherwise timely -- notice of appeal. That is hardly surprising given that this specific jurisdictional snare has been known to trap even seasoned appellate practitioners. Put differently, in my view, this particular quirk of appellate procedure is not one that lay people reasonably can be charged with knowing.<br><br>I am, of course, cognizant of the principle that self-represented parties are held to the same procedural rules as those represented by counsel. See, e.g., McCormick v. Labor Relations Comm'n, 412 Mass. 164, 170 n.11 (1992). However, the Supreme Judicial Court has suggested that this principle should bend where the circumstances are such that an unrepresented party thereby would be deprived of an adequate chance to present its arguments in a matter of grave importance. See Carter v. Lynn Housing Authority, 450 Mass. 626, 637 n.17 (2008) (indicating that although a tenant bears the burden of proving mitigating circumstances related to loss of housing subsidy, hearing examiner should take affirmative measures to solicit relevant information). Finally, I note that the Supreme Judicial Court recently has issued an opinion that can be read as calling into question whether the filing of a timely motion to vacate a judgment necessarily renders a notice of appeal of that judgment that was filed before the motion was decided a nullity. See Roch v. Mollica, 481 Mass. 164, 165 n.2 (2019). [5]<br><br>The balance of the equities. The stakes to the defendants from the lack of a stay are obvious and strong. The plaintiff has not argued, much less documented, the harm to it in the interim. Of course, common sense dictates that that the plaintiff will suffer some economic harm while the appeal is pending. Any such harm partially can be mitigated through expediting this appeal.<br><br>Disposition. Although there certainly is case law to support the judge's order, I believe the defendants nevertheless have a reasonable argument that such cases can and should be revisited. In my view, in light of the unbalanced state of the equities, the defendants have made a sufficient showing regarding their likelihood of success to justify the issuance of stay pending appeal. This also will allow an important issue affecting the administration of justice to be addressed.<br><br>For all of these reasons, the existing stay of the defendants' eviction is continued pending resolution of the defendants' appeal noticed on February 1, 2019 following the allowance of plaintiff's motion to dismiss the request for appeal and issuance of the execution. That appeal hereby is ordered to be expedited. The entry fee of the defendants-appellants hereby is waived, and the appeal is entered this date as docket number 2019-P-315. The Clerk of the Eastern District of the Housing Court is to prepare and transmit forthwith notice of assembly of the record, referencing docket number 2019-P-315. The defendants-appellants shall file their brief and appendix[6] on or before April 1, 2019, and the plaintiff-appellee's brief shall be filed on or before May 1, 2019. No party shall seek an enlargement of time to file a brief, except for extraordinary circumstances. The appeal shall be scheduled for argument in June 2019. (Milkey, J.) *Notice/Attest/Horan, J./Salvidio, J.<br><br>Footnotes<br><br>1. The petitions in 19-J-75, 19-J-76, and 19-J-77 were consolidated for purposes of filing and decision by order on February 20, 2019.<br><br>2. See also Manzaro v. McCann, 401 Mass. 880, 882 (1988) (in summary process actions, "when a timely [postjudgment] motion . . . is filed, the time for appeal for all parties shall run from the entry of the order granting or denying that motion").<br><br>3. An amendment to the rule, effective tomorrow, will amplify the point even further by adding that "A new notice of appeal must be filed within the prescribed time measured from the entry of the order disposing of the last such remaining motion."<br><br>4. Because that appeal period was set by statute, it cannot be extended by operation of court rule. Jones v. Manns, 33 Mass. App. Ct. 485, 488-489 (1992) (ten day summary process appeal period is jurisdictional). See generally, Friedman v. Bd. of Registration in Medicine, 414 Mass. 663, 665 (1993). Contrast Karen Construction Co. v. Lizotte, 396 Mass. 143, 146 (1985) (upholding an order allowing a short extension of a nonstatutory appeal period based on "excusable neglect").<br><br>5. There, the court reached the underlying merits even though the appellant failed to file a second notice of appeal after a post-judgment motion for reconsideration was denied. Accordingly, the case can be read as constituting a relaxation of the law in this subject area.<br><br>6. As provided in the previous order of February 20, 2019, to the extent the defendants-appellants remain self-represented, they may submit unitary filings provided they each sign the filing. In any event, all new filings should be made in docket 2019-P-315, not 2019-J-75 (which is now closed).
+											</td>
+
+				</tr>
+
+			
+		</tbody>
+
+	</table>
+
+</section>
+
+
+					</div>
+
+					
+
+					<div class="content-footer">
+											</div>
+
+					<div class="page-footer pb-3" style="min-height:2em;" >
+						<span class="publish-date">
+		As of 11/04/2019 8:00pm
+	</span>
+													<div class="page-top-link hidden-print">
+								<a href="#top" id="bottom">Top &#9652;</a>
+							</div>
+											</div>
+
+				</main>
+
+			</div> 
+		</div>     
+
+		
+        <div class="modal" tabindex="-1" role="dialog" id="help-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" >
+                    <div class="context-help">   <!-- style="text-align:center;"-->
+                        <div class="help-container">
+
+	<table>
+
+	
+
+	<tr>
+	<td>
+	<div class="help-content">
+		For more information about how to search for court cases, visit the
+<a target="_blank" href="https://www.ma-appellatecourts.org/help">court website</a>.
+	</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<div class="help-footer">
+		<div class="modal-footer">
+			<a target="_blank" href="https://www.ma-appellatecourts.org/help"> More Help <img id="modal-help-link" src="https://www.ma-appellatecourts.org/images/external.png"  alt="More Help"></a>
+			<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+		</div>
+
+	</div>
+	</td>
+	</tr>
+
+	</table>
+
+</div> 
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+
+		
+		<div class="overlay"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#dismiss, .overlay').on('click', function () {
+					// hide sidebar
+					$('#sidebar').removeClass('active');
+					$('#sidebar').css('overflow', 'hidden');
+					// hide overlay
+					$('.overlay').removeClass('active');
+				});
+
+				$('#sidebarCollapse').on('click', function () {
+					// open sidebar
+					$('#sidebar').css('overflow', 'auto');
+					$('#sidebar').addClass('active');
+					// fade in the overlay
+					$('.overlay').addClass('active');
+					$('.collapse.in').toggleClass('in');
+					$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+				});
+
+				// Highlight the last search in the menu
+				var menu_context = "docket";
+				var currentMenu = $("a[data-context=" + menu_context + "]");
+				currentMenu.addClass('menu-context');
+				// Detect ie11.
+				var mq=window.matchMedia("(-ms-high-contrast: none)");
+				if (mq.matches) {
+					// Don't focus the field if it's IE, focus kills the place holder
+					// console.log("is IE 11");
+					$('form').find('*').filter(':input:visible:first').blur();
+				}
+			});  // document.ready
+		</script>
+
+					<!-- Include Court Tracking Software -->
+			<script src="https://rum-static.pingdom.net/pa-5bed916cdb2aac0016000085.js" async></script>
+		
+		
+	</body>
+
+</html>
+

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<!--
+// Copyright (C) 1988-2019 Relational Semantics, Inc. (RSI), Newton MA USA
+// This Module contains Proprietary Information of Relational Semantics, Inc.
+// and should be treated as Confidential. All rights reserved.
+// RSI, PARAGON, and FORECOURT are registered trademarks of Relational Semantics, Inc.
+-->
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="csrf-token" content="qGrcFlCOjOBjLdTq1PamjCc1NOdlHwZ0qg1Qoo7J">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Mass Appellate Courts - Public Case Search</title>
+		<link rel="shortcut icon"    href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="icon"		     href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+
+		<link href="https://www.ma-appellatecourts.org/css/material.css" rel="stylesheet" type="text/css" />
+
+		            <link href="https://www.ma-appellatecourts.org/css/mysjc.css" rel="stylesheet" type="text/css" />
+		
+        <script src="https://www.ma-appellatecourts.org/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://www.ma-appellatecourts.org/js/popper.min.js"></script>
+        
+        <script src="https://www.ma-appellatecourts.org/js/app.js" ></script>
+        <script src="https://www.ma-appellatecourts.org/js/material.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			
+			<nav id="sidebar">
+
+				
+
+				<div class="sidebar-header text-center">
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><div class="pt-2 pb-2"><img src="https://www.ma-appellatecourts.org/images/seal_comm_gray.png" class="nav-seal" alt="Home"></div></a>
+				</div>
+
+				<ul class="sidenav">
+
+											<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/home.png" alt="Home">Home</li></a>
+					
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/case.png" alt="Case Search">Case Search</li></a>
+						<ul class="sidenav-search">
+							<a target="_top" href="https://www.ma-appellatecourts.org/party" data-context="party"><li><img src="https://www.ma-appellatecourts.org/images/party.png" alt="Party Search"><span>Involved Party</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/docket" data-context="docket"><li><img src="https://www.ma-appellatecourts.org/images/number.png" alt="Docket Number Search"><span>Docket Number</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/attorney" data-context="attorney"><li><img src="https://www.ma-appellatecourts.org/images/attorney.png" alt="Attorney Search"><span>Attorney Appearance</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/ljudge" data-context="ljudge"><li><img src="https://www.ma-appellatecourts.org/images/judge.png" alt="Lower Court Judge Search"><span>Lower Court Judge</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/lcourt" data-context="lcourt"><li><img src="https://www.ma-appellatecourts.org/images/court.png" alt="Lower Court Search"><span>Lower Court</span></li></a>
+						</ul>
+
+					<a target="_top" href="https://www.ma-appellatecourts.org/calendar" data-context="calendar"><li><img src="https://www.ma-appellatecourts.org/images/calendar.png" alt="Court Calendars">Court Calendars</li></a>
+
+						<ul class="sidenav-calendar">
+							<a href="https://www.ma-appellatecourts.org/calendar/fc" data-context="calendarfc"><li><span>SJC Full Court</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/sj" data-context="calendarsj"><li><span>SJC Single Justice</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/ac" data-context="calendarac"><li><span>Appeals Court Panel</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/aj" data-context="calendaraj"><li><span>Appeals Court Single Justice</span></li></a>
+						</ul>
+
+					<a target="_blank" href="https://www.ma-appellatecourts.org/help"><li><img src="https://www.ma-appellatecourts.org/images/menu-help.png" alt="More Help">More Help <img id="help-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="More Help"></li></a>
+				</ul>
+
+				<div class="sidebar-footer">
+					<a class="copyright" target="_blank" href="https://www.rsi.com/state-judicial-solutions/public-access/">&copy; 2019 RSI</a>
+				</div>
+
+			</nav>
+			
+
+			<div id="content">
+
+				<nav class="navbar navbar-full navbar-light text-center py-0" id="header">
+					<div class="my-auto">
+						<button type="button" id="sidebarCollapse" class="btn btn-info">
+							<span>
+								<img src="https://www.ma-appellatecourts.org/images/top-menu.png" title="Menu"  alt="Menu" >
+							</span>
+						</button>
+					</div>
+					<div class="text-center my-auto page-title">
+						<span class="page-title">
+							<a href="https://www.ma-appellatecourts.org" class="page-title">
+																		<h4 class="page-header">
+											<span class="page-title-1 text-nowrap">Massachusetts Appellate Courts</span><br>
+											<span class="page-title-2 text-nowrap">Public Case Search</span>
+										</h4>
+																</a>
+						</span>
+					</div>
+					<div class="text-right my-auto">
+						
+						<a target="_blank" data-toggle="modal" href="#help-modal">
+							<button type="button" id="info_button" class="btn">
+								<span>
+									<img src="https://www.ma-appellatecourts.org/images/top-help.png" title="More Help"  alt="More Help" >
+								</span>
+							</button>
+						</a>
+					</div>
+				</nav>
+
+				<main id='main-content' class="col text-center">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col pl-0">
+								
+							</div>
+							<div class="col-7">
+																	<div class="content-header">
+										
+    <div class="docket-header">
+	
+    	<div class="docket-header-1">
+    	    		    		    			SUPREME JUDICIAL COURT<br>for the Commonwealth
+    			    	</div>
+    	<div class="docket-header-2">Case Docket</div>
+
+    	<hr class="short">
+
+    	<div class="docket-header-1">ANTONIO GARCIA vs. COMMONWEALTH</div>
+    	    		<div class="docket-header-2">PARTIALLY SEALED</div>
+    	    	<div class="docket-header-2">SJC-12579</div>
+
+    	<hr class="short">
+
+    </div>
+									</div>
+															</div>
+							<div class="col pr-0">
+								 									<div class="page-bottom-link hidden-print">
+										<a href="#bottom"><span class="text-nowrap">Bottom &#9662;</span></a>
+									</div>
+															</div>
+						</div>
+					</div>
+
+					
+					
+					
+					
+					
+					
+
+					<div class="content-body">
+						
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			<span class="align-middle">CASE HEADER</span>
+		</div>
+
+	</div>
+
+	<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Status
+		<span class="flex_rt ds-normal">Decided, Rescript issued</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Status Date
+		<span class="flex_rt ds-normal">12/26/2018</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Nature
+		<span class="flex_rt ds-normal">Superintendence, c211, s3</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Entry Date
+		<span class="flex_rt ds-normal">08/13/2018</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Appellant
+		<span class="flex_rt ds-normal">Defendant</span></span>
+	</div>
+
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Type
+		<span class="flex_rt ds-normal">Civil</span></span>
+	</div>
+
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Status
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Due
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12">
+		<span class="flex_span_wide ds-bold">Quorum
+		<span class="flex_rt_wide ds-normal">Gants, C.J., Gaziano, Budd, Cypher, Kafker, JJ.</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+   	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Argued Date
+		<span class="flex_rt ds-normal">11/08/2018</span></span>
+	</div>
+   	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Decision Date
+		<span class="flex_rt ds-normal">11/26/2018</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+  	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">AC/SJ Number
+		<span class="flex_rt ds-normal">
+		<a class="docket-number-link" target="_top" href="https://www.ma-appellatecourts.org/docket/SJ-2018-0285">SJ-2018-0285</a>
+		</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Citation
+		<span class="flex_rt ds-normal">481 Mass. 1005</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+ 	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">DAR/FAR Number
+		<span class="flex_rt ds-normal">
+				</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Number
+		<span class="flex_rt ds-normal">SJ-2018-0285</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+  	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court
+		<span class="flex_rt ds-normal">SJC for Suffolk County</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Judge
+		<span class="flex_rt ds-normal">David A. Lowy, J.</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+  	<div class="col-12">
+		<span class="flex_span_wide ds-bold">Route to SJC
+		<span class="flex_rt_wide ds-normal">Direct Entry: Appeal from Single Justice Order/Judgment</span></span>
+	</div>
+</div>
+
+</section>
+
+
+	
+	
+	<section class="docket">
+
+    <div class="row mx-0" id="one_col_title">
+         <div class="col-12 parties_section_title"><span class="flex_span align-middle"><b>PARTY &nbsp;/&nbsp; ATTORNEY</b></span></div>
+    </div>
+    <div class="row mx-0" id="two_col_title">   
+         <div class="col-5 col-sm-6 parties_section_title1"><span class="flex_span align-middle"><b>INVOLVED PARTY</b></span></div>
+         <div class="col-7 col-sm-6 parties_section_title2 pl-4"><span class="flex_span align-middle"><b>ATTORNEY APPEARANCE</b></span></div>
+    </div>
+
+
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Antonio Garcia
+                        </b>
+                        <br>
+                        Pro Se Petitioner/Appellant
+                                        <br>
+
+                    
+                                                                                                        Mem. &amp; Appx. under Rule 2:21
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Commonwealth
+                        </b>
+                        <br>
+                        Respondent/Appellee
+                                        <br>
+
+                    
+                                                                                                        Red brief &amp; appendix filed
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/639596">Catherine L. Semel,
+							A.D.A.
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+</section>
+
+
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			DOCUMENTS
+		</div>
+	</div>
+
+    <div class="documents_list pl-2">
+        <ul>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12579/SJC-12579_06_Appellee_Commonwealth_REDACTED_Brief.pdf">Appellee Commonwealth REDACTED Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12579/SJC-12579_06_Appellee_Commonwealth_REDACTED_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+        </ul>
+    </div>
+
+</section>
+
+
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+	    <div class="docket_entries_title">
+			<span class="align-middle">DOCKET ENTRIES</span>
+	    </div>
+	</div>
+
+   	<table class="docket_entries">
+
+		<tbody>
+
+			<tr class="subhead">
+				<td nowrap><b>Entry Date</b>&nbsp;</td>
+				<td nowrap><b>Paper 	</b>&nbsp;</td>
+				<td nowrap width=100%><b>Entry Text</b></td>
+			</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/13/2018</td>
+					<td nowrap valign=top>#1</td>
+					<td valign=top>Entered. Notice to counsel.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/13/2018</td>
+					<td nowrap valign=top>#2</td>
+					<td valign=top>(Impounded) Affidavit of indigency of Antonio Garcia. (ALLOWED forthwith. See SJ-2018-0285)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/14/2018</td>
+					<td nowrap valign=top>#3</td>
+					<td valign=top>(SEALED) Grand Jury Minutes filed by Antonio Garcia, pro se.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/16/2018</td>
+					<td nowrap valign=top>#4</td>
+					<td valign=top>Motion for Grand Jury Minutes (MOTION TO EXPAND THE RECORD), filed for Antonio Garcia by Antonio Garcia, Pro Se Petitioner/Appellant, Pro Se. (Referred to the Quorum)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/16/2018</td>
+					<td nowrap valign=top>#5</td>
+					<td valign=top>SERVICE of Mem. & Appx. under Rule 2:21 for Petitioner/Appellant Antonio Garcia by Antonio Garcia, Pro Se Petitioner/Appellant.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/16/2018</td>
+					<td nowrap valign=top>#6</td>
+					<td valign=top>Affidavit in Support of Memorandum in Reconsideration of Law in Support of the Petition for Relief Pursuant to G.L. c. 211, s. 3, Ineffective Assistance of Counsel and Testimony of the Alleged Witness, filed for Antonio Garcia by Antonio Garcia, Pro Se Petitioner/Appellant.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/22/2018</td>
+					<td nowrap valign=top>#7</td>
+					<td valign=top>Copy of Notice of Entry of Appeal, Motion for Grand Jury Minutes, Memorandum of Law in Support of the Petition for Relief Pursuant to G.L. c. 211, &#167;3 and Affidavit in Support of Memorandum received from Antonio Garcia, Pro Se.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/28/2018</td>
+					<td nowrap valign=top>#8</td>
+					<td valign=top>ORDER: Antonio Garcia appeals from a judgment of the county court denying his petition for relief under G. L. c. 211, &#167; 3. Garcia has been indicted for trafficking of a person for sexual services, deriving support from prostitution, and, most recently, witness intimidation. On the Commonwealth's motion, and after a dangerousness hearing in the witness intimidation case, a judge in the Superior Court ordered that Garcia be held without bail for a period of not more than 120 days pursuant to G. L. c. 276, &#167; 58A. At the same time, the judge set bail in the sex trafficking cases at $20,000 each, a reduction of amounts that had been set previously. Some time later, Garcia sought a bail hearing, but the Commonwealth objected on the ground that 120 days had not yet run on his &#167; 58A detention. No bail hearing was held at that time. Garcia subsequently filed his G. L. c. 211, &#167; 3, petition, arguing that the judge wrongly denied him release on his personal recognizance.[1] The single justice denied relief without a hearing. The case is before us pursuant to S.J.C. Rule 2:21, as amended, 434 Mass. 1301 (2001), which requires a petitioner seeking relief from an interlocutory ruling of the trial court to "set forth the reasons why review of the trial court decision cannot adequately be obtained on appeal from any final adverse judgment in the trial court or by other available means." Garcia's pro se memorandum does not address this issue, but challenges the &#167; 58A order on the merits and also challenges certain aspects of the grand jury proceedings. Nonetheless, as the Commonwealth acknowledged in its opposition to Garcia's petition, filing a petition pursuant to G. L. c. 211, &#167; 3 is the proper means for seeking relief from bail determinations or pretrial detentions based on dangerousness. See <u>Brangan</u> v. <u>Commonwealth</u>, 477 Mass. 691, 697 (2017). The limited purpose of Rule 2:21 has thus been satisfied. Garcia has no other means of obtaining adequate appellate review of his detention under &#167; 58A. As to Garcia's claims about the grand jury proceedings, however, we see no reason Garcia could not obtain adequate review in the ordinary appellate process after a conviction of any offense. In these circumstances, we allow this appeal from the single justice's judgment to proceed, limited to issues concerning bail and pretrial detention.[2] In its opposition to Garcia's petition, the Commonwealth stated that the trial is scheduled for December 10, 2018. Accordingly, unless the trial is postponed, this case shall be argued in November, 2018, and the parties shall cooperate to establish an expedited briefing schedule. We express no view on the merits of Garcia's claims at this preliminary juncture. By the Court, Francis V. Kenneally, Clerk [1] We note that although Garcia is represented by counsel in the Superior Court, he has proceeded pro se before the single justice and before the full court. [2] We also note that although Garcia has filed a memorandum pursuant to Rule 2:21, he has not filed an appendix presenting the record before the single justice, which is also required by the rule. Ordinarily, this would present a reason not to disturb the judgment of the single justice. See, e.g., <u>Bishay</u> v. <u>Land Ct. Dep't of the Trial Ct</u>., 477 Mass. 1032, 1033 n.2 (2017). However, because it is well established that a petition under G. L. c. 211, &#167; 3, is the appropriate method to obtain review of a bail determination or a pretrial detention order based on dangerousness, we allow the appeal to proceed as to that limited issue.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/01/2018</td>
+					<td nowrap valign=top>#9</td>
+					<td valign=top>NOTICE of November argument sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/12/2018</td>
+					<td nowrap valign=top>#10</td>
+					<td valign=top>Commonwealth's Notice of Briefing Schedule, filed by Catherine Langevin Semel, A.D.A..
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/12/2018</td>
+					<td nowrap valign=top>#11</td>
+					<td valign=top>Appendix to Petitioner's Memorandum, filed by Antonio Garcia, Pro Se.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/15/2018</td>
+					<td nowrap valign=top>#12</td>
+					<td valign=top>ORDERED for argument on November 8. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/15/2018</td>
+					<td nowrap valign=top>#13</td>
+					<td valign=top>NOTICE of Briefing Schedule, filed for Commonwealth by Catherine Langevin Semel .
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/23/2018</td>
+					<td nowrap valign=top>#14</td>
+					<td valign=top>SERVICE of brief & supplemental appendix for Respondent/Appellee Commonwealth by Catherine L. Semel, A.D.A..
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/08/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Oral argument held. (Gants, C.J., Gaziano, J., Budd, J., Cypher, J., Kafker, J.).
+													&nbsp;
+							<a target="_blank" alt="View Webcast" href="https://boston.suffolk.edu/sjc/pop.php?csnum=SJC_12579">View Webcast </a>
+							<a target="_blank" alt="View Webcast" href="https://boston.suffolk.edu/sjc/pop.php?csnum=SJC_12579"><img id="webcast-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="View Webcast"></a>
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/26/2018</td>
+					<td nowrap valign=top>#15</td>
+					<td valign=top>RESCRIPT (Rescript Opinion): Judgment Affirmed. (By the Court)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>12/26/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RESCRIPT ISSUED to trial court.
+											</td>
+
+				</tr>
+
+			
+		</tbody>
+
+	</table>
+
+</section>
+
+
+					</div>
+
+					
+
+					<div class="content-footer">
+											</div>
+
+					<div class="page-footer pb-3" style="min-height:2em;" >
+						<span class="publish-date">
+		As of 11/04/2019 8:00pm
+	</span>
+													<div class="page-top-link hidden-print">
+								<a href="#top" id="bottom">Top &#9652;</a>
+							</div>
+											</div>
+
+				</main>
+
+			</div> 
+		</div>     
+
+		
+        <div class="modal" tabindex="-1" role="dialog" id="help-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" >
+                    <div class="context-help">   <!-- style="text-align:center;"-->
+                        <div class="help-container">
+
+	<table>
+
+	
+
+	<tr>
+	<td>
+	<div class="help-content">
+		For more information about how to search for court cases, visit the
+<a target="_blank" href="https://www.ma-appellatecourts.org/help">court website</a>.
+	</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<div class="help-footer">
+		<div class="modal-footer">
+			<a target="_blank" href="https://www.ma-appellatecourts.org/help"> More Help <img id="modal-help-link" src="https://www.ma-appellatecourts.org/images/external.png"  alt="More Help"></a>
+			<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+		</div>
+
+	</div>
+	</td>
+	</tr>
+
+	</table>
+
+</div> 
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+
+		
+		<div class="overlay"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#dismiss, .overlay').on('click', function () {
+					// hide sidebar
+					$('#sidebar').removeClass('active');
+					$('#sidebar').css('overflow', 'hidden');
+					// hide overlay
+					$('.overlay').removeClass('active');
+				});
+
+				$('#sidebarCollapse').on('click', function () {
+					// open sidebar
+					$('#sidebar').css('overflow', 'auto');
+					$('#sidebar').addClass('active');
+					// fade in the overlay
+					$('.overlay').addClass('active');
+					$('.collapse.in').toggleClass('in');
+					$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+				});
+
+				// Highlight the last search in the menu
+				var menu_context = "docket";
+				var currentMenu = $("a[data-context=" + menu_context + "]");
+				currentMenu.addClass('menu-context');
+				// Detect ie11.
+				var mq=window.matchMedia("(-ms-high-contrast: none)");
+				if (mq.matches) {
+					// Don't focus the field if it's IE, focus kills the place holder
+					// console.log("is IE 11");
+					$('form').find('*').filter(':input:visible:first').blur();
+				}
+			});  // document.ready
+		</script>
+
+					<!-- Include Court Tracking Software -->
+			<script src="https://rum-static.pingdom.net/pa-5bed916cdb2aac0016000085.js" async></script>
+		
+		
+	</body>
+
+</html>
+
