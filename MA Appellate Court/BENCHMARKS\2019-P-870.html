@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<!--
+// Copyright (C) 1988-2019 Relational Semantics, Inc. (RSI), Newton MA USA
+// This Module contains Proprietary Information of Relational Semantics, Inc.
+// and should be treated as Confidential. All rights reserved.
+// RSI, PARAGON, and FORECOURT are registered trademarks of Relational Semantics, Inc.
+-->
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="csrf-token" content="zkai4jLtEnlxQQZBgRjqp1nv7IrH2wnwSE0UBXs3">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Mass Appellate Courts - Public Case Search</title>
+		<link rel="shortcut icon"    href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="icon"		     href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+
+		<link href="https://www.ma-appellatecourts.org/css/material.css" rel="stylesheet" type="text/css" />
+
+		            <link href="https://www.ma-appellatecourts.org/css/mysjc.css" rel="stylesheet" type="text/css" />
+		
+        <script src="https://www.ma-appellatecourts.org/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://www.ma-appellatecourts.org/js/popper.min.js"></script>
+        
+        <script src="https://www.ma-appellatecourts.org/js/app.js" ></script>
+        <script src="https://www.ma-appellatecourts.org/js/material.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			
+			<nav id="sidebar">
+
+				
+
+				<div class="sidebar-header text-center">
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><div class="pt-2 pb-2"><img src="https://www.ma-appellatecourts.org/images/seal_comm_gray.png" class="nav-seal" alt="Home"></div></a>
+				</div>
+
+				<ul class="sidenav">
+
+											<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/home.png" alt="Home">Home</li></a>
+					
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/case.png" alt="Case Search">Case Search</li></a>
+						<ul class="sidenav-search">
+							<a target="_top" href="https://www.ma-appellatecourts.org/party" data-context="party"><li><img src="https://www.ma-appellatecourts.org/images/party.png" alt="Party Search"><span>Involved Party</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/docket" data-context="docket"><li><img src="https://www.ma-appellatecourts.org/images/number.png" alt="Docket Number Search"><span>Docket Number</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/attorney" data-context="attorney"><li><img src="https://www.ma-appellatecourts.org/images/attorney.png" alt="Attorney Search"><span>Attorney Appearance</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/ljudge" data-context="ljudge"><li><img src="https://www.ma-appellatecourts.org/images/judge.png" alt="Lower Court Judge Search"><span>Lower Court Judge</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/lcourt" data-context="lcourt"><li><img src="https://www.ma-appellatecourts.org/images/court.png" alt="Lower Court Search"><span>Lower Court</span></li></a>
+						</ul>
+
+					<a target="_top" href="https://www.ma-appellatecourts.org/calendar" data-context="calendar"><li><img src="https://www.ma-appellatecourts.org/images/calendar.png" alt="Court Calendars">Court Calendars</li></a>
+
+						<ul class="sidenav-calendar">
+							<a href="https://www.ma-appellatecourts.org/calendar/fc" data-context="calendarfc"><li><span>SJC Full Court</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/sj" data-context="calendarsj"><li><span>SJC Single Justice</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/ac" data-context="calendarac"><li><span>Appeals Court Panel</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/aj" data-context="calendaraj"><li><span>Appeals Court Single Justice</span></li></a>
+						</ul>
+
+					<a target="_blank" href="https://www.ma-appellatecourts.org/help"><li><img src="https://www.ma-appellatecourts.org/images/menu-help.png" alt="More Help">More Help <img id="help-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="More Help"></li></a>
+				</ul>
+
+				<div class="sidebar-footer">
+					<a class="copyright" target="_blank" href="https://www.rsi.com/state-judicial-solutions/public-access/">&copy; 2019 RSI</a>
+				</div>
+
+			</nav>
+			
+
+			<div id="content">
+
+				<nav class="navbar navbar-full navbar-light text-center py-0" id="header">
+					<div class="my-auto">
+						<button type="button" id="sidebarCollapse" class="btn btn-info">
+							<span>
+								<img src="https://www.ma-appellatecourts.org/images/top-menu.png" title="Menu"  alt="Menu" >
+							</span>
+						</button>
+					</div>
+					<div class="text-center my-auto page-title">
+						<span class="page-title">
+							<a href="https://www.ma-appellatecourts.org" class="page-title">
+																		<h4 class="page-header">
+											<span class="page-title-1 text-nowrap">Massachusetts Appellate Courts</span><br>
+											<span class="page-title-2 text-nowrap">Public Case Search</span>
+										</h4>
+																</a>
+						</span>
+					</div>
+					<div class="text-right my-auto">
+						
+						<a target="_blank" data-toggle="modal" href="#help-modal">
+							<button type="button" id="info_button" class="btn">
+								<span>
+									<img src="https://www.ma-appellatecourts.org/images/top-help.png" title="More Help"  alt="More Help" >
+								</span>
+							</button>
+						</a>
+					</div>
+				</nav>
+
+				<main id='main-content' class="col text-center">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col pl-0">
+								
+							</div>
+							<div class="col-7">
+																	<div class="content-header">
+										
+    <div class="docket-header">
+	
+    	<div class="docket-header-1">
+    	    			APPEALS COURT<br>Full Court Panel Case
+    			    	</div>
+    	<div class="docket-header-2">Case Docket</div>
+
+    	<hr class="short">
+
+    	<div class="docket-header-1">SULLIVAN &amp; COMPANY vs. BRIAN SAIPE</div>
+    	    		<div class="docket-header-2">THIS CASE CONTAINS IMPOUNDED MATERIAL OR PID</div>
+    	    	<div class="docket-header-2">2019-P-0870</div>
+
+    	<hr class="short">
+
+    </div>
+									</div>
+															</div>
+							<div class="col pr-0">
+								 									<div class="page-bottom-link hidden-print">
+										<a href="#bottom"><span class="text-nowrap">Bottom &#9662;</span></a>
+									</div>
+															</div>
+						</div>
+					</div>
+
+					
+					
+					
+					
+					
+					
+
+					<div class="content-body">
+						
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			<span class="align-middle">CASE HEADER</span>
+		</div>
+
+	</div>
+
+	<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Status
+		<span class="flex_rt ds-normal">No briefs yet</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Status Date
+		<span class="flex_rt ds-normal">10/02/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Nature
+		<span class="flex_rt ds-normal">Real Estate</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Entry Date
+		<span class="flex_rt ds-normal">06/11/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Sub-Nature
+		<span class="flex_rt ds-normal">Summary Process</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">SJ Number
+		<span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Appellant
+		<span class="flex_rt ds-normal">Defendant</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Type
+		<span class="flex_rt ds-normal">Civil</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Status
+		<span class="flex_rt ds-normal">Awaiting blue brief</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Due
+		<span class="flex_rt ds-normal">11/18/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Panel
+		<span class="flex_rt ds-normal">Blake</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Argued/Submitted
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Citation
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Decision Date
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court
+		<span class="flex_rt ds-normal">Housing Court, Southeast</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Number
+		<span class="flex_rt ds-normal"></span></span> 
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Judge
+		<span class="flex_rt ds-normal">Diana H. Horan, J.</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Entry Date
+		<span class="flex_rt ds-normal">10/05/2018</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">FAR Number
+	    <span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">SJC Number
+		<span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+</div>
+
+</section>
+
+
+	
+	
+	<section class="docket">
+
+    <div class="row mx-0" id="one_col_title">
+         <div class="col-12 parties_section_title"><span class="flex_span align-middle"><b>PARTY &nbsp;/&nbsp; ATTORNEY</b></span></div>
+    </div>
+    <div class="row mx-0" id="two_col_title">   
+         <div class="col-5 col-sm-6 parties_section_title1"><span class="flex_span align-middle"><b>INVOLVED PARTY</b></span></div>
+         <div class="col-7 col-sm-6 parties_section_title2 pl-4"><span class="flex_span align-middle"><b>ATTORNEY APPEARANCE</b></span></div>
+    </div>
+
+
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Sullivan &amp; Company
+                        </b>
+                        <br>
+                        Plaintiff/Appellee
+                                        <br>
+
+                    
+                                                                                                        Awaiting red brief
+                                <br>
+                                                                                                                Due 12/18/2019
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/562152">Jeffrey C. Turk,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/641048">Therese Quijano,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Brian Saipe
+                        </b>
+                        <br>
+                        Pro Se Defendant/Appellant
+                                        <br>
+
+                    
+                                                                                                        Awaiting blue brief
+                                <br>
+                                                                                                                Due 11/18/2019
+                                <br>
+                                                                                                                2 Enls, 120 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                                        </div>
+
+        </div>
+    
+</section>
+
+
+	
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+	    <div class="docket_entries_title">
+			<span class="align-middle">DOCKET ENTRIES</span>
+	    </div>
+	</div>
+
+   	<table class="docket_entries">
+
+		<tbody>
+
+			<tr class="subhead">
+				<td nowrap><b>Entry Date</b>&nbsp;</td>
+				<td nowrap><b>Paper 	</b>&nbsp;</td>
+				<td nowrap width=100%><b>Entry Text</b></td>
+			</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/26/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top><b>IMPOUNDED INFORMATION</b>: Medical records and documents per lower court order.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/11/2019</td>
+					<td nowrap valign=top>#1</td>
+					<td valign=top>Lower Court Assembly of the Record Package
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/11/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Notice of entry sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/11/2019</td>
+					<td nowrap valign=top>#2</td>
+					<td valign=top>Affidavit of indigency (IMPOUNDED) filed for Brian Saipe
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/13/2019</td>
+					<td nowrap valign=top>#3</td>
+					<td valign=top>MOTION for stay under MRAP 6(a), filed for Brian Saipe, Pro Se Defendant/Appellant.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/13/2019</td>
+					<td nowrap valign=top>#4</td>
+					<td valign=top>Request for Hearing on Disability Accommodations received from Brian Saipe.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/13/2019</td>
+					<td nowrap valign=top>#5</td>
+					<td valign=top>Clerk's Office provided copy of Guide to Civil and Criminal Appeals, printout of court's Motion Practice website education page, and certificate of service form in hand to Brian Saipe.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/18/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#2 ALLOWED FORTHWITH. The appellant's Affidavit of Indigency appears regular and complete on its face, and indicates that the appellant is indigent. The court hereby allows the Motion to Waive entry fee. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/18/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#3: No action necessary. By operation of court rules, no execution shall issue during the pendency of the defendant's appeal. Mass. R. Civ. P. 62; Rule 13 of the Uniform Summary Process Rules. (Rubin, J.). *Notice/Attest.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/25/2019</td>
+					<td nowrap valign=top>#6</td>
+					<td valign=top>Docketing Statement received from Brian Saipe.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/28/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#4: This matter came before the Court on a request from the appellant for a hearing on disability accommodations. The request for a hearing is allowed and shall be scheduled on July 25 2019 at 2:00 <u>P</u>.<u>M</u>. In view of the hearing date, the appellant's brief shall be due on or before August 26, 2019.It is further ordered, that Associate Justice Amy Blake shall be assigned to hear all matters filed in this action, as a single justice, until the case is assigned to a panel for consideration of the appeal on the merits. Having reviewed the appellant's request for a hearing on disability accommodations, the Court is satisfied that the appellant is entitled to reasonable accommodations pursuant to the Americans with Disabilities Act of 1990. The hearing on July 25, 2019 will be solely on the specific accommodations the appellant is seeking. Normally each side is allowed 15 minutes for oral argument. See Mass. R. App. P. 22 (b). For this hearing, the Court will allow each party 30 minutes for oral argument. A time keeper will keep track of the time and notify each side when they have 5 minutes remaining. The appellee shall have the right to attend this hearing, but is not required to be present. Justice Blake has conducted an in camera inspection of all the records filed by the appellant to date in this Court and has ordered that the medical records and so much of the lower court's memorandum of decision and order that details the testimony of the appellant's doctors shall be impounded. However, the appellant's motion and the remainder of the memorandum of decision and order shall not be impounded. Requests for access to impounded documents shall be made in writing with notice to all parties, filed in the Clerk's Office, and directed to the attention of Justice Blake. (Blake, J.) *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/28/2019</td>
+					<td nowrap valign=top>#7</td>
+					<td valign=top>Notice to counsel for hearing before Blake, J. on 07/25/2019 @2:00PM in Courtroom 4.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/25/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Hearing held.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/25/2019</td>
+					<td nowrap valign=top>#8</td>
+					<td valign=top>Appearance of Brian Saipe, Pro Se Defendant/Appellant
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/25/2019</td>
+					<td nowrap valign=top>#9</td>
+					<td valign=top>Appearance of Therese Quijano, Esquire for Sullivan & Company.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/29/2019</td>
+					<td nowrap valign=top>#10</td>
+					<td valign=top>ORDER: This matter came before the Court, Blake, J., presiding on a request from the pro se defendant-appellant for disability accommodations. At this hearing counsel for the plaintiff-appellee and Mr. Saipe appeared. Prior to the hearing, the defendant submitted, among other things, documents from his medical providers. Upon consideration thereof, the court hereby makes the following findings and orders:<br><br>1. I find that the defendant's disabilities render him less able to present his arguments in the morning. Therefore I find and order as a reasonable accommodation, that all future hearings shall be scheduled in the afternoon, either at 12:00 P.M. or 2:00 P.M.<br><br>2. I find that the defendant's disabilities render him less able to succinctly make arguments orally. As a reasonable accommodation, I order that at any such hearing, each side shall be allotted thirty (30) minutes of argument. This accommodation represents a doubling of the time set forth in Mass. R. App. P. 22 (b). In addition, neither side is permitted rebuttal time.<br><br>3. I find that the defendant's disabilities render him less able to remain focused in the courtroom when distracted. Therefore I find and order, that as a reasonable accommodation, the Court shall take all reasonable steps to minimize distractions during any hearing, including but not limited to scheduling the case to be the only case in the courtroom at the time of the hearing.<br><br>4. Regarding the defendant-appellant's request to present his case orally, counsel for the plaintiff-appellee has objected and contends that she cannot file a responsive pleading if the case is presented orally, without any briefs. It is the defendant-appellant's responsibility, as the appellant, to identify and brief the issues. The record below demonstrates that the defendant-appellant has presented voluminous pleadings that were either hand written or typed. An appeal requires the filing of a brief and record appendix. See generally Mass. R. App. P. To permit an appeal to proceed without a written brief would fundamentally alter the nature of this court's activities. See Adjartey v. Central Division of the Housing Court Department, 481 Mass. 830, 848-849 (2019). I find that the defendant's disabilities render him less able, though not unable to present written materials to the court; I further find that allowing him to only present his substantive appellate argument orally is contrary to the business practices of this Court. To that end, the following accommodations shall be made. The defendant-appellant may file a brief and appendix in one of three ways. He may file a handwritten brief. He may file a typed brief. He may also file a brief using a dictation or talk-to-text service. This would enable him to dictate his brief and thereafter, print his brief. Regardless of the avenue he chooses, the brief shall comply with Mass. R. App. P.16. It shall include a table of authorities, statement of the issues, statement of the case, statement of the facts and legal argument that cites to the record and to the relevant legal authorities. The brief shall be limited to fifty pages per Mass. R. App. P. 20, however, the Court waives all additional requirements under this rule as to format and pagination. See Mass. R. App. P. (20)(4).<br><br>5. In view of the foregoing, I find and order, that as a reasonable accommodation, the original due date for the appellant's brief is extended for the second time until October 4, 2019. No further enlargements shall be anticipated. (Blake, J.). *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/26/2019</td>
+					<td nowrap valign=top>#11</td>
+					<td valign=top>Motion for second ADA hearing, filed by Brian Saipe, Defendant/Appellant. (rec'd for filing 09/25/2019)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/26/2019</td>
+					<td nowrap valign=top>#12</td>
+					<td valign=top>Motion to reconsider paper #10, filed by Brian Saipe, Defendant/Appellant. (rec'd for filing 09/25/2019)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/26/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#11: Appellant's motion for second ADA accommodations hearing is allowed. The motion for reconsideration of order dated July 29, 2019 shall be heard at the same time.<br><br>The motions shall be heard on October 2, 2019 at 2:30PM in courtroom 3.<br><br>As an accommodation, both parties shall be permitted to set up in the designated courtroom at 2:00 pm. The hearing shall begin precisely at 2:30 pm. Each side will be permitted thirty minutes (which represents a doubling of the standard hearing time of 15 minutes). In addition, as an accommodation, and contrary to court policy, for this hearing each party shall be permitted no more than 15 minutes of rebuttal time. Appellant will present his argument on his motions, followed by appellee's argument in response. Thereafter appellant will present his rebuttal, if any, followed by appellee's rebuttal, if any.<br><br>The hearing shall conclude no later than 4:00 pm.<br><br>There will be a process for keeping time and notifying the parties of their remaining time during all arguments.<br><br>To the extent that the appellant seeks a closed courtroom for his hearing, that is denied.<br><br>At the prior hearing and without advance notice, appellant indicated he could not stand to present his case. Both parties were allowed to present seated. The court will follow this same procedure for this hearing with the use of a portable recording device. (Blake, J.). *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/26/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Notice to counsel for hearing before Blake, J. on 10/02/2019 at 2:30PM in courtroom 3.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/01/2019</td>
+					<td nowrap valign=top>#13</td>
+					<td valign=top>Letter from Brian Saipe re: disability accommodations in other courts
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/02/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Hearing held.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/03/2019</td>
+					<td nowrap valign=top>#14</td>
+					<td valign=top>Appearance of Brian Saipe.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/03/2019</td>
+					<td nowrap valign=top>#15</td>
+					<td valign=top>Appearance of Therese Quijano, Esquire for Sullivan & Company.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/03/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>ORDER: The defendant is granted an enlargement to 11/18/2019 to file his brief and appendix. No further enlargements. Further orders shall issue. (Blake, J.). *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/22/2019</td>
+					<td nowrap valign=top>#16</td>
+					<td valign=top>ORDER: This is an appeal of a summary process action entered by the Metro South Division of the Housing Court Department. The defendant, a tenant whose lease was not renewed, appealed from a judgment for the plaintiff.<br> On June 11, 2019, the tenant entered his appeal on our docket pursuant to Mass. R.A.P. 10 (a). The same day, he filed a motion seeking a stay and a request for a hearing on disability accommodations. No action was required on the motion to stay, because the issuance of the execution was stayed by operation of law pursuant to Mass. R. Civ. P. 62 and Uniform Summary Process Rule 13.<br> On July 25, 2019, I conducted a hearing on the tenant's request for disability accommodations. Following the hearing, I issued written findings and orders including, among other things, enlarging the time for filing of the tenant's brief and appendix to October 4, 2019. Approximately one week before the tenant's brief and appendix were due, he filed a motion to reconsider my previous order and a motion for a second hearing on disability accommodation. I allowed the motion for a second hearing on disability accommodations. The scheduling order addressed some issues raised in the tenant's motion to reconsider. Specifically, the hearing was scheduled for 2:30 P.M.; the courtroom was made available at 2:00 P.M.to allow the tenant to set up and get organized; and, contrary to customary practice, the parties were allotted fifteen minutes for rebuttal.<br> Discussion. The tenant's substantive rights under article 114 of the Amendments to the Massachusetts Constitution, the Massachusetts Equal Rights Act (MERA) [1], and the Americans with Disabilities Act (ADA) [2] are significant. See McDonough, petitioner, 457 Mass. 512, 519-520 (2010). Together, the Massachusetts Constitution, MERA and the ADA entitle the tenant to reasonable accommodations for his disabilities to enable him to participate equally in the services, programs, and activities of the Appeals Court. Adjartey v. Central Division of the Housing Court Department, 481 Mass. 830, 848-849 (2019). "What accommodation is reasonable must be determined on an individualized basis depending on the particular circumstances presented." Id. at 849. It is the tenant's responsibility to identify the reasonable accommodation that he seeks. McDonough, 457 Mass. at 523. However, the judge determines whether the requested accommodation is reasonable, taking into account the totality of the circumstances. Adjartey 481 Mass. at 848-849. Primary consideration must be granted to the requested accommodation; however, a request is unreasonable if it requires the court "to take any action that would fundamentally alter the nature of its services, programs, or activities, or result in an undue financial or administrative burden." Massachusetts Court System, ADA Accessibility Policy (2018); McDonough, 457 Mass at 425.<br> Findings and orders. I incorporate, by reference, my previous findings regarding the tenant's disabilities and their effect on his ability to prosecute his appeal. a. Timing of hearings. Contrary to his prior request, the tenant has now requested that hearings be scheduled for 2:00 P.M. or later. That accommodation is allowed.<br> b. Time allotted for hearings. The tenant requested that (1) he be granted more than thirty minutes to present his case at any future hearings and (2) he be permitted time for rebuttal.[3] I decline to enter such an order at this time. The appropriate, reasonable duration of any particular hearing will be decided on a hearing by hearing basis. This order should not be construed as a denial or approval of additional time at any future hearing.<br> c. Conversational setting. The tenant requests that any further hearings be in a closed "conversational setting" rather than an "adversarial setting." I construe this to be a request that further hearings occur outside the courtroom. Appellate proceedings are open to the public; various members of the court staff must be present; and all hearings must be recorded. Conducting a hearing outside the courtroom would fundamentally alter the nature of the Appeals Court's services, programs, and activities. I find this request to be an unreasonable accommodation.<br> d. Hearings closed to the public or otherwise limited. The tenant requests that hearings be closed to the public or attendance be limited. Court hearings are open to the public and should be available absent compelling circumstances. See generally Boston Globe Media Partners, LLC v. Chief Justice of the Trial Court, 483 Mass. 80 (2019). Here, the tenant's request for a closed hearing does not sufficiently outweigh the public interest in judicial business being conducted under public scrutiny. Therefore, I decline to enter an order closing any future hearings to the public or otherwise limiting attendance of others. The issue may be raised on a hearing by hearing basis.<br> e. Hybrid appellate argument. The tenant has requested that he be permitted to present his argument in a hybrid form, by filing a brief and then being guaranteed oral argument is scheduled. The plaintiff objects to this requested accommodation. I construe this to be a request to file an incomplete brief, to be augmented by oral argument.[4]<br> An appellant is required to file a brief that sets forth his appellate arguments, supported by legal authority. Mass. R. A. P. 16. Failure to include an argument in the written brief constitutes a waiver of the argument, and failure to raise a sufficient appellate argument constitutes waiver of the right to appellate review. Tobin v. Comm'r of Banks, 377 Mass. 909, 909 (1979).<br> I find that permitting the tenant to present his argument in the hybrid form described above would fundamentally alter the nature of the Appeals Court's services, programs, and activities. I also find that (1) the requested accommodation would unfairly prejudice the plaintiff and (2) the requested accommodation would likely be futile. [5] Therefore, I deny this request. The decision of whether to schedule this case will be made in the ordinary course following the filing of both parties' briefs.<br> f. Additional time to file brief and record appendix. The tenant has again requested additional time to file his brief and appendix. He requests a due date of January 29, 2020. The plaintiff objects to further enlargements of time. The tenant's request, is allowed in part. His brief and appendix, which were originally due July 21, 2019 are now due on or before November 18, 2019. No further enlargements shall be granted.<br> I find that there is no apparent connection between the tenant's disabilities and the specific date that he requested. Nevertheless, I do find that some additional time is required as an accommodation. I therefore enlarge the time to file the defendant's brief and appendix to November 18, 2019, which is 120 days after the date on which his brief was originally due.<br> I note that this is an appeal from a summary process judgment, and the plaintiff's entitlement to the timely recovery of its real property must be balanced against the tenant's right to reasonable accommodations and, generally, to due process. The tenant's written filings, oral presentations, and medical documentation fail to establish a connection between his disabilities and the proposed January 2020 brief due date. Therefore, notwithstanding primary consideration being granted to the requested accommodation, I cannot conclude that the defendant's interests so significantly outweigh the plaintiff's so as to permit the defendant to avoid filing his brief until almost one year after the judgment for the plaintiff entered.[6]<br> g. Additional requests. Based on his communications to date with the ADA coordinator and to the Clerk's office, the tenant has requested to present his procedural requests to me through staff. This is impermissible. Any communication regarding the substance of his case or procedural matters that affect the parties intended for me or any other judges cannot be made ex parte. Code of Judicial Conduct, Supreme Judicial Court Rule 3:09, Canon 2.9. Similarly, court staff cannot advocate on any party's behalf, and they cannot prepare written court filings on any party's behalf. [7] See generally, Code of Professional Responsibility for Clerks of the Courts, Supreme Court Rule 3:12, Canon 4.[8] No member of the court staff shall spend a disproportionate amount of his and her works hours assisting the tenant in an effort to eliminate any undue administrative burden.<br> h. Additional materials. The tenant has been directed to the court website for materials to assist him with this appeal. The clerk's office shall print out and mail to the tenant the following materials which are available on the internet: Pro Se Guide to the Appeals Court, template of an appellate brief and appendix, Rules of Appellate Procedure. (Blake, J.). *Notice<br><br>Footnotes:<br>1 G. L. c. 151B, &#167;&#167; 1-10.<br>2 42 U.S.C.<br>3 At the October 2, 2019 hearing, I allowed each party fifteen minutes of rebuttal, and thirty minutes each for their primary presentation, i.e., tripling the standard allotment and increasing by 50% the available time from my prior order. In addition, at each hearing to date, I have permitted the defendant to exceed the allotted time.<br>4 This is the process by which the tenant has been permitted to request accommodations, i.e., a bare bones written filing containing his requests, augmented by an oral presentation.<br>5 Permitting the tenant to reserve arguments for presentation at oral argument would be futile. In the two hearings over which I presided, the tenant was permitted more than double the amount of time granted for oral argument. The tenant's disability-related impediments to effective presentation, including his stream-of-consciousness presentations did not substantially augment his written materials. Therefore, I find that permitting the defendant to engage in a similar presentation, i.e., to file bare written filings augmented through oral presentation, would not effectively increase his ability to successfully and fully prosecute his appeal.<br>6 See G. L. c. 239, &#167; 9 (the trial court judge may grant a stay on judgment and execution for a period not exceeding twelve months in case of a premises occupied by a handicapped person). Here, based on the enlargements to date, it is unlikely that this appeal will be resolved within one year of entry of the judgment.<br>7 In this case, assistance in filling out court generated forms is permissible.<br>Additional requests for typing short motions will be addressed on a request by request basis.<br>8 I note that, although the ADA coordinator at the Appeals Court is not subject to the Code of Professional Responsibility for Clerks of the Courts, continued preparation of written filings on behalf of this particular tenant, under these particular circumstances would constitute an undue administrative burden. Further, to provide that level of assistance in the preparation of the tenant's brief and appendix could reasonably call into question the impartiality of the judicial process and is, therefore, unreasonable.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/22/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Copy of Pro Se Guide to the Appeals Court, template of an appellate brief and appendix, Rules of Appellate Procedure sent to Brian Saipe.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/22/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#12: See court's order dated 10/22/2019. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/05/2019</td>
+					<td nowrap valign=top>#17</td>
+					<td valign=top>IMPOUNDED MOTION to extend brief & appendix due date, filed by Brian Saipe, Defendant/Appellant. (rec'd for filing 11/04/2019).
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/05/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#17: The defendant has filed a motion seeking to enlarge the time to file his brief and appendix to February 5, 2020. The basis for the defendant's request are his medical issues.<br><br> The defendant has appealed a final judgment for the plaintiff entered by the Housing Court on February 15, 2019 and from the denial of his post-judgment motion to vacate that judgment. The defendant's appeal was entered on this court's docket on June 11, 2019. Pursuant to Mass. R. A. P. 19 (a) (1), his brief and appendix were thus due on or before July 22, 2019 (July 21, 2019 was a Sunday). On June 13, 2019, the defendant filed, inter alia, a request for a hearing on the disability accommodations that he would require. His request for a hearing was allowed, and I ordered his brief to be due on or before August 26, 2019 to allow time for the accommodations hearing to occur and for the implementation of any accommodations that were granted. I held the first accommodations hearing on July 25, 2019. The defendant and counsel for the plaintiff were present at the hearing. On July 29, 2019, I issued my first orders regarding accommodations. I adopt the findings made therein by reference in this order. My July 29, 2019 order extended the time for filing the defendant's brief and appendix to October 4, 2019 as a reasonable accommodation but cautioned the defendant about anticipating further enlargements.<br><br> On September 26, 2019, the defendant filed a motion seeking a second hearing on disability accommodations. I allowed his request and conducted a second hearing on October 2, 2019. At that hearing, the defendant requested that his brief and appendix be due by January 29, 2020. On October 22, 2019, I again issued finding and orders relative to disability accommodations, and notwithstanding my previous caution, partially granted the defendant's request for an additional enlargement of time. I ordered him to file his brief and appendix on or before November 18, 2019. I incorporate my findings in that order by reference. In that order, I stated unequivocally that no further enlargements shall be granted.<br><br> The within motion is seeking reconsideration of the prohibition on further enlargements, and the defendant is now seeking an enlargement to February 5, 2020, i.e., a week longer that then the date he requested at the October 2, 2019 hearing. In support of his motion, the defendant has filed additional documentation from his medical providers. The additional medical records shall be impounded pending further order of this court or a single justice thereof.<br><br>I find that the medical documentation is cumulative of the medical documentation previously submitted and the assertions made by the defendant at the two hearings. Consequently, there is no need for a third hearing on the defendant's request. And after reconsideration of my prior order, that order is to stand. The defendant's brief and appendix remain due on or before November 18, 2019. (Blake, J.). *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/12/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Copy of Order on file and Notice of hearing scheduled for 11/15/2019 received from SJC.
+											</td>
+
+				</tr>
+
+			
+		</tbody>
+
+	</table>
+
+</section>
+
+
+					</div>
+
+					
+
+					<div class="content-footer">
+											</div>
+
+					<div class="page-footer pb-3" style="min-height:2em;" >
+						<span class="publish-date">
+		As of 11/14/2019 10:15am
+	</span>
+													<div class="page-top-link hidden-print">
+								<a href="#top" id="bottom">Top &#9652;</a>
+							</div>
+											</div>
+
+				</main>
+
+			</div> 
+		</div>     
+
+		
+        <div class="modal" tabindex="-1" role="dialog" id="help-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" >
+                    <div class="context-help">   <!-- style="text-align:center;"-->
+                        <div class="help-container">
+
+	<table>
+
+	
+
+	<tr>
+	<td>
+	<div class="help-content">
+		For more information about how to search for court cases, visit the
+<a target="_blank" href="https://www.ma-appellatecourts.org/help">court website</a>.
+	</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<div class="help-footer">
+		<div class="modal-footer">
+			<a target="_blank" href="https://www.ma-appellatecourts.org/help"> More Help <img id="modal-help-link" src="https://www.ma-appellatecourts.org/images/external.png"  alt="More Help"></a>
+			<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+		</div>
+
+	</div>
+	</td>
+	</tr>
+
+	</table>
+
+</div> 
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+
+		
+		<div class="overlay"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#dismiss, .overlay').on('click', function () {
+					// hide sidebar
+					$('#sidebar').removeClass('active');
+					$('#sidebar').css('overflow', 'hidden');
+					// hide overlay
+					$('.overlay').removeClass('active');
+				});
+
+				$('#sidebarCollapse').on('click', function () {
+					// open sidebar
+					$('#sidebar').css('overflow', 'auto');
+					$('#sidebar').addClass('active');
+					// fade in the overlay
+					$('.overlay').addClass('active');
+					$('.collapse.in').toggleClass('in');
+					$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+				});
+
+				// Highlight the last search in the menu
+				var menu_context = "docket";
+				var currentMenu = $("a[data-context=" + menu_context + "]");
+				currentMenu.addClass('menu-context');
+				// Detect ie11.
+				var mq=window.matchMedia("(-ms-high-contrast: none)");
+				if (mq.matches) {
+					// Don't focus the field if it's IE, focus kills the place holder
+					// console.log("is IE 11");
+					$('form').find('*').filter(':input:visible:first').blur();
+				}
+			});  // document.ready
+		</script>
+
+					<!-- Include Court Tracking Software -->
+			<script src="https://rum-static.pingdom.net/pa-5bed916cdb2aac0016000085.js" async></script>
+		
+		
+	</body>
+
+</html>
+

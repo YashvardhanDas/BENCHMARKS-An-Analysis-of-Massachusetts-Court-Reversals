@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<!--
+// Copyright (C) 1988-2019 Relational Semantics, Inc. (RSI), Newton MA USA
+// This Module contains Proprietary Information of Relational Semantics, Inc.
+// and should be treated as Confidential. All rights reserved.
+// RSI, PARAGON, and FORECOURT are registered trademarks of Relational Semantics, Inc.
+-->
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="csrf-token" content="yxuTAoxYV8lwJorGDV9oJKchnW8ko7eOLYPHsIgR">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Mass Appellate Courts - Public Case Search</title>
+		<link rel="shortcut icon"    href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="icon"		     href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+
+		<link href="https://www.ma-appellatecourts.org/css/material.css" rel="stylesheet" type="text/css" />
+
+		            <link href="https://www.ma-appellatecourts.org/css/mysjc.css" rel="stylesheet" type="text/css" />
+		
+        <script src="https://www.ma-appellatecourts.org/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://www.ma-appellatecourts.org/js/popper.min.js"></script>
+        
+        <script src="https://www.ma-appellatecourts.org/js/app.js" ></script>
+        <script src="https://www.ma-appellatecourts.org/js/material.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			
+			<nav id="sidebar">
+
+				
+
+				<div class="sidebar-header text-center">
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><div class="pt-2 pb-2"><img src="https://www.ma-appellatecourts.org/images/seal_comm_gray.png" class="nav-seal" alt="Home"></div></a>
+				</div>
+
+				<ul class="sidenav">
+
+											<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/home.png" alt="Home">Home</li></a>
+					
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/case.png" alt="Case Search">Case Search</li></a>
+						<ul class="sidenav-search">
+							<a target="_top" href="https://www.ma-appellatecourts.org/party" data-context="party"><li><img src="https://www.ma-appellatecourts.org/images/party.png" alt="Party Search"><span>Involved Party</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/docket" data-context="docket"><li><img src="https://www.ma-appellatecourts.org/images/number.png" alt="Docket Number Search"><span>Docket Number</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/attorney" data-context="attorney"><li><img src="https://www.ma-appellatecourts.org/images/attorney.png" alt="Attorney Search"><span>Attorney Appearance</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/ljudge" data-context="ljudge"><li><img src="https://www.ma-appellatecourts.org/images/judge.png" alt="Lower Court Judge Search"><span>Lower Court Judge</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/lcourt" data-context="lcourt"><li><img src="https://www.ma-appellatecourts.org/images/court.png" alt="Lower Court Search"><span>Lower Court</span></li></a>
+						</ul>
+
+					<a target="_top" href="https://www.ma-appellatecourts.org/calendar" data-context="calendar"><li><img src="https://www.ma-appellatecourts.org/images/calendar.png" alt="Court Calendars">Court Calendars</li></a>
+
+						<ul class="sidenav-calendar">
+							<a href="https://www.ma-appellatecourts.org/calendar/fc" data-context="calendarfc"><li><span>SJC Full Court</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/sj" data-context="calendarsj"><li><span>SJC Single Justice</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/ac" data-context="calendarac"><li><span>Appeals Court Panel</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/aj" data-context="calendaraj"><li><span>Appeals Court Single Justice</span></li></a>
+						</ul>
+
+					<a target="_blank" href="https://www.ma-appellatecourts.org/help"><li><img src="https://www.ma-appellatecourts.org/images/menu-help.png" alt="More Help">More Help <img id="help-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="More Help"></li></a>
+				</ul>
+
+				<div class="sidebar-footer">
+					<a class="copyright" target="_blank" href="https://www.rsi.com/state-judicial-solutions/public-access/">&copy; 2019 RSI</a>
+				</div>
+
+			</nav>
+			
+
+			<div id="content">
+
+				<nav class="navbar navbar-full navbar-light text-center py-0" id="header">
+					<div class="my-auto">
+						<button type="button" id="sidebarCollapse" class="btn btn-info">
+							<span>
+								<img src="https://www.ma-appellatecourts.org/images/top-menu.png" title="Menu"  alt="Menu" >
+							</span>
+						</button>
+					</div>
+					<div class="text-center my-auto page-title">
+						<span class="page-title">
+							<a href="https://www.ma-appellatecourts.org" class="page-title">
+																		<h4 class="page-header">
+											<span class="page-title-1 text-nowrap">Massachusetts Appellate Courts</span><br>
+											<span class="page-title-2 text-nowrap">Public Case Search</span>
+										</h4>
+																</a>
+						</span>
+					</div>
+					<div class="text-right my-auto">
+						
+						<a target="_blank" data-toggle="modal" href="#help-modal">
+							<button type="button" id="info_button" class="btn">
+								<span>
+									<img src="https://www.ma-appellatecourts.org/images/top-help.png" title="More Help"  alt="More Help" >
+								</span>
+							</button>
+						</a>
+					</div>
+				</nav>
+
+				<main id='main-content' class="col text-center">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col pl-0">
+								
+							</div>
+							<div class="col-7">
+																	<div class="content-header">
+										
+    <div class="docket-header">
+	
+    	<div class="docket-header-1">
+    	    			APPEALS COURT<br>Full Court Panel Case
+    			    	</div>
+    	<div class="docket-header-2">Case Docket</div>
+
+    	<hr class="short">
+
+    	<div class="docket-header-1">C.F.L &amp; another vs. B.B.</div>
+    	    		<div class="docket-header-2">THIS CASE CONTAINS IMPOUNDED MATERIAL OR PID</div>
+    	    	<div class="docket-header-2">2018-P-1284</div>
+
+    	<hr class="short">
+
+    </div>
+									</div>
+															</div>
+							<div class="col pr-0">
+								 									<div class="page-bottom-link hidden-print">
+										<a href="#bottom"><span class="text-nowrap">Bottom &#9662;</span></a>
+									</div>
+															</div>
+						</div>
+					</div>
+
+					
+					
+					
+					
+					
+					
+
+					<div class="content-body">
+						
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			<span class="align-middle">CASE HEADER</span>
+		</div>
+
+	</div>
+
+	<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Status
+		<span class="flex_rt ds-normal">Argued, under advisement</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Status Date
+		<span class="flex_rt ds-normal">09/12/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Nature
+		<span class="flex_rt ds-normal">Tort</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Entry Date
+		<span class="flex_rt ds-normal">09/13/2018</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Sub-Nature
+		<span class="flex_rt ds-normal">Judgment entered</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">SJ Number
+		<span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Appellant
+		<span class="flex_rt ds-normal">Defendant</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Type
+		<span class="flex_rt ds-normal">Civil</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Status
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Due
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Panel
+		<span class="flex_rt ds-normal">Vuono, Meade, Sullivan, JJ.</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Argued/Submitted
+		<span class="flex_rt ds-normal">09/12/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Citation
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Decision Date
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court
+		<span class="flex_rt ds-normal">Plymouth Superior Court</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Number
+		<span class="flex_rt ds-normal"></span></span> 
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Judge
+		<span class="flex_rt ds-normal">Mark C. Gildea, J.</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Entry Date
+		<span class="flex_rt ds-normal">06/16/2016</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">FAR Number
+	    <span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">SJC Number
+		<span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+</div>
+
+</section>
+
+
+	<section class="docket">
+
+	<div class="row mx-0">
+		<div class="section_title">
+			<span class="align-middle">ADDITIONAL INFORMATION</span>
+		</div>
+	</div>
+
+	<div class="pl-2">
+				   Consolidated with: 2017-P-0576.
+		   <br />
+			</div>
+
+</section>
+
+
+	
+	<section class="docket">
+
+    <div class="row mx-0" id="one_col_title">
+         <div class="col-12 parties_section_title"><span class="flex_span align-middle"><b>PARTY &nbsp;/&nbsp; ATTORNEY</b></span></div>
+    </div>
+    <div class="row mx-0" id="two_col_title">   
+         <div class="col-5 col-sm-6 parties_section_title1"><span class="flex_span align-middle"><b>INVOLVED PARTY</b></span></div>
+         <div class="col-7 col-sm-6 parties_section_title2 pl-4"><span class="flex_span align-middle"><b>ATTORNEY APPEARANCE</b></span></div>
+    </div>
+
+
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        C.F.L
+                        </b>
+                        <br>
+                        Plaintiff/Appellee
+                                        <br>
+
+                    
+                                                                                                        Red brief filed
+                                <br>
+                                                                                                                1 Ext, 31 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/639944">Jeffrey E. Francis,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/676462">Nicholas P. Brown,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        J.P.L
+                        </b>
+                        <br>
+                        Plaintiff/Appellee
+                                        <br>
+
+                    
+                                                                                                        Red brief filed
+                                <br>
+                                                                                                                1 Ext, 31 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/639944">Jeffrey E. Francis,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/676462">Nicholas P. Brown,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        B.B.
+                        </b>
+                        <br>
+                        Defendant/Appellant
+                                        <br>
+
+                    
+                                                                                                        Blue brief &amp; appendix filed
+                                <br>
+                                                                                                                2 Exts, 159 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/247930">Margaret A. Ishihara,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+</section>
+
+
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+		<div  class="section_title">
+			ORAL ARGUMENTS
+		</div>
+	</div>
+
+    <div class="documents_list pl-2">
+
+        <ul>
+			                <li>
+					<audio id="audio" controls preload="metadata">
+    					<source src="https://www.ma-appellatecourts.org/arg/2018-P-1284/2018-P-1284_2019-09-12_Arguments.mp3">
+    					<a class="arg-link" target="_blank" href="https://www.ma-appellatecourts.org/arg/2018-P-1284/2018-P-1284_2019-09-12_Arguments.mp3">2019-09-12 Arguments</a>
+    					<a class="arg-link" target="_blank" href="https://www.ma-appellatecourts.org/arg/2018-P-1284/2018-P-1284_2019-09-12_Arguments.mp3"><img src="https://www.ma-appellatecourts.org/images/audio.png" alt="Argument Audio"></a>
+					</audio>
+                </li>
+			        </ul>
+
+    </div>
+
+</section>
+
+
+
+	<section class="docket">
+
+	<div class="row mx-0">
+	    <div class="docket_entries_title">
+			<span class="align-middle">DOCKET ENTRIES</span>
+	    </div>
+	</div>
+
+   	<table class="docket_entries">
+
+		<tbody>
+
+			<tr class="subhead">
+				<td nowrap><b>Entry Date</b>&nbsp;</td>
+				<td nowrap><b>Paper 	</b>&nbsp;</td>
+				<td nowrap width=100%><b>Entry Text</b></td>
+			</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/17/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top><b>IMPOUNDED INFORMATION</b>: Parties are on 258E case (see 2017-P-0576)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/13/2018</td>
+					<td nowrap valign=top>#1</td>
+					<td valign=top>Lower Court Assembly of the Record Package
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/13/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Notice of entry sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/18/2018</td>
+					<td nowrap valign=top>#2</td>
+					<td valign=top>Docketing Statement (IMPOUNDED) filed for B.B. by Attorney Margaret Ishihara.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/19/2018</td>
+					<td nowrap valign=top>#3</td>
+					<td valign=top>MOTION to consolidate 2017-P-0576 with 2018-P-1284, filed for C.L., J.L. by Attorney Nicholas P. Brown.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/20/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>ORDER: RE#3: The appeals 2017-P-0576 and 2018-P-1284 are consolidated for briefing and decision. 2017-P-0576 is closed. All papers shall be transferred to 2018-P-1284. All future filings shall refer only to 2018-P-1284. Appellant's replacement brief and appendix in the consolidated appeal is due on or before 10/23/2018. Notice/attest
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/20/2018</td>
+					<td nowrap valign=top>#4</td>
+					<td valign=top>Copy of Lower court assembly of the record, docketing statement, appellant brief and record appendix, and appellees brief and supplemental record appendix transferred from 2017-P-0576.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/11/2018</td>
+					<td nowrap valign=top>#5</td>
+					<td valign=top>Motion of Appellant to extend date for filing brief and appendix filed for B.B. by Attorney Margaret Ishihara.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/15/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#5: Allowed to 12/07/2018. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>12/06/2018</td>
+					<td nowrap valign=top>#6</td>
+					<td valign=top>Appellant brief filed for B.B. by Attorney Margaret Ishihara.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>12/06/2018</td>
+					<td nowrap valign=top>#7</td>
+					<td valign=top>Appendix filed for B.B. by Attorney Margaret Ishihara.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>12/21/2018</td>
+					<td nowrap valign=top>#8</td>
+					<td valign=top>MOTION of Appellee to extend brief due date filed for C.F.L and J.P.L by Attorney Nicholas P. Brown.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>12/24/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#8: Allowed to 02/07/2019. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/07/2019</td>
+					<td nowrap valign=top>#9</td>
+					<td valign=top>Appellee brief filed for C.F.L and J.P.L by Attorney Nicholas P. Brown.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/01/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Entry vacated as having entered in error (By the Court 3/1/19) ORDER: A review of the trial court docket shows that this appeal is from the trial court's order denying defendant's motion to suppress. The defendant filed, and the trial court allowed, a motion to enlarge time to file application for leave to appeal under rule 15(a)(2). The trial court docket does not reflect that the application was allowed, nor does a review of the SJC single justice docket show that the application has been filed, although the record was assembled and notice of assembly sent to this court and the parties . Accordingly, appellate proceedings in this matter are stayed to April 1, 2019, by when a status report is due from the defendant as to whether entry of this appeal should be vacated. *Notice/Attest/Gildea,J
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/21/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Notice sent seeking information on unavailability for oral argument in July 2019.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/21/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Letter from Margaret A. Ishihara, Esquire re: available all dates for oral argument..
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/28/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Letter from Nicholas P. Brown, Esquire re: available all dates for oral argument..
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/11/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Notice sent seeking information on unavailability for oral argument in September 2019
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/12/2019</td>
+					<td nowrap valign=top>#10</td>
+					<td valign=top>Response from Jeffrey E. Francis, Esquire unavailable for oral argument September 4, 5 and 6.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/16/2019</td>
+					<td nowrap valign=top>#11</td>
+					<td valign=top>Response from Margaret A. Ishihara, Esquire unavailable for oral argument September 11, 2019.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/02/2019</td>
+					<td nowrap valign=top>#12</td>
+					<td valign=top>Notice of 09/12/2019, 9:30 AM argument at John Adams Courthouse, Courtroom 3 (a3) sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/02/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Response from Margaret A. Ishihara, Esquire re: will appear and argue on 09/12/2019.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/21/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Response from Jeffrey E. Francis, Esquire re: will appear and argue on 09/12/2019.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/06/2019</td>
+					<td nowrap valign=top>#13</td>
+					<td valign=top>Copy of CD Containing trial Exhibits 7 and 8 received from Margaret Ishihara.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/12/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Oral argument held. (Vuono, J., Meade, J., Sullivan, J.).
+											</td>
+
+				</tr>
+
+			
+		</tbody>
+
+	</table>
+
+</section>
+
+
+					</div>
+
+					
+
+					<div class="content-footer">
+											</div>
+
+					<div class="page-footer pb-3" style="min-height:2em;" >
+						<span class="publish-date">
+		As of 11/08/2019 3:10pm
+	</span>
+													<div class="page-top-link hidden-print">
+								<a href="#top" id="bottom">Top &#9652;</a>
+							</div>
+											</div>
+
+				</main>
+
+			</div> 
+		</div>     
+
+		
+        <div class="modal" tabindex="-1" role="dialog" id="help-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" >
+                    <div class="context-help">   <!-- style="text-align:center;"-->
+                        <div class="help-container">
+
+	<table>
+
+	
+
+	<tr>
+	<td>
+	<div class="help-content">
+		For more information about how to search for court cases, visit the
+<a target="_blank" href="https://www.ma-appellatecourts.org/help">court website</a>.
+	</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<div class="help-footer">
+		<div class="modal-footer">
+			<a target="_blank" href="https://www.ma-appellatecourts.org/help"> More Help <img id="modal-help-link" src="https://www.ma-appellatecourts.org/images/external.png"  alt="More Help"></a>
+			<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+		</div>
+
+	</div>
+	</td>
+	</tr>
+
+	</table>
+
+</div> 
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+
+		
+		<div class="overlay"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#dismiss, .overlay').on('click', function () {
+					// hide sidebar
+					$('#sidebar').removeClass('active');
+					$('#sidebar').css('overflow', 'hidden');
+					// hide overlay
+					$('.overlay').removeClass('active');
+				});
+
+				$('#sidebarCollapse').on('click', function () {
+					// open sidebar
+					$('#sidebar').css('overflow', 'auto');
+					$('#sidebar').addClass('active');
+					// fade in the overlay
+					$('.overlay').addClass('active');
+					$('.collapse.in').toggleClass('in');
+					$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+				});
+
+				// Highlight the last search in the menu
+				var menu_context = "docket";
+				var currentMenu = $("a[data-context=" + menu_context + "]");
+				currentMenu.addClass('menu-context');
+				// Detect ie11.
+				var mq=window.matchMedia("(-ms-high-contrast: none)");
+				if (mq.matches) {
+					// Don't focus the field if it's IE, focus kills the place holder
+					// console.log("is IE 11");
+					$('form').find('*').filter(':input:visible:first').blur();
+				}
+			});  // document.ready
+		</script>
+
+					<!-- Include Court Tracking Software -->
+			<script src="https://rum-static.pingdom.net/pa-5bed916cdb2aac0016000085.js" async></script>
+		
+		
+	</body>
+
+</html>
+

@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<!--
+// Copyright (C) 1988-2019 Relational Semantics, Inc. (RSI), Newton MA USA
+// This Module contains Proprietary Information of Relational Semantics, Inc.
+// and should be treated as Confidential. All rights reserved.
+// RSI, PARAGON, and FORECOURT are registered trademarks of Relational Semantics, Inc.
+-->
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="csrf-token" content="XcqhTUaRjNMpUI5WFeiTrRkyebKvpTC0WkMulAwB">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Mass Appellate Courts - Public Case Search</title>
+		<link rel="shortcut icon"    href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="icon"		     href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+
+		<link href="https://www.ma-appellatecourts.org/css/material.css" rel="stylesheet" type="text/css" />
+
+		            <link href="https://www.ma-appellatecourts.org/css/mysjc.css" rel="stylesheet" type="text/css" />
+		
+        <script src="https://www.ma-appellatecourts.org/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://www.ma-appellatecourts.org/js/popper.min.js"></script>
+        
+        <script src="https://www.ma-appellatecourts.org/js/app.js" ></script>
+        <script src="https://www.ma-appellatecourts.org/js/material.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			
+			<nav id="sidebar">
+
+				
+
+				<div class="sidebar-header text-center">
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><div class="pt-2 pb-2"><img src="https://www.ma-appellatecourts.org/images/seal_comm_gray.png" class="nav-seal" alt="Home"></div></a>
+				</div>
+
+				<ul class="sidenav">
+
+											<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/home.png" alt="Home">Home</li></a>
+					
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/case.png" alt="Case Search">Case Search</li></a>
+						<ul class="sidenav-search">
+							<a target="_top" href="https://www.ma-appellatecourts.org/party" data-context="party"><li><img src="https://www.ma-appellatecourts.org/images/party.png" alt="Party Search"><span>Involved Party</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/docket" data-context="docket"><li><img src="https://www.ma-appellatecourts.org/images/number.png" alt="Docket Number Search"><span>Docket Number</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/attorney" data-context="attorney"><li><img src="https://www.ma-appellatecourts.org/images/attorney.png" alt="Attorney Search"><span>Attorney Appearance</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/ljudge" data-context="ljudge"><li><img src="https://www.ma-appellatecourts.org/images/judge.png" alt="Lower Court Judge Search"><span>Lower Court Judge</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/lcourt" data-context="lcourt"><li><img src="https://www.ma-appellatecourts.org/images/court.png" alt="Lower Court Search"><span>Lower Court</span></li></a>
+						</ul>
+
+					<a target="_top" href="https://www.ma-appellatecourts.org/calendar" data-context="calendar"><li><img src="https://www.ma-appellatecourts.org/images/calendar.png" alt="Court Calendars">Court Calendars</li></a>
+
+						<ul class="sidenav-calendar">
+							<a href="https://www.ma-appellatecourts.org/calendar/fc" data-context="calendarfc"><li><span>SJC Full Court</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/sj" data-context="calendarsj"><li><span>SJC Single Justice</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/ac" data-context="calendarac"><li><span>Appeals Court Panel</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/aj" data-context="calendaraj"><li><span>Appeals Court Single Justice</span></li></a>
+						</ul>
+
+					<a target="_blank" href="https://www.ma-appellatecourts.org/help"><li><img src="https://www.ma-appellatecourts.org/images/menu-help.png" alt="More Help">More Help <img id="help-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="More Help"></li></a>
+				</ul>
+
+				<div class="sidebar-footer">
+					<a class="copyright" target="_blank" href="https://www.rsi.com/state-judicial-solutions/public-access/">&copy; 2019 RSI</a>
+				</div>
+
+			</nav>
+			
+
+			<div id="content">
+
+				<nav class="navbar navbar-full navbar-light text-center py-0" id="header">
+					<div class="my-auto">
+						<button type="button" id="sidebarCollapse" class="btn btn-info">
+							<span>
+								<img src="https://www.ma-appellatecourts.org/images/top-menu.png" title="Menu"  alt="Menu" >
+							</span>
+						</button>
+					</div>
+					<div class="text-center my-auto page-title">
+						<span class="page-title">
+							<a href="https://www.ma-appellatecourts.org" class="page-title">
+																		<h4 class="page-header">
+											<span class="page-title-1 text-nowrap">Massachusetts Appellate Courts</span><br>
+											<span class="page-title-2 text-nowrap">Public Case Search</span>
+										</h4>
+																</a>
+						</span>
+					</div>
+					<div class="text-right my-auto">
+						
+						<a target="_blank" data-toggle="modal" href="#help-modal">
+							<button type="button" id="info_button" class="btn">
+								<span>
+									<img src="https://www.ma-appellatecourts.org/images/top-help.png" title="More Help"  alt="More Help" >
+								</span>
+							</button>
+						</a>
+					</div>
+				</nav>
+
+				<main id='main-content' class="col text-center">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col pl-0">
+								
+							</div>
+							<div class="col-7">
+																	<div class="content-header">
+										
+    <div class="docket-header">
+	
+    	<div class="docket-header-1">
+    	    		    		    			SUPREME JUDICIAL COURT<br>for the Commonwealth
+    			    	</div>
+    	<div class="docket-header-2">Case Docket</div>
+
+    	<hr class="short">
+
+    	<div class="docket-header-1">COMMONWEALTH vs. SAM C. WASSILIE</div>
+    	    	<div class="docket-header-2">SJC-12672</div>
+
+    	<hr class="short">
+
+    </div>
+									</div>
+															</div>
+							<div class="col pr-0">
+								 									<div class="page-bottom-link hidden-print">
+										<a href="#bottom"><span class="text-nowrap">Bottom &#9662;</span></a>
+									</div>
+															</div>
+						</div>
+					</div>
+
+					
+					
+					
+					
+					
+					
+
+					<div class="content-body">
+						
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			<span class="align-middle">CASE HEADER</span>
+		</div>
+
+	</div>
+
+	<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Status
+		<span class="flex_rt ds-normal">Decided, Rescript issued</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Status Date
+		<span class="flex_rt ds-normal">08/06/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Nature
+		<span class="flex_rt ds-normal">Crime: Sexual Offense</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Entry Date
+		<span class="flex_rt ds-normal">01/16/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Appellant
+		<span class="flex_rt ds-normal">Both Plf &amp; Deft</span></span>
+	</div>
+
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Type
+		<span class="flex_rt ds-normal">Criminal</span></span>
+	</div>
+
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Status
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Due
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12">
+		<span class="flex_span_wide ds-bold">Quorum
+		<span class="flex_rt_wide ds-normal">Gants, C.J., Lenk, Gaziano, Lowy, Budd, Cypher, Kafker, JJ.</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+   	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Argued Date
+		<span class="flex_rt ds-normal">04/02/2019</span></span>
+	</div>
+   	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Decision Date
+		<span class="flex_rt ds-normal">07/02/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+  	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">AC/SJ Number
+		<span class="flex_rt ds-normal">
+		<a class="docket-number-link" target="_top" href="https://www.ma-appellatecourts.org/docket/2018-P-1066">2018-P-1066</a>
+		</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Citation
+		<span class="flex_rt ds-normal">482 Mass. 562</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+ 	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">DAR/FAR Number
+		<span class="flex_rt ds-normal">
+		<a class="docket-number-link" target="_top" href="https://www.ma-appellatecourts.org/docket/DAR-26555">DAR-26555</a>
+		</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Number
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+  	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court
+		<span class="flex_rt ds-normal">Berkshire Superior Court</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Judge
+		<span class="flex_rt ds-normal">John A. Agostini, J.</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+  	<div class="col-12">
+		<span class="flex_span_wide ds-bold">Route to SJC
+		<span class="flex_rt_wide ds-normal">Direct Appellate Review</span></span>
+	</div>
+</div>
+
+</section>
+
+
+	<section class="docket">
+
+	<div class="row mx-0">
+		<div class="section_title">
+			<span class="align-middle">ADDITIONAL INFORMATION</span>
+		</div>
+	</div>
+
+	<div class="pl-2">
+				   Transcripts received: 6 volumes (PDF only). Transcript dates: 11/6/2017, 11/8/2017, 11/9/2017, 11/10/2017, 11/29/2017, and 1/16/2018. (Scanned)
+		   <br />
+			</div>
+
+</section>
+
+
+	
+	<section class="docket">
+
+    <div class="row mx-0" id="one_col_title">
+         <div class="col-12 parties_section_title"><span class="flex_span align-middle"><b>PARTY &nbsp;/&nbsp; ATTORNEY</b></span></div>
+    </div>
+    <div class="row mx-0" id="two_col_title">   
+         <div class="col-5 col-sm-6 parties_section_title1"><span class="flex_span align-middle"><b>INVOLVED PARTY</b></span></div>
+         <div class="col-7 col-sm-6 parties_section_title2 pl-4"><span class="flex_span align-middle"><b>ATTORNEY APPEARANCE</b></span></div>
+    </div>
+
+
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Commonwealth
+                        </b>
+                        <br>
+                        Plaintiff/Appellant
+                                        <br>
+
+                    
+                                                                                                        Blue br &amp; appendix transf w/case
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/267410">Jeanne M. Kempthorne,
+							A.D.A.
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/550420">Joseph A. Pieropan,
+							A.D.A.
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/692328">Joseph Coliflores,
+							A.D.A.
+                            </a>
+						
+                        							- Inactive
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Sam C. Wassilie
+                        </b>
+                        <br>
+                        Defendant/Appellee
+                                        <br>
+
+                    
+                                                                                                        Red br &amp; app transf w/ case
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/676840">Emily A. Cardy,
+							Esquire
+                            </a>
+						
+                        							- Inactive
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/545666">Nancy A. Dolberg,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+</section>
+
+
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			DOCUMENTS
+		</div>
+	</div>
+
+    <div class="documents_list pl-2">
+        <ul>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12672/SJC-12672_01_Appellant_Commonwealth_Brief.pdf">Appellant Commonwealth Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12672/SJC-12672_01_Appellant_Commonwealth_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12672/SJC-12672_03_Appellee_Wassilie_Brief.pdf">Appellee Wassilie Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12672/SJC-12672_03_Appellee_Wassilie_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12672/SJC-12672_06_Appellant_Commonwealth_Reply_Brief.pdf">Appellant Commonwealth Reply Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12672/SJC-12672_06_Appellant_Commonwealth_Reply_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12672/SJC-12672_06_Appellant_Wassilie_Reply_Brief.pdf">Appellant Wassilie Reply Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12672/SJC-12672_06_Appellant_Wassilie_Reply_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+        </ul>
+    </div>
+
+</section>
+
+
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+	    <div class="docket_entries_title">
+			<span class="align-middle">DOCKET ENTRIES</span>
+	    </div>
+	</div>
+
+   	<table class="docket_entries">
+
+		<tbody>
+
+			<tr class="subhead">
+				<td nowrap><b>Entry Date</b>&nbsp;</td>
+				<td nowrap><b>Paper 	</b>&nbsp;</td>
+				<td nowrap width=100%><b>Entry Text</b></td>
+			</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/16/2019</td>
+					<td nowrap valign=top>#1</td>
+					<td valign=top>Entered. Notice to counsel.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/16/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Transferred from Appeals Court: Appellant's Brief and Record Appendix: Electronically filed in the Appeals Court. Appellee's Brief and Supplemental Appendix: Electronically filed in the Appeals Court.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/16/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>NOTICE OF AVAILABILITY OF ELECTRONIC FILING: The clerk's office will accept briefs, appendices, motions, status reports, and correspondence through eFileMA effective immediately. Please note that after review and docketing of e-filed briefs and appendices, the clerk will require a limited number of paper copies to be filed. Parties are free to file their briefs and record appendices under the revised rules of appellate procedure prior to their effective date, March 1, 2019.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/17/2019</td>
+					<td nowrap valign=top>#2</td>
+					<td valign=top>Appearance filed for Commonwealth by Jeanne Kempthorne, A.D.A.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/17/2019</td>
+					<td nowrap valign=top>#3</td>
+					<td valign=top>Appendix filed for Commonwealth by Jeanne Kempthorne, A.D.A..
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/17/2019</td>
+					<td nowrap valign=top>#4</td>
+					<td valign=top>Appellant brief filed for Commonwealth by Jeanne Kempthorne, A.D.A.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/17/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>NOTICE: The clerk's office has received the appellant's brief and record appendix through e-fileMA. The brief and record appendix have been accepted for filing and entered on the docket. The appellant shall file with the clerk 4 copies of the brief and record appendix within 5 days. The clerk's office may require additional copies if necessary.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/18/2019</td>
+					<td nowrap valign=top>#5</td>
+					<td valign=top>Appellee brief filed for Sam C. Wassilie by Attorney Nancy Ann Dolberg.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/18/2019</td>
+					<td nowrap valign=top>#6</td>
+					<td valign=top>Supplemental Appendix filed for Sam C. Wassilie by Attorney Nancy Ann Dolberg.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/18/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>NOTICE: The clerk's office has received the appellee's brief and supplemental appendix through e-fileMA. The brief and supplemental appendix have been accepted for filing and entered on the docket. The appellee shall file with the clerk 4 copies of the brief and supplemental appendix within 5 days. The clerk's office may require additional copies if necessary.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/22/2019</td>
+					<td nowrap valign=top>#7</td>
+					<td valign=top>Additional 4 copies of each appellee's brief and supplemental appendix filed by Sam C. Wassilie.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/22/2019</td>
+					<td nowrap valign=top>#8</td>
+					<td valign=top>NOTICE of April argument sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/22/2019</td>
+					<td nowrap valign=top>#9</td>
+					<td valign=top>Assented-to Motion to Set a Briefing Schedule, filed for Commonwealth by Jeanne Kempthorne, A.D.A. (ALLOWED. The Commonwealth's reply brief is due on or before February 15, 2019. The defendant's reply brief is due on or before March 1, 2019.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/23/2019</td>
+					<td nowrap valign=top>#10</td>
+					<td valign=top>ANNOUNCEMENT: The Justices are soliciting amicus briefs. 1. Whether, by placing a cell phone in a hidden location in a public bathroom and video-recording individuals using the toilet, the defendant violated G. L. c. 272, &#167; 105 (b), third par., the so-called "up-skirting" statute; whether, as a judge ruled, the statute is unconstitutionally vague and ambiguous by virtue of its inclusion of language that the recording must be "under or around the [person's] clothing to view or attempt to view the [person's] sexual or other intimate parts." 2. Whether for purposes of G. L. c. 272, &#167; 105 (b), first par., which prohibits secretly recording a person who is nude or partially nude in a place or circumstance in which the person would have a reasonable expectation of privacy in not being recorded, the correct unit of prosecution is the number of recordings made or the number of individuals whose images are captured on the recordings.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/24/2019</td>
+					<td nowrap valign=top>#11</td>
+					<td valign=top>Additional 4 copies of appellant's brief and appendix filed by Commonwealth.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/04/2019</td>
+					<td nowrap valign=top>#12</td>
+					<td valign=top>ORDERED for argument on April 2. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/13/2019</td>
+					<td nowrap valign=top>#13</td>
+					<td valign=top>Reply brief filed for Commonwealth by Jeanne Kempthorne, A.D.A.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/13/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>The clerk's office has received the appellant's reply brief through e-fileMA. The brief has been accepted for filing and entered on the docket. The<b> </b>Commonwealth<b> </b>shall file with the clerk 4 copies of the brief within 5 days. The clerk's office may require additional copies if necessary.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/26/2019</td>
+					<td nowrap valign=top>#14</td>
+					<td valign=top>Additional 4 copies of appellant's reply brief filed by Commonwealth.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/14/2019</td>
+					<td nowrap valign=top>#15</td>
+					<td valign=top>MOTION to extend to 03/14/2019 filing of reply brief of Sam C. Wassilie by Nancy A. Dolberg, Esquire. (ALLOWED.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/14/2019</td>
+					<td nowrap valign=top>#16</td>
+					<td valign=top>SERVICE of appellee's reply brief for Sam C. Wassilie by Nancy A. Dolberg, Esquire.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/14/2019</td>
+					<td nowrap valign=top>#17</td>
+					<td valign=top>MOTION TO EXPAND THE RECORD, filed for Sam C. Wassilie by Nancy A. Dolberg, Esquire. (Referred to the Quorum)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/02/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Oral argument held. (Gants, C.J., Lenk, J., Gaziano, J., Lowy, J., Budd, J., Cypher, J., Kafker, J.).
+													&nbsp;
+							<a target="_blank" alt="View Webcast" href="https://boston.suffolk.edu/sjc/pop.php?csnum=SJC_12672">View Webcast </a>
+							<a target="_blank" alt="View Webcast" href="https://boston.suffolk.edu/sjc/pop.php?csnum=SJC_12672"><img id="webcast-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="View Webcast"></a>
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/08/2019</td>
+					<td nowrap valign=top>#18</td>
+					<td valign=top>(IMPOUNDED) Exhibit's 9 and 10, filed for Commonwealth by Jeanne Kempthorne, A.D.A.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/10/2019</td>
+					<td nowrap valign=top>#19</td>
+					<td valign=top>SUPPLEMENTAL CITATION filed for Commonwealth by Jeanne M. Kempthorne, A.D.A..
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/02/2019</td>
+					<td nowrap valign=top>#20</td>
+					<td valign=top>RESCRIPT (Full Opinion): The order denying the defendant's postconviction motion to be sentenced on one indictment under G. L. c. 272, &#167; 105 (b), first par., is affirmed. The order vacating the defendant's convictions on the five indictments under G. L. c. 272, &#167; 105 (b), third par., is reversed and remanded for a new trial on the three indictments identified (no. 2015-078-20 and nos. 2015-078-19 and 2015-078-21). The two other indictments under that paragraph are dismissed without prejudice. (By the Court)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/08/2019</td>
+					<td nowrap valign=top>#21</td>
+					<td valign=top>Motion for Reconsideration or Modification filed for Sam C. Wassilie by Attorney Nancy Ann Dolberg. (8/5/19: The decision in this matter has been modified. Please see the Revisions List of the Office of the Reporter of Decisions: https://www.mass.gov/service-details/opinion-revisions.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/19/2019</td>
+					<td nowrap valign=top>#22</td>
+					<td valign=top>ORDER: The court hereby requests a response from the Commonwealth to the motion for modification of decision. The response is due on or before July 26, 2019. By the Court
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/23/2019</td>
+					<td nowrap valign=top>#23</td>
+					<td valign=top>Response to the Reconsideration or Modification filed for Commonwealth by Jeanne Kempthorne, ADA.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/05/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Order on Modification: After consideration, the decision in this matter has been modified. Please see the Revisions List of the Office of the Reporter of Decisions: https://www.mass.gov/service-details/opinion-revisions.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/06/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RESCRIPT ISSUED to trial court.
+											</td>
+
+				</tr>
+
+			
+		</tbody>
+
+	</table>
+
+</section>
+
+
+					</div>
+
+					
+
+					<div class="content-footer">
+											</div>
+
+					<div class="page-footer pb-3" style="min-height:2em;" >
+						<span class="publish-date">
+		As of 11/04/2019 8:00pm
+	</span>
+													<div class="page-top-link hidden-print">
+								<a href="#top" id="bottom">Top &#9652;</a>
+							</div>
+											</div>
+
+				</main>
+
+			</div> 
+		</div>     
+
+		
+        <div class="modal" tabindex="-1" role="dialog" id="help-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" >
+                    <div class="context-help">   <!-- style="text-align:center;"-->
+                        <div class="help-container">
+
+	<table>
+
+	
+
+	<tr>
+	<td>
+	<div class="help-content">
+		For more information about how to search for court cases, visit the
+<a target="_blank" href="https://www.ma-appellatecourts.org/help">court website</a>.
+	</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<div class="help-footer">
+		<div class="modal-footer">
+			<a target="_blank" href="https://www.ma-appellatecourts.org/help"> More Help <img id="modal-help-link" src="https://www.ma-appellatecourts.org/images/external.png"  alt="More Help"></a>
+			<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+		</div>
+
+	</div>
+	</td>
+	</tr>
+
+	</table>
+
+</div> 
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+
+		
+		<div class="overlay"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#dismiss, .overlay').on('click', function () {
+					// hide sidebar
+					$('#sidebar').removeClass('active');
+					$('#sidebar').css('overflow', 'hidden');
+					// hide overlay
+					$('.overlay').removeClass('active');
+				});
+
+				$('#sidebarCollapse').on('click', function () {
+					// open sidebar
+					$('#sidebar').css('overflow', 'auto');
+					$('#sidebar').addClass('active');
+					// fade in the overlay
+					$('.overlay').addClass('active');
+					$('.collapse.in').toggleClass('in');
+					$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+				});
+
+				// Highlight the last search in the menu
+				var menu_context = "docket";
+				var currentMenu = $("a[data-context=" + menu_context + "]");
+				currentMenu.addClass('menu-context');
+				// Detect ie11.
+				var mq=window.matchMedia("(-ms-high-contrast: none)");
+				if (mq.matches) {
+					// Don't focus the field if it's IE, focus kills the place holder
+					// console.log("is IE 11");
+					$('form').find('*').filter(':input:visible:first').blur();
+				}
+			});  // document.ready
+		</script>
+
+					<!-- Include Court Tracking Software -->
+			<script src="https://rum-static.pingdom.net/pa-5bed916cdb2aac0016000085.js" async></script>
+		
+		
+	</body>
+
+</html>
+

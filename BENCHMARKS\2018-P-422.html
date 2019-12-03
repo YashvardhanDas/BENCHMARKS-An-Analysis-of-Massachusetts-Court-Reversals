@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<!--
+// Copyright (C) 1988-2019 Relational Semantics, Inc. (RSI), Newton MA USA
+// This Module contains Proprietary Information of Relational Semantics, Inc.
+// and should be treated as Confidential. All rights reserved.
+// RSI, PARAGON, and FORECOURT are registered trademarks of Relational Semantics, Inc.
+-->
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="csrf-token" content="xUFY8bV8o4R0mMF11YWv1tfMqFEAsxSo8p3diN2n">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Mass Appellate Courts - Public Case Search</title>
+		<link rel="shortcut icon"    href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="icon"		     href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+
+		<link href="https://www.ma-appellatecourts.org/css/material.css" rel="stylesheet" type="text/css" />
+
+		            <link href="https://www.ma-appellatecourts.org/css/mysjc.css" rel="stylesheet" type="text/css" />
+		
+        <script src="https://www.ma-appellatecourts.org/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://www.ma-appellatecourts.org/js/popper.min.js"></script>
+        
+        <script src="https://www.ma-appellatecourts.org/js/app.js" ></script>
+        <script src="https://www.ma-appellatecourts.org/js/material.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			
+			<nav id="sidebar">
+
+				
+
+				<div class="sidebar-header text-center">
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><div class="pt-2 pb-2"><img src="https://www.ma-appellatecourts.org/images/seal_comm_gray.png" class="nav-seal" alt="Home"></div></a>
+				</div>
+
+				<ul class="sidenav">
+
+											<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/home.png" alt="Home">Home</li></a>
+					
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/case.png" alt="Case Search">Case Search</li></a>
+						<ul class="sidenav-search">
+							<a target="_top" href="https://www.ma-appellatecourts.org/party" data-context="party"><li><img src="https://www.ma-appellatecourts.org/images/party.png" alt="Party Search"><span>Involved Party</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/docket" data-context="docket"><li><img src="https://www.ma-appellatecourts.org/images/number.png" alt="Docket Number Search"><span>Docket Number</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/attorney" data-context="attorney"><li><img src="https://www.ma-appellatecourts.org/images/attorney.png" alt="Attorney Search"><span>Attorney Appearance</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/ljudge" data-context="ljudge"><li><img src="https://www.ma-appellatecourts.org/images/judge.png" alt="Lower Court Judge Search"><span>Lower Court Judge</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/lcourt" data-context="lcourt"><li><img src="https://www.ma-appellatecourts.org/images/court.png" alt="Lower Court Search"><span>Lower Court</span></li></a>
+						</ul>
+
+					<a target="_top" href="https://www.ma-appellatecourts.org/calendar" data-context="calendar"><li><img src="https://www.ma-appellatecourts.org/images/calendar.png" alt="Court Calendars">Court Calendars</li></a>
+
+						<ul class="sidenav-calendar">
+							<a href="https://www.ma-appellatecourts.org/calendar/fc" data-context="calendarfc"><li><span>SJC Full Court</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/sj" data-context="calendarsj"><li><span>SJC Single Justice</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/ac" data-context="calendarac"><li><span>Appeals Court Panel</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/aj" data-context="calendaraj"><li><span>Appeals Court Single Justice</span></li></a>
+						</ul>
+
+					<a target="_blank" href="https://www.ma-appellatecourts.org/help"><li><img src="https://www.ma-appellatecourts.org/images/menu-help.png" alt="More Help">More Help <img id="help-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="More Help"></li></a>
+				</ul>
+
+				<div class="sidebar-footer">
+					<a class="copyright" target="_blank" href="https://www.rsi.com/state-judicial-solutions/public-access/">&copy; 2019 RSI</a>
+				</div>
+
+			</nav>
+			
+
+			<div id="content">
+
+				<nav class="navbar navbar-full navbar-light text-center py-0" id="header">
+					<div class="my-auto">
+						<button type="button" id="sidebarCollapse" class="btn btn-info">
+							<span>
+								<img src="https://www.ma-appellatecourts.org/images/top-menu.png" title="Menu"  alt="Menu" >
+							</span>
+						</button>
+					</div>
+					<div class="text-center my-auto page-title">
+						<span class="page-title">
+							<a href="https://www.ma-appellatecourts.org" class="page-title">
+																		<h4 class="page-header">
+											<span class="page-title-1 text-nowrap">Massachusetts Appellate Courts</span><br>
+											<span class="page-title-2 text-nowrap">Public Case Search</span>
+										</h4>
+																</a>
+						</span>
+					</div>
+					<div class="text-right my-auto">
+						
+						<a target="_blank" data-toggle="modal" href="#help-modal">
+							<button type="button" id="info_button" class="btn">
+								<span>
+									<img src="https://www.ma-appellatecourts.org/images/top-help.png" title="More Help"  alt="More Help" >
+								</span>
+							</button>
+						</a>
+					</div>
+				</nav>
+
+				<main id='main-content' class="col text-center">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col pl-0">
+								
+							</div>
+							<div class="col-7">
+																	<div class="content-header">
+										
+    <div class="docket-header">
+	
+    	<div class="docket-header-1">
+    	    			APPEALS COURT<br>Full Court Panel Case
+    			    	</div>
+    	<div class="docket-header-2">Case Docket</div>
+
+    	<hr class="short">
+
+    	<div class="docket-header-1">T.M. vs. R.K.</div>
+    	    		<div class="docket-header-2">THIS CASE CONTAINS IMPOUNDED MATERIAL OR PID</div>
+    	    	<div class="docket-header-2">2018-P-0422</div>
+
+    	<hr class="short">
+
+    </div>
+									</div>
+															</div>
+							<div class="col pr-0">
+								 									<div class="page-bottom-link hidden-print">
+										<a href="#bottom"><span class="text-nowrap">Bottom &#9662;</span></a>
+									</div>
+															</div>
+						</div>
+					</div>
+
+					
+					
+					
+					
+					
+					
+
+					<div class="content-body">
+						
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			<span class="align-middle">CASE HEADER</span>
+		</div>
+
+	</div>
+
+	<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Status
+		<span class="flex_rt ds-normal">Petition for reconsideration denied</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Status Date
+		<span class="flex_rt ds-normal">10/04/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Nature
+		<span class="flex_rt ds-normal">Abuse prevention order</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Entry Date
+		<span class="flex_rt ds-normal">03/26/2018</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Sub-Nature
+		<span class="flex_rt ds-normal">Burdens imposed by MGL CP 258E, Section 1</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">SJ Number
+		<span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Appellant
+		<span class="flex_rt ds-normal">Defendant</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Type
+		<span class="flex_rt ds-normal">Civil</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Status
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Due
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Panel
+		<span class="flex_rt ds-normal">Blake, Henry, McDonough, JJ.</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Argued/Submitted
+		<span class="flex_rt ds-normal">05/09/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Citation
+		<span class="flex_rt ds-normal">95 Mass. App. Ct. 1123</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Decision Date
+		<span class="flex_rt ds-normal">08/07/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court
+		<span class="flex_rt ds-normal">Concord District, MI</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Number
+		<span class="flex_rt ds-normal"></span></span> 
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Judge
+		<span class="flex_rt ds-normal">Jennifer A. Stark, J.</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Entry Date
+		<span class="flex_rt ds-normal">01/04/2016</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">FAR Number
+	    <span class="flex_rt ds-normal">
+			<a class="docket-number-link" target="_top" href="https://www.ma-appellatecourts.org/docket/FAR-27040">FAR-27040</a>
+		</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">SJC Number
+		<span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+</div>
+
+</section>
+
+
+	
+	
+	<section class="docket">
+
+    <div class="row mx-0" id="one_col_title">
+         <div class="col-12 parties_section_title"><span class="flex_span align-middle"><b>PARTY &nbsp;/&nbsp; ATTORNEY</b></span></div>
+    </div>
+    <div class="row mx-0" id="two_col_title">   
+         <div class="col-5 col-sm-6 parties_section_title1"><span class="flex_span align-middle"><b>INVOLVED PARTY</b></span></div>
+         <div class="col-7 col-sm-6 parties_section_title2 pl-4"><span class="flex_span align-middle"><b>ATTORNEY APPEARANCE</b></span></div>
+    </div>
+
+
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        T.M.
+                        </b>
+                        <br>
+                        Pro Se Plaintiff/Appellee
+                                        <br>
+
+                    
+                                                                                                        Stay vacated
+                                <br>
+                                                                                                                Red brief &amp; appendix filed
+                                <br>
+                                                                                                                1 Enl, 31 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        R.K.
+                        </b>
+                        <br>
+                        Pro Se Defendant/Appellant
+                                        <br>
+
+                    
+                                                                                                        Stay vacated
+                                <br>
+                                                                                                                Blue br, app &amp; reply br filed
+                                <br>
+                                                                                                                3 Enls, 109 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                                        </div>
+
+        </div>
+    
+</section>
+
+
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+		<div  class="section_title">
+			ORAL ARGUMENTS
+		</div>
+	</div>
+
+    <div class="documents_list pl-2">
+
+        <ul>
+			                <li>
+					<audio id="audio" controls preload="metadata">
+    					<source src="https://www.ma-appellatecourts.org/arg/2018-P-0422/2018-P-0422_2019-05-09_Arguments.mp3">
+    					<a class="arg-link" target="_blank" href="https://www.ma-appellatecourts.org/arg/2018-P-0422/2018-P-0422_2019-05-09_Arguments.mp3">2019-05-09 Arguments</a>
+    					<a class="arg-link" target="_blank" href="https://www.ma-appellatecourts.org/arg/2018-P-0422/2018-P-0422_2019-05-09_Arguments.mp3"><img src="https://www.ma-appellatecourts.org/images/audio.png" alt="Argument Audio"></a>
+					</audio>
+                </li>
+			        </ul>
+
+    </div>
+
+</section>
+
+
+
+	<section class="docket">
+
+	<div class="row mx-0">
+	    <div class="docket_entries_title">
+			<span class="align-middle">DOCKET ENTRIES</span>
+	    </div>
+	</div>
+
+   	<table class="docket_entries">
+
+		<tbody>
+
+			<tr class="subhead">
+				<td nowrap><b>Entry Date</b>&nbsp;</td>
+				<td nowrap><b>Paper 	</b>&nbsp;</td>
+				<td nowrap width=100%><b>Entry Text</b></td>
+			</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>12/07/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top><b>IMPOUNDED INFORMATION</b>: Name and address impounded per V.A.W.A. (Violence Against Women's Act)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/26/2018</td>
+					<td nowrap valign=top>#1</td>
+					<td valign=top>Lower Court Assembly of the Record Package
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/26/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Notice of entry sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/02/2018</td>
+					<td nowrap valign=top>#2</td>
+					<td valign=top>Docketing Statement received from R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/06/2018</td>
+					<td nowrap valign=top>#3</td>
+					<td valign=top>Pro Se Motion for removal of Attorney Thomas Finnerty, filed by R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/06/2018</td>
+					<td nowrap valign=top>#4</td>
+					<td valign=top>Pro Se Motion for an enlargement of time, filed by R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/10/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#3: Allowed. Attorney Finnerty is withdrawn. The defendant is deemed to be proceeding pro se. For service of all filings in this appeal, the defendant is instructed to provide a service copy of each filing to the Appeals Court clerk's office along with a written request that the copy be forwarded to the plaintiff. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/10/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#4: The within is treated as a motion to stay appellate proceedings and is allowed. Appellate proceedings are stayed to 05/10/2018 by when the defendant shall file a status report updating this Court on his efforts to obtain the transcript of the proceedings of the lower court. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/09/2018</td>
+					<td nowrap valign=top>#5</td>
+					<td valign=top>MOTION to extend brief & appendix due date, filed by R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/09/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#5: The stay of appellate proceedings is vacated. As requested, Appellant's brief and appendix is due 6/30/18. *Notice
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/13/2018</td>
+					<td nowrap valign=top>#6</td>
+					<td valign=top>Notice to R.K. that brief is non-conforming for the reasons indicated on the checklist: 1 (should be blue), 6, 8, 13, 17, 19. Other: Transcript does not have a proper cover. The party has until 06/30/2018 to file, and re-serve upon all parties, a conforming brief and appendix or a motion to accept nonconforming brief and appendix.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/14/2018</td>
+					<td nowrap valign=top>#7</td>
+					<td valign=top>MOTION to extend brief & appendix due date, filed by R.K..
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/14/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#7: Allowed to 08/14/2018. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/19/2018</td>
+					<td nowrap valign=top>#8</td>
+					<td valign=top>Notice to R.K. that brief is non-conforming for the reasons indicated on the checklist: 1. Blue, 2., 3., 6., 8., 13.,17., 19.. Other: Transcript does not have a proper cover. . The party has until 08/14/2018 to file, and re-serve upon all parties, a conforming brief and appendix or a motion to accept nonconforming brief and appendix.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/21/2018</td>
+					<td nowrap valign=top>#9</td>
+					<td valign=top>MOTION to extend brief & appendix due date, filed by R.K (as forwarded from Concord District Court)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/22/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#9: See notice of brief rejection issued on 6/19/18. No further action necessary.. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/13/2018</td>
+					<td nowrap valign=top>#10</td>
+					<td valign=top>Impounded Notice of change of address of T.M., Pro Se Plaintiff/Appellee, Pro Se.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/30/2018</td>
+					<td nowrap valign=top>#11</td>
+					<td valign=top>MOTION to extend brief & appendix due date, filed by R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/30/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Copy of paper #11 sent to T.M. with address removed
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/31/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#11: Allowed to the extent the brief and appendix are to be filed on or before 8/24/18. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/23/2018</td>
+					<td nowrap valign=top>#12</td>
+					<td valign=top>Appellant brief including record appendix filed for R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/07/2018</td>
+					<td nowrap valign=top>#13</td>
+					<td valign=top>Request for stay pending receipt of transcripts from Concord District Court, filed for T.M.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/07/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Copy of paper #13 sent to R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/11/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#13: Appellate proceedings stayed to 10/11/18. Status report due then concerning readiness of 2 additional transcripts. *Notice/Attest
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/10/2018</td>
+					<td nowrap valign=top>#14</td>
+					<td valign=top>Status Report, filed by T.M.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/12/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#14: Appellate proceedings remain stayed to 11/9/18 by when appellant is to alert the court as to whether a revised brief and appendix will be filed, including the recently-produced transcript. In the alternative, appellant may file revised documents on or before that time. *Notice
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/15/2018</td>
+					<td nowrap valign=top>#15</td>
+					<td valign=top>MOTION to extend brief & appendix due date, filed for R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/17/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#15: See order entered on 10/12/18 on Paper #14. Appellate proceedings remain stayed and no brief is presently due from Appellee. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/08/2018</td>
+					<td nowrap valign=top>#16</td>
+					<td valign=top>Request for copies of transcripts, filed for R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/13/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#16: Denied without prejudice to refiling in the trial court. *Notice sent
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>12/03/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>[This entry is VACATED as having entered in error [Per the Court (12/04/2018)] Notice preceding dismissal: Standing Order Governing Dismissals for Lack of Prosecution. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>12/04/2018</td>
+					<td nowrap valign=top>#17</td>
+					<td valign=top>ORDER: Appellant has not complied with the court's 10/12/18 action requiring him to alert the court as to whether a revised brief and appendix will be filed. The trial court docket indicates the trial court received copies of the transcripts sought by appellant on 11/8/18. On or before 12/12/18, appellant to alert the court as to how he intends to proceed or the stay will be vacated and a briefing date set for appellee's brief. *Notice
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>12/06/2018</td>
+					<td nowrap valign=top>#18</td>
+					<td valign=top>Status Report, filed by R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>12/10/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#18: Appellant reports that he will not be filing the transcripts or a revised brief. The stay of appellate proceedings is vacated. Appellee's brief is due 1/10/19. Appellee is given leave to file a supplemental appendix with her brief, including any transcripts. Appellant will have 14 days thereafter to file a reply brief
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/10/2019</td>
+					<td nowrap valign=top>#19</td>
+					<td valign=top>MOTION to file supplemental appendix, filed for T.M.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/11/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#19: Accepted for filing. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/11/2019</td>
+					<td nowrap valign=top>#20</td>
+					<td valign=top>Appellee brief filed by T.M.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/11/2019</td>
+					<td nowrap valign=top>#21</td>
+					<td valign=top>Supplemental Appendix filed by T.M.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/14/2019</td>
+					<td nowrap valign=top>#22</td>
+					<td valign=top>Request for copy of Appellee Filings filed by R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/17/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Copy of paper #20 & #21 sent to R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/28/2019</td>
+					<td nowrap valign=top>#23</td>
+					<td valign=top>MOTION to extend reply brief due date, filed by R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/31/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#23: Denied without prejudice to renewal with a date certain for the requested enlargement. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/07/2019</td>
+					<td nowrap valign=top>#24</td>
+					<td valign=top>MOTION to extend reply brief due date and copies of appellee brief and record appendix for the commonwealth, filed by R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/11/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#24: Allowed to 3/29/19. Copy of paper #20 & #21 resent to R.K. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/26/2019</td>
+					<td nowrap valign=top>#25</td>
+					<td valign=top>Motion to reconsider paper #24, filed for T.M.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/01/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#25: Treated as a motion to reconsider the court's action on paper #24 regarding the time for filing the appellant's reply brief, after reconsideration, the action is to stand. However, appellant to note no further enlargement of time should be anticipated. Appellee to note that the date the appellant files a reply brief, if a reply brief is filed, has no bearing on when the case is ready for consideration. For purposes of consideration of the appeal by the court, the appeal is deemed ready as of 1/11/19, the date appellee's brief was filed. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/08/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Notice sent seeking information on unavailability for oral argument in May 2019
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/13/2019</td>
+					<td nowrap valign=top>#26</td>
+					<td valign=top>Letter of T.M., Pro Se Plaintiff/Appellee, Pro Se unavailable for oral argument May 1, 2, 3, 6, 7 and 8, 2019..
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/27/2019</td>
+					<td nowrap valign=top>#27</td>
+					<td valign=top>Reply brief filed by R.K..
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/02/2019</td>
+					<td nowrap valign=top>#28</td>
+					<td valign=top>Notice of 05/09/2019, 9:30 AM argument at John Adams Courthouse, Courtroom 3 (a3) sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/03/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Letter from R.K., Pro Se Defendant/Appellant, Pro Se re: will appear and argue on 05/09/2019.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/19/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Letter from T.M., Pro Se Plaintiff/Appellee, Pro Se re: will appear and argue on 05/09/2019.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/09/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Oral argument held. (Blake, J., Henry, J., McDonough, J.).
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/07/2019</td>
+					<td nowrap valign=top>#29</td>
+					<td valign=top>Decision: Rule 1:28 Permanent harassment prevention order dated February 27, 2018, vacated. (Blake, Henry, McDonough, JJ.). *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/20/2019</td>
+					<td nowrap valign=top>#30</td>
+					<td valign=top>Motion to enlarge time to file motion for reconsideration, filed for T.M.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/20/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Copy of P#30 sent to R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/21/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#30: Allowed to 9/16/19. (Blake, Henry & McDonough, JJ.). *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/27/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>FAR-27040 opened.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/10/2019</td>
+					<td nowrap valign=top>#31</td>
+					<td valign=top>Request for expansion of time to file a motion for reconsideration, filed by T.M.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/10/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Copy of paper #31 sent to R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/13/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#31: Allowed to 9/30/19. No further enlargement should be anticipated. (Blake, Henry & McDonough, JJ.). *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/24/2019</td>
+					<td nowrap valign=top>#32</td>
+					<td valign=top>Motion for Expansion of Time to File a Motion for Reconsideration, filed for T.M.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/24/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Copy of paper #32 sent to R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/26/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#32: Denied. (Blake, Henry & McDonough, JJ.) *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/30/2019</td>
+					<td nowrap valign=top>#33</td>
+					<td valign=top>Motion for Reconsideration or modification of decision filed by T.M.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/30/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Copy of paper #33 to R.K..
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/04/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#33: After consideration, the motion filed pursuant to Rule 27 is denied. (Blake, Henry, McDonough, JJ.). *Notice
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/04/2019</td>
+					<td nowrap valign=top>#34</td>
+					<td valign=top>Motion Requesting Enlargement of Time and Complete Copy of Transcript , filed for R.K.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/08/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#34: Denied. See court's 10/4/19 order denying plaintiff's Rule 27 motion. (Blake, Henry & McDonough, JJ.). *Notice
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/29/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Copy of paper #34 to T.M.
+											</td>
+
+				</tr>
+
+			
+		</tbody>
+
+	</table>
+
+</section>
+
+
+					</div>
+
+					
+
+					<div class="content-footer">
+											</div>
+
+					<div class="page-footer pb-3" style="min-height:2em;" >
+						<span class="publish-date">
+		As of 11/08/2019 3:12pm
+	</span>
+													<div class="page-top-link hidden-print">
+								<a href="#top" id="bottom">Top &#9652;</a>
+							</div>
+											</div>
+
+				</main>
+
+			</div> 
+		</div>     
+
+		
+        <div class="modal" tabindex="-1" role="dialog" id="help-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" >
+                    <div class="context-help">   <!-- style="text-align:center;"-->
+                        <div class="help-container">
+
+	<table>
+
+	
+
+	<tr>
+	<td>
+	<div class="help-content">
+		For more information about how to search for court cases, visit the
+<a target="_blank" href="https://www.ma-appellatecourts.org/help">court website</a>.
+	</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<div class="help-footer">
+		<div class="modal-footer">
+			<a target="_blank" href="https://www.ma-appellatecourts.org/help"> More Help <img id="modal-help-link" src="https://www.ma-appellatecourts.org/images/external.png"  alt="More Help"></a>
+			<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+		</div>
+
+	</div>
+	</td>
+	</tr>
+
+	</table>
+
+</div> 
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+
+		
+		<div class="overlay"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#dismiss, .overlay').on('click', function () {
+					// hide sidebar
+					$('#sidebar').removeClass('active');
+					$('#sidebar').css('overflow', 'hidden');
+					// hide overlay
+					$('.overlay').removeClass('active');
+				});
+
+				$('#sidebarCollapse').on('click', function () {
+					// open sidebar
+					$('#sidebar').css('overflow', 'auto');
+					$('#sidebar').addClass('active');
+					// fade in the overlay
+					$('.overlay').addClass('active');
+					$('.collapse.in').toggleClass('in');
+					$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+				});
+
+				// Highlight the last search in the menu
+				var menu_context = "docket";
+				var currentMenu = $("a[data-context=" + menu_context + "]");
+				currentMenu.addClass('menu-context');
+				// Detect ie11.
+				var mq=window.matchMedia("(-ms-high-contrast: none)");
+				if (mq.matches) {
+					// Don't focus the field if it's IE, focus kills the place holder
+					// console.log("is IE 11");
+					$('form').find('*').filter(':input:visible:first').blur();
+				}
+			});  // document.ready
+		</script>
+
+					<!-- Include Court Tracking Software -->
+			<script src="https://rum-static.pingdom.net/pa-5bed916cdb2aac0016000085.js" async></script>
+		
+		
+	</body>
+
+</html>
+

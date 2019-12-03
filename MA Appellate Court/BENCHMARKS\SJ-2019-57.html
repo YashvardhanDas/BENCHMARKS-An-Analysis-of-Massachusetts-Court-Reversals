@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<!--
+// Copyright (C) 1988-2019 Relational Semantics, Inc. (RSI), Newton MA USA
+// This Module contains Proprietary Information of Relational Semantics, Inc.
+// and should be treated as Confidential. All rights reserved.
+// RSI, PARAGON, and FORECOURT are registered trademarks of Relational Semantics, Inc.
+-->
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="csrf-token" content="pBiDBH0D3oLL22IGn28t3jMs5zbi1Nzl2WP3MSRZ">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Mass Appellate Courts - Public Case Search</title>
+		<link rel="shortcut icon"    href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="icon"		     href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+
+		<link href="https://www.ma-appellatecourts.org/css/material.css" rel="stylesheet" type="text/css" />
+
+		            <link href="https://www.ma-appellatecourts.org/css/mysjc.css" rel="stylesheet" type="text/css" />
+		
+        <script src="https://www.ma-appellatecourts.org/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://www.ma-appellatecourts.org/js/popper.min.js"></script>
+        
+        <script src="https://www.ma-appellatecourts.org/js/app.js" ></script>
+        <script src="https://www.ma-appellatecourts.org/js/material.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			
+			<nav id="sidebar">
+
+				
+
+				<div class="sidebar-header text-center">
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><div class="pt-2 pb-2"><img src="https://www.ma-appellatecourts.org/images/seal_comm_gray.png" class="nav-seal" alt="Home"></div></a>
+				</div>
+
+				<ul class="sidenav">
+
+											<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/home.png" alt="Home">Home</li></a>
+					
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/case.png" alt="Case Search">Case Search</li></a>
+						<ul class="sidenav-search">
+							<a target="_top" href="https://www.ma-appellatecourts.org/party" data-context="party"><li><img src="https://www.ma-appellatecourts.org/images/party.png" alt="Party Search"><span>Involved Party</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/docket" data-context="docket"><li><img src="https://www.ma-appellatecourts.org/images/number.png" alt="Docket Number Search"><span>Docket Number</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/attorney" data-context="attorney"><li><img src="https://www.ma-appellatecourts.org/images/attorney.png" alt="Attorney Search"><span>Attorney Appearance</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/ljudge" data-context="ljudge"><li><img src="https://www.ma-appellatecourts.org/images/judge.png" alt="Lower Court Judge Search"><span>Lower Court Judge</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/lcourt" data-context="lcourt"><li><img src="https://www.ma-appellatecourts.org/images/court.png" alt="Lower Court Search"><span>Lower Court</span></li></a>
+						</ul>
+
+					<a target="_top" href="https://www.ma-appellatecourts.org/calendar" data-context="calendar"><li><img src="https://www.ma-appellatecourts.org/images/calendar.png" alt="Court Calendars">Court Calendars</li></a>
+
+						<ul class="sidenav-calendar">
+							<a href="https://www.ma-appellatecourts.org/calendar/fc" data-context="calendarfc"><li><span>SJC Full Court</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/sj" data-context="calendarsj"><li><span>SJC Single Justice</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/ac" data-context="calendarac"><li><span>Appeals Court Panel</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/aj" data-context="calendaraj"><li><span>Appeals Court Single Justice</span></li></a>
+						</ul>
+
+					<a target="_blank" href="https://www.ma-appellatecourts.org/help"><li><img src="https://www.ma-appellatecourts.org/images/menu-help.png" alt="More Help">More Help <img id="help-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="More Help"></li></a>
+				</ul>
+
+				<div class="sidebar-footer">
+					<a class="copyright" target="_blank" href="https://www.rsi.com/state-judicial-solutions/public-access/">&copy; 2019 RSI</a>
+				</div>
+
+			</nav>
+			
+
+			<div id="content">
+
+				<nav class="navbar navbar-full navbar-light text-center py-0" id="header">
+					<div class="my-auto">
+						<button type="button" id="sidebarCollapse" class="btn btn-info">
+							<span>
+								<img src="https://www.ma-appellatecourts.org/images/top-menu.png" title="Menu"  alt="Menu" >
+							</span>
+						</button>
+					</div>
+					<div class="text-center my-auto page-title">
+						<span class="page-title">
+							<a href="https://www.ma-appellatecourts.org" class="page-title">
+																		<h4 class="page-header">
+											<span class="page-title-1 text-nowrap">Massachusetts Appellate Courts</span><br>
+											<span class="page-title-2 text-nowrap">Public Case Search</span>
+										</h4>
+																</a>
+						</span>
+					</div>
+					<div class="text-right my-auto">
+						
+						<a target="_blank" data-toggle="modal" href="#help-modal">
+							<button type="button" id="info_button" class="btn">
+								<span>
+									<img src="https://www.ma-appellatecourts.org/images/top-help.png" title="More Help"  alt="More Help" >
+								</span>
+							</button>
+						</a>
+					</div>
+				</nav>
+
+				<main id='main-content' class="col text-center">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col pl-0">
+								
+							</div>
+							<div class="col-7">
+																	<div class="content-header">
+										
+    <div class="docket-header">
+	
+    	<div class="docket-header-1">
+    	    		    			SUPREME JUDICIAL COURT<br>for Suffolk County
+    			    	</div>
+    	<div class="docket-header-2">Case Docket</div>
+
+    	<hr class="short">
+
+    	<div class="docket-header-1">JOSEPH BUCKMAN and PETER CRUZ v. MASSACHUSETTS DEPARTMENT OF CORRECTION, CAROL MICI, COMMISSIONER OF CORRECTION, COLETTE GOGUEN, SUPERINTENDENT, MCI SHIRLEY, and STEVEN SILVA, SUPERINTENDENT, MCI NORFOLK</div>
+    	    	<div class="docket-header-2">SJ-2019-0057</div>
+
+    	<hr class="short">
+
+    </div>
+									</div>
+															</div>
+							<div class="col pr-0">
+								 									<div class="page-bottom-link hidden-print">
+										<a href="#bottom"><span class="text-nowrap">Bottom &#9662;</span></a>
+									</div>
+															</div>
+						</div>
+					</div>
+
+					
+					
+					
+					
+					
+					
+
+					<div class="content-body">
+						
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			<span class="align-middle">CASE HEADER</span>
+		</div>
+
+	</div>
+
+	<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Status
+		<span class="flex_rt ds-normal">Reserved and Reported to the Full Court</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Status Date
+		<span class="flex_rt ds-normal">04/03/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Nature
+		<span class="flex_rt ds-normal">Certiorari c 249 s 4</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Entry Date
+		<span class="flex_rt ds-normal">02/19/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Sub-Nature
+		<span class="flex_rt ds-normal">Medical Parole</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Single Justice
+		<span class="flex_rt ds-normal">Cypher, J.</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Ruling
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Ruling Date
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">SJ Ruling
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Number
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Pet Role Below
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Full Ct Number
+		<span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Judge
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+</section>
+
+
+	
+	
+	<section class="docket">
+
+    <div class="row mx-0" id="one_col_title">
+         <div class="col-12 parties_section_title"><span class="flex_span align-middle"><b>PARTY &nbsp;/&nbsp; ATTORNEY</b></span></div>
+    </div>
+    <div class="row mx-0" id="two_col_title">   
+         <div class="col-5 col-sm-6 parties_section_title1"><span class="flex_span align-middle"><b>INVOLVED PARTY</b></span></div>
+         <div class="col-7 col-sm-6 parties_section_title2 pl-4"><span class="flex_span align-middle"><b>ATTORNEY APPEARANCE</b></span></div>
+    </div>
+
+
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Joseph Buckman
+                        </b>
+                        <br>
+                        Petitioner
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/563783">Ruth Greenberg,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/416120">John Reinstein,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Peter Cruz
+                        </b>
+                        <br>
+                        Petitioner
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/563783">Ruth Greenberg,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/416120">John Reinstein,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Massachusetts Department of Correction
+                        </b>
+                        <br>
+                        Respondent
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/558970">Mary C. Eiro-Bartevyan,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/659533">Bradley A. Sultan,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/678741">Richard E. Gordon,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Carol Mici, Commissioner of Correction
+                        </b>
+                        <br>
+                        Respondent
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/558970">Mary C. Eiro-Bartevyan,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/659533">Bradley A. Sultan,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/678741">Richard E. Gordon,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Colette Goguen, Superintendent, MCI Shirley
+                        </b>
+                        <br>
+                        Respondent
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/558970">Mary C. Eiro-Bartevyan,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/659533">Bradley A. Sultan,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/678741">Richard E. Gordon,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Steven Silva, Superintendent, MCI Norfolk
+                        </b>
+                        <br>
+                        Respondent
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/558970">Mary C. Eiro-Bartevyan,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/659533">Bradley A. Sultan,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/678741">Richard E. Gordon,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Clerk - SJC for the Commonwealth
+                        </b>
+                        <br>
+                        Clerk for Commonwealth
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                                        </div>
+
+        </div>
+    
+</section>
+
+
+	
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+	    <div class="docket_entries_title">
+			<span class="align-middle">DOCKET ENTRIES</span>
+	    </div>
+	</div>
+
+   	<table class="docket_entries">
+
+		<tbody>
+
+			<tr class="subhead">
+				<td nowrap><b>Entry Date</b>&nbsp;</td>
+				<td nowrap><b>Paper 	</b>&nbsp;</td>
+				<td nowrap width=100%><b>Entry Text</b></td>
+			</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/19/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Case entered.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/19/2019</td>
+					<td nowrap valign=top>#1</td>
+					<td valign=top>Plaintiffs' MOTION To Waive Filing Fee with Affidavit and Certificate of Service filed for Joseph Buckman and Peter Cruz by Atty. Ruth Greenberg.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/19/2019</td>
+					<td nowrap valign=top>#2</td>
+					<td valign=top>Complaint Pursuant to G. L. c. 249, &#167; 4 with Affidavit, Certificate of Service and attachments filed for Joseph Buckman and Peter Cruz by Atty. Ruth Greenberg.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/19/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Fee Waiver ALLOWED by Judge. (Cypher, J.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/28/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Hearing scheduled for 03/06/2019. (all parties notified via e-mail.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/05/2019</td>
+					<td nowrap valign=top>#3</td>
+					<td valign=top>Defendants/Respondents' MOTION To Dismiss For Failure To Exhaust Administrative Remedies And Opposition To Request For Order Of Mandamus, Injunctive And Declaratory Relief with Certificate of Service and Exhibits A-H filed by Atty. Mary Bartevyan.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/06/2019</td>
+					<td nowrap valign=top>#4</td>
+					<td valign=top>Copy of Findings and Order Following Conference of October 1, 2018 from Worcester Superior Court, dated 10/4/2018, Docket No. 18-1431D filed by Atty. Ruth Greenberg.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/06/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Hearing held before (Cypher, J.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/06/2019</td>
+					<td nowrap valign=top>#5</td>
+					<td valign=top>Appearance of Atty. Ruth Greenberg for Joseph Buckman and Peter Cruz, filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/06/2019</td>
+					<td nowrap valign=top>#6</td>
+					<td valign=top>Appearance of Atty. John Reinstein for Joseph Buckman and Peter Cruz, filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/06/2019</td>
+					<td nowrap valign=top>#7</td>
+					<td valign=top>Appearance of Atty. Bradley A. Sultan for Massachusetts Department of Correction, Carol Mici, Colette Goguen and Steven Silva, filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/06/2019</td>
+					<td nowrap valign=top>#8</td>
+					<td valign=top>Appearance of Atty. Mary C. Eiro-Bartevyan for Massachusetts Department of Correction, Carol Mici, Colette Goguen and Steven Silva, filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/08/2019</td>
+					<td nowrap valign=top>#9</td>
+					<td valign=top>Letter to Eric Wetzel, Assistant Clerk form Atty. Ruth Greenberg saying ..."Please let Justice Cypher Know that Plaintiff Buckman was hospitalized Thursday night." filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/08/2019</td>
+					<td nowrap valign=top>#10</td>
+					<td valign=top>Letter to Eric Wetzel, Assistant Clerk from Atty. Ruth Greenberg filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/13/2019</td>
+					<td nowrap valign=top>#11</td>
+					<td valign=top>Letter to Maura S. Doyle, Clerk from Atty. Ruth Greenberg saying ... "I would be grateful if you could let Justice Cypher know that as of today and since March 1, 2019, DOC is in further violation of the Compassionate Release statute, having deliberately and completely ignored its duty to provide a report to the Legislature on that date. No report has yet been filed." filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/01/2019</td>
+					<td nowrap valign=top>#12</td>
+					<td valign=top>Letter with attachment to Eric Wetzel, Assistant Clerk from Atty. Ruth Greenberg, filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/03/2019</td>
+					<td nowrap valign=top>#13</td>
+					<td valign=top>Reservation and Report: " I have carefully reviewed the complaint, the defendants' motion to dismiss, and supporting materials. In my view, the case raises some important legal issues concerning the medical parole statute, G. L. c. 129, &#167; 119A. Because the issues are substantial and recurring, I therefore reserve and report the case to the full court. The record before the full court shall consist of the pleadings and supporting materials filed in the county court, this reservation and report, and the docket sheet in SJ-2019-57. Further, the parties are to prepare and file in the full court a sufficiently comprehensive statement of agreed facts that will enable the court to resolve the legal issues raised in the pleadings. The failure to agree on all the facts needed for a decision could impair the court's ability to decide the case. In addition to any other issues, the parties shall address in their briefs: 1. Whether, for purposes of G. L. c. 127, &#167; 119A, a written petition for medical parole of a prisoner must be considered by the superintendent of the facility where the prisoner is incarcerated, regardless of the superintendent's view as to the completeness or adequacy of the petition. 2. Which party bears the burden of preparing or procuring "(i) a medical parole plan; (ii) a written diagnosis by a physician licensed to practice medicine under section 2 of chapter 112; and (iii) an assessment of the risk of violence that the prisoner poses to society." G. L. c. 127, &#167; 119A. 3. Whether the Commissioner of Correction, on receipt of the petition and the superintendent's recommendation as to release of the prisoner, must provide notice to the prisoner of the recommendation, as well as a copy of the recommendation and any supporting or related materials. This matter shall proceed in all respects in conformance with the Massachusetts Rules of Appellate Procedure. The plaintiffs are designated as the appellants.The parties shall confer with the Clerk of the Supreme Judicial Court for the Commonwealth regarding a schedule for the filing and service of briefs. The statement of agreed facts shall be finalized in time for inclusion in the record appendix filed with the appellants' brief. The pendency of this appeal should not preclude the parties from jointly working toward a resolution of this matter." (Cypher, J.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/04/2019</td>
+					<td nowrap valign=top>#14</td>
+					<td valign=top>Notice of assembly of the record.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/04/2019</td>
+					<td nowrap valign=top>#15</td>
+					<td valign=top>Notice to counsel/parties, regarding paper #'s 13 & 14 filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/03/2019</td>
+					<td nowrap valign=top>#16</td>
+					<td valign=top>Reservation and Report: as on file. (Cypher, J.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/16/2019</td>
+					<td nowrap valign=top>#17</td>
+					<td valign=top>Letter to S.J.C for Suffolk County from S.J.C for the Commonwealth saying; Pursuant to Mass.R.A.P. 10(a)(3), you are hereby notified that, on April 16, 2019, the above-referenced case was entered on the docket of this court.
+											</td>
+
+				</tr>
+
+			
+		</tbody>
+
+	</table>
+
+</section>
+
+
+					</div>
+
+					
+
+					<div class="content-footer">
+											</div>
+
+					<div class="page-footer pb-3" style="min-height:2em;" >
+						<span class="publish-date">
+		As of 11/04/2019 8:00pm
+	</span>
+													<div class="page-top-link hidden-print">
+								<a href="#top" id="bottom">Top &#9652;</a>
+							</div>
+											</div>
+
+				</main>
+
+			</div> 
+		</div>     
+
+		
+        <div class="modal" tabindex="-1" role="dialog" id="help-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" >
+                    <div class="context-help">   <!-- style="text-align:center;"-->
+                        <div class="help-container">
+
+	<table>
+
+	
+
+	<tr>
+	<td>
+	<div class="help-content">
+		For more information about how to search for court cases, visit the
+<a target="_blank" href="https://www.ma-appellatecourts.org/help">court website</a>.
+	</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<div class="help-footer">
+		<div class="modal-footer">
+			<a target="_blank" href="https://www.ma-appellatecourts.org/help"> More Help <img id="modal-help-link" src="https://www.ma-appellatecourts.org/images/external.png"  alt="More Help"></a>
+			<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+		</div>
+
+	</div>
+	</td>
+	</tr>
+
+	</table>
+
+</div> 
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+
+		
+		<div class="overlay"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#dismiss, .overlay').on('click', function () {
+					// hide sidebar
+					$('#sidebar').removeClass('active');
+					$('#sidebar').css('overflow', 'hidden');
+					// hide overlay
+					$('.overlay').removeClass('active');
+				});
+
+				$('#sidebarCollapse').on('click', function () {
+					// open sidebar
+					$('#sidebar').css('overflow', 'auto');
+					$('#sidebar').addClass('active');
+					// fade in the overlay
+					$('.overlay').addClass('active');
+					$('.collapse.in').toggleClass('in');
+					$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+				});
+
+				// Highlight the last search in the menu
+				var menu_context = "docket";
+				var currentMenu = $("a[data-context=" + menu_context + "]");
+				currentMenu.addClass('menu-context');
+				// Detect ie11.
+				var mq=window.matchMedia("(-ms-high-contrast: none)");
+				if (mq.matches) {
+					// Don't focus the field if it's IE, focus kills the place holder
+					// console.log("is IE 11");
+					$('form').find('*').filter(':input:visible:first').blur();
+				}
+			});  // document.ready
+		</script>
+
+					<!-- Include Court Tracking Software -->
+			<script src="https://rum-static.pingdom.net/pa-5bed916cdb2aac0016000085.js" async></script>
+		
+		
+	</body>
+
+</html>
+

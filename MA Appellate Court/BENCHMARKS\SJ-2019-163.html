@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<!--
+// Copyright (C) 1988-2019 Relational Semantics, Inc. (RSI), Newton MA USA
+// This Module contains Proprietary Information of Relational Semantics, Inc.
+// and should be treated as Confidential. All rights reserved.
+// RSI, PARAGON, and FORECOURT are registered trademarks of Relational Semantics, Inc.
+-->
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="csrf-token" content="Ow8ZAHhkfiMkYzMaJ89k9BsgZ3YlVKM4yV5C8E7B">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Mass Appellate Courts - Public Case Search</title>
+		<link rel="shortcut icon"    href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="icon"		     href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+
+		<link href="https://www.ma-appellatecourts.org/css/material.css" rel="stylesheet" type="text/css" />
+
+		            <link href="https://www.ma-appellatecourts.org/css/mysjc.css" rel="stylesheet" type="text/css" />
+		
+        <script src="https://www.ma-appellatecourts.org/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://www.ma-appellatecourts.org/js/popper.min.js"></script>
+        
+        <script src="https://www.ma-appellatecourts.org/js/app.js" ></script>
+        <script src="https://www.ma-appellatecourts.org/js/material.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			
+			<nav id="sidebar">
+
+				
+
+				<div class="sidebar-header text-center">
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><div class="pt-2 pb-2"><img src="https://www.ma-appellatecourts.org/images/seal_comm_gray.png" class="nav-seal" alt="Home"></div></a>
+				</div>
+
+				<ul class="sidenav">
+
+											<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/home.png" alt="Home">Home</li></a>
+					
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/case.png" alt="Case Search">Case Search</li></a>
+						<ul class="sidenav-search">
+							<a target="_top" href="https://www.ma-appellatecourts.org/party" data-context="party"><li><img src="https://www.ma-appellatecourts.org/images/party.png" alt="Party Search"><span>Involved Party</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/docket" data-context="docket"><li><img src="https://www.ma-appellatecourts.org/images/number.png" alt="Docket Number Search"><span>Docket Number</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/attorney" data-context="attorney"><li><img src="https://www.ma-appellatecourts.org/images/attorney.png" alt="Attorney Search"><span>Attorney Appearance</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/ljudge" data-context="ljudge"><li><img src="https://www.ma-appellatecourts.org/images/judge.png" alt="Lower Court Judge Search"><span>Lower Court Judge</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/lcourt" data-context="lcourt"><li><img src="https://www.ma-appellatecourts.org/images/court.png" alt="Lower Court Search"><span>Lower Court</span></li></a>
+						</ul>
+
+					<a target="_top" href="https://www.ma-appellatecourts.org/calendar" data-context="calendar"><li><img src="https://www.ma-appellatecourts.org/images/calendar.png" alt="Court Calendars">Court Calendars</li></a>
+
+						<ul class="sidenav-calendar">
+							<a href="https://www.ma-appellatecourts.org/calendar/fc" data-context="calendarfc"><li><span>SJC Full Court</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/sj" data-context="calendarsj"><li><span>SJC Single Justice</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/ac" data-context="calendarac"><li><span>Appeals Court Panel</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/aj" data-context="calendaraj"><li><span>Appeals Court Single Justice</span></li></a>
+						</ul>
+
+					<a target="_blank" href="https://www.ma-appellatecourts.org/help"><li><img src="https://www.ma-appellatecourts.org/images/menu-help.png" alt="More Help">More Help <img id="help-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="More Help"></li></a>
+				</ul>
+
+				<div class="sidebar-footer">
+					<a class="copyright" target="_blank" href="https://www.rsi.com/state-judicial-solutions/public-access/">&copy; 2019 RSI</a>
+				</div>
+
+			</nav>
+			
+
+			<div id="content">
+
+				<nav class="navbar navbar-full navbar-light text-center py-0" id="header">
+					<div class="my-auto">
+						<button type="button" id="sidebarCollapse" class="btn btn-info">
+							<span>
+								<img src="https://www.ma-appellatecourts.org/images/top-menu.png" title="Menu"  alt="Menu" >
+							</span>
+						</button>
+					</div>
+					<div class="text-center my-auto page-title">
+						<span class="page-title">
+							<a href="https://www.ma-appellatecourts.org" class="page-title">
+																		<h4 class="page-header">
+											<span class="page-title-1 text-nowrap">Massachusetts Appellate Courts</span><br>
+											<span class="page-title-2 text-nowrap">Public Case Search</span>
+										</h4>
+																</a>
+						</span>
+					</div>
+					<div class="text-right my-auto">
+						
+						<a target="_blank" data-toggle="modal" href="#help-modal">
+							<button type="button" id="info_button" class="btn">
+								<span>
+									<img src="https://www.ma-appellatecourts.org/images/top-help.png" title="More Help"  alt="More Help" >
+								</span>
+							</button>
+						</a>
+					</div>
+				</nav>
+
+				<main id='main-content' class="col text-center">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col pl-0">
+								
+							</div>
+							<div class="col-7">
+																	<div class="content-header">
+										
+    <div class="docket-header">
+	
+    	<div class="docket-header-1">
+    	    		    			SUPREME JUDICIAL COURT<br>for Suffolk County
+    			    	</div>
+    	<div class="docket-header-2">Case Docket</div>
+
+    	<hr class="short">
+
+    	<div class="docket-header-1">MARQUIS DAVIS v. COMMONWEALTH</div>
+    	    		<div class="docket-header-2">THIS CASE CONTAINS IMPOUNDED MATERIAL OR PID</div>
+    	    	<div class="docket-header-2">SJ-2019-0163</div>
+
+    	<hr class="short">
+
+    </div>
+									</div>
+															</div>
+							<div class="col pr-0">
+								 									<div class="page-bottom-link hidden-print">
+										<a href="#bottom"><span class="text-nowrap">Bottom &#9662;</span></a>
+									</div>
+															</div>
+						</div>
+					</div>
+
+					
+					
+					
+					
+					
+					
+
+					<div class="content-body">
+						
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			<span class="align-middle">CASE HEADER</span>
+		</div>
+
+	</div>
+
+	<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Status
+		<span class="flex_rt ds-normal">Decided</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Status Date
+		<span class="flex_rt ds-normal">10/15/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Nature
+		<span class="flex_rt ds-normal">Superintendence c 211 s 3</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Entry Date
+		<span class="flex_rt ds-normal">04/26/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Sub-Nature
+		<span class="flex_rt ds-normal">Stay of Arraignment</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Single Justice
+		<span class="flex_rt ds-normal">Lenk, J.</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Ruling
+		<span class="flex_rt ds-normal">Relief denied</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Ruling Date
+		<span class="flex_rt ds-normal">04/24/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">SJ Ruling
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Number
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Pet Role Below
+		<span class="flex_rt ds-normal">Defendant in lower court</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Full Ct Number
+		<span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court
+		<span class="flex_rt ds-normal">Boston Municipal, Central Div.</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Judge
+		<span class="flex_rt ds-normal">Sally A. Kelly, J.</span></span>
+	</div>
+</div>
+
+</section>
+
+
+	<section class="docket">
+
+	<div class="row mx-0">
+		<div class="section_title">
+			<span class="align-middle">ADDITIONAL INFORMATION</span>
+		</div>
+	</div>
+
+	<div class="pl-2">
+				   EXHIBIT 1 to PAPER #2 (IMPOUNDED) LOCATED IN BROWN EXPANDABLE FOLDER ATTACHED TO FILE)
+		   <br />
+			</div>
+
+</section>
+
+
+	
+	<section class="docket">
+
+    <div class="row mx-0" id="one_col_title">
+         <div class="col-12 parties_section_title"><span class="flex_span align-middle"><b>PARTY &nbsp;/&nbsp; ATTORNEY</b></span></div>
+    </div>
+    <div class="row mx-0" id="two_col_title">   
+         <div class="col-5 col-sm-6 parties_section_title1"><span class="flex_span align-middle"><b>INVOLVED PARTY</b></span></div>
+         <div class="col-7 col-sm-6 parties_section_title2 pl-4"><span class="flex_span align-middle"><b>ATTORNEY APPEARANCE</b></span></div>
+    </div>
+
+
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Marquis Davis
+                        </b>
+                        <br>
+                        Defendant/Petitioner
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/673591">Lia C. Monahon, Clinical Instructor,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Commonwealth
+                        </b>
+                        <br>
+                        Plaintiff/Respondent
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/662332">Janis DiLoreto Smith,
+							Assistant District Attorney
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/651223">Donna Jalbert Patalano,
+							Assistant District Attorney
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/676342">Cailin M. Campbell,
+							Assistant District Attorney
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Patrick Nowak
+                        </b>
+                        <br>
+                        Student appearing under SJC Rule 3:03
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Loryn Helfmann
+                        </b>
+                        <br>
+                        Student appearing under SJC Rule 3:03
+                                        <br>
+
+                    
+                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                                        </div>
+
+        </div>
+    
+</section>
+
+
+	
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+	    <div class="docket_entries_title">
+			<span class="align-middle">DOCKET ENTRIES</span>
+	    </div>
+	</div>
+
+   	<table class="docket_entries">
+
+		<tbody>
+
+			<tr class="subhead">
+				<td nowrap><b>Entry Date</b>&nbsp;</td>
+				<td nowrap><b>Paper 	</b>&nbsp;</td>
+				<td nowrap width=100%><b>Entry Text</b></td>
+			</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/26/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Case entered.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/26/2019</td>
+					<td nowrap valign=top>#1</td>
+					<td valign=top>MOTION For Waiver Of Entry Fee with Affidavit In Support filed for Marquis Davis by Atty. Lia Monahon and Student Patrick Nowak. (Appearing Under Rule 3:03)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/26/2019</td>
+					<td nowrap valign=top>#2</td>
+					<td valign=top>(PARTIALLY IMPOUNDED see docket note below): Petition For Relief Pursuant to G. L. c. 211, &#167; 3 with Exhibits 1-3 filed for Marquis Davis by Atty. Lia Monahon, Student Patrick Nowak (Appearing Under Rule 3:03) and Student Loryn Helfmann. (Appearing Under Rule 3:03) (SEE PAPER # 24)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/26/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>DOCKET NOTE: EXHIBIT 1 to PAPER #2 is IMPOUNDED in accordance with G. L.c. 276, &#167; 100.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/26/2019</td>
+					<td nowrap valign=top>#3</td>
+					<td valign=top>Affidavit In Support Of Petition For Relief Pursuant to G. L. c. 211, &#167; 3 filed by Student Patrick Nowak. (Appearing Under Rule 3:03)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/26/2019</td>
+					<td nowrap valign=top>#4</td>
+					<td valign=top>Certificate of Service of paper #'s 1-3 filed by Student Patrick Nowak. (Appearing Under Rule 3:03)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/29/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Fee Waiver ALLOWED by Judge. (Kafker, J.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/13/2019</td>
+					<td nowrap valign=top>#5</td>
+					<td valign=top>Letter to Stephen Cronin, Assistant Clerk from ADA John Zanini saying ... "Please be advised that this office will not be filing a responsive pleading in this matter." ... filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/14/2019</td>
+					<td nowrap valign=top>#6</td>
+					<td valign=top>Transcript of proceedings from Boston Municipal Court, Docket No. 1801CR005910; 1901CR001353, dated April 24, 2019 Before the Honorable Sally A Kelly, filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/16/2019</td>
+					<td nowrap valign=top>#7</td>
+					<td valign=top>Petition for Relief Pursuant to G. L. c. 211, &#167; 3 with Affidavit filed by Atty. Lia C. Monahon. (SEE PAPER # 24)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/16/2019</td>
+					<td nowrap valign=top>#8</td>
+					<td valign=top>Supplement to Petition for Relief Pursuant to G. L. c. 211, &#167; 3 with Affidavit and Exhibit 1 filed by Atty. Lia C. Monahon.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/20/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Under advisement. (Lenk, J.).
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/23/2019</td>
+					<td nowrap valign=top>#9</td>
+					<td valign=top>INTERIM ORDER: ... "it is ORDERED that the parties shall submit a status report to this court within two weeks of the issuance of this order, explaining the current status of the cases." (Lenk, J.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/23/2019</td>
+					<td nowrap valign=top>#10</td>
+					<td valign=top>Notice to counsel/parties, regarding paper #9 filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/06/2019</td>
+					<td nowrap valign=top>#11</td>
+					<td valign=top>Status Report in Support of Petition for Relied Pursuant to G. L. c. 211, &#167; 3 filed by Atty. Lia C. Monahon.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/11/2019</td>
+					<td nowrap valign=top>#12</td>
+					<td valign=top>Letter to Stephen Cronin, Assistant Clerk from ADA John Zanini saying ... "Pursuant to the Court's Order for the filing of a status report: The case is scheduled for a second pretrial date on 6/17/19. At the first pretrial date, on May 24, 2019, defense counsel asked for a stay in the proceedings pending the appeal and the Commonwealth did not object. Judge Richard Sinnott denied defense counsel's request. At this point in the pretrial phase, on docket 1801CR5910, I have been informed by the trial court prosecutor that discovery is complete on that matter. On docket 1901CR1353, we are awaiting the drug certificate." ... filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/12/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Under advisement. (Lenk, J.).
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/13/2019</td>
+					<td nowrap valign=top>#13</td>
+					<td valign=top>SECOND INTERIM ORDER: ... "it is ORDERED that the trial proceedings in these two cases shall be stayed for a period of ninety days, or until further order of this court, so that the parties can continue to pursue an agreement on the question of pretrial diversion. During that time, the parties shall file monthly status reports with this court. At the end of the ninety-day period, the parties shall file a joint report indicating whether they were able to reach agreement, or whether the Commonwealth has determined to proceed with the prosecution. It is anticipated that the Commonwealth by that time will have been able to complete testing of the suspected drugs seized in the earlier case, and to have determined whether the substance seized is in fact illegal narcotics." (Lenk, J.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/14/2019</td>
+					<td nowrap valign=top>#14</td>
+					<td valign=top>Notice to counsel/parties, regarding paper #13 filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/21/2019</td>
+					<td nowrap valign=top>#15</td>
+					<td valign=top>Commonwealth's MOTION To Vacate Stay with Certificate of Service filed by ADA John Zanini. (7/24/19 "Per the within, Motion to Vacate Stay is denied, without hearing." (Lenk, J.))
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/24/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Motion Under Advisement. (Lenk, J.).
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/19/2019</td>
+					<td nowrap valign=top>#16</td>
+					<td valign=top>Petitioner's First Monthly Status Report and Opposition to Commonwealth's Motion to Vacate Stay filed by Atty. Lia Monahon.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/24/2019</td>
+					<td nowrap valign=top>#17</td>
+					<td valign=top>Notice to counsel/parties, regarding paper #15 filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/24/2019</td>
+					<td nowrap valign=top>#18</td>
+					<td valign=top>Commonwealth's Status Report with Certificate of Service filed by ADA Cailin Campbell.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/27/2019</td>
+					<td nowrap valign=top>#19</td>
+					<td valign=top>Commonwealth's Status Report with Certificate of Service filed by ADA Cailin Campbell.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/28/2019</td>
+					<td nowrap valign=top>#20</td>
+					<td valign=top>THIRD INTERIM ORDER: ... "it is ORDERED that the trial proceedings in these two cases shall be stayed for an additional period of ninety days, or until further order of this court, so that the parties can continue to pursue an agreement on the question of pretrial diversion and to allow completion of the suspect substance that was seized from the defendant. During that time, the parties shall file monthly status reports with this court. At the end of the ninety-day period, the parties shall file a joint report indicating whether they were able to reach agreement, or whether the Commonwealth has determined to proceed with the prosecution. It is anticipated that the Commonwealth by that time will have been able to complete testing of the suspected drugs seized in the earlier case, and to have determined whether the substance seized is in fact illegal narcotics." (Lenk, J.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/28/2019</td>
+					<td nowrap valign=top>#21</td>
+					<td valign=top>Notice to counsel/parties, regarding paper #20 filed.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/29/2019</td>
+					<td nowrap valign=top>#22</td>
+					<td valign=top>Petitioner's Second Monthly Status Report with Certificate of Service filed by Atty. Lia C. Monahon.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/15/2019</td>
+					<td nowrap valign=top>#23</td>
+					<td valign=top>Joint Status Report with Certificate of Service filed by ADA Cailin Campbell and Atty. Lia Monahon.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/15/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Under advisement. (Lenk, J.).
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/18/2019</td>
+					<td nowrap valign=top>#24</td>
+					<td valign=top>JUDGMENT: "This matter is before the court, LENK, J., on an emergency petition for extraordinary relief pursuant to G. L. c. 211, &#167; 3, and the parties' joint status report of October 15, 2019, in response to this court's interim orders. The parties report that the two Boston Municipal Court criminal matters at issue were dismissed on the Commonwealth's motion on September 13, 2019. The parties request that this court vacate the arraignments in those cases and also order that the petitioner's criminal record, to the extent created by the "unlawful arraignments," be expunged. See Commonwealth <u>vs</u>. Roderick Webber, country court Docket No. SJ-2019-0366 (Sept. 9, 2019); G. L. c. 276, &#167; 100K (<u>a</u>) and (<u>a</u>) (6); Mass. R. Crim. P. 16. See also <u>Police Com'r of Boston</u> v. <u>Municipal Court of Dorchester Dist.</u>, 374 Mass. 640, 665 n. 18 (1978). Cr. <u>Commonwealth</u> v. <u>Cheney</u>, 440 Mass. 568, 574 (2003). Upon consideration of the parties' joint motion, it is ORDERED that the petition for extraordinary relief under G. L. c. 211, &#167; 3, shall be, and hereby is, ALLOWED in part. The arraignments in Boston Municipal Court Nos. 1801CR05910 and 1907CR01353 shall be vacated and set aside. It is FURTHER ORDERED that the parties' joint motion to expunge the petitioner's criminal record created as a result of these two improper arraignments, shall be, and hereby is, ALLOWED. The clerk of the Boston Municipal Court, Central Division, shall expunge all records of the matters from its filed, and shall notify the Commissioner of Probation and the Criminal History Systems board to do so as well." (Lenk, J.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/18/2019</td>
+					<td nowrap valign=top>#25</td>
+					<td valign=top>Notice to counsel/parties, regarding paper #24 filed.
+											</td>
+
+				</tr>
+
+			
+		</tbody>
+
+	</table>
+
+</section>
+
+
+					</div>
+
+					
+
+					<div class="content-footer">
+											</div>
+
+					<div class="page-footer pb-3" style="min-height:2em;" >
+						<span class="publish-date">
+		As of 11/04/2019 8:00pm
+	</span>
+													<div class="page-top-link hidden-print">
+								<a href="#top" id="bottom">Top &#9652;</a>
+							</div>
+											</div>
+
+				</main>
+
+			</div> 
+		</div>     
+
+		
+        <div class="modal" tabindex="-1" role="dialog" id="help-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" >
+                    <div class="context-help">   <!-- style="text-align:center;"-->
+                        <div class="help-container">
+
+	<table>
+
+	
+
+	<tr>
+	<td>
+	<div class="help-content">
+		For more information about how to search for court cases, visit the
+<a target="_blank" href="https://www.ma-appellatecourts.org/help">court website</a>.
+	</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<div class="help-footer">
+		<div class="modal-footer">
+			<a target="_blank" href="https://www.ma-appellatecourts.org/help"> More Help <img id="modal-help-link" src="https://www.ma-appellatecourts.org/images/external.png"  alt="More Help"></a>
+			<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+		</div>
+
+	</div>
+	</td>
+	</tr>
+
+	</table>
+
+</div> 
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+
+		
+		<div class="overlay"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#dismiss, .overlay').on('click', function () {
+					// hide sidebar
+					$('#sidebar').removeClass('active');
+					$('#sidebar').css('overflow', 'hidden');
+					// hide overlay
+					$('.overlay').removeClass('active');
+				});
+
+				$('#sidebarCollapse').on('click', function () {
+					// open sidebar
+					$('#sidebar').css('overflow', 'auto');
+					$('#sidebar').addClass('active');
+					// fade in the overlay
+					$('.overlay').addClass('active');
+					$('.collapse.in').toggleClass('in');
+					$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+				});
+
+				// Highlight the last search in the menu
+				var menu_context = "docket";
+				var currentMenu = $("a[data-context=" + menu_context + "]");
+				currentMenu.addClass('menu-context');
+				// Detect ie11.
+				var mq=window.matchMedia("(-ms-high-contrast: none)");
+				if (mq.matches) {
+					// Don't focus the field if it's IE, focus kills the place holder
+					// console.log("is IE 11");
+					$('form').find('*').filter(':input:visible:first').blur();
+				}
+			});  // document.ready
+		</script>
+
+					<!-- Include Court Tracking Software -->
+			<script src="https://rum-static.pingdom.net/pa-5bed916cdb2aac0016000085.js" async></script>
+		
+		
+	</body>
+
+</html>
+

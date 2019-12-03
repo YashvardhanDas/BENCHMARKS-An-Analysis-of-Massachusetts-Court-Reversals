@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<!--
+// Copyright (C) 1988-2019 Relational Semantics, Inc. (RSI), Newton MA USA
+// This Module contains Proprietary Information of Relational Semantics, Inc.
+// and should be treated as Confidential. All rights reserved.
+// RSI, PARAGON, and FORECOURT are registered trademarks of Relational Semantics, Inc.
+-->
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="csrf-token" content="Wf0OMykvfHzPSHDuCQKEG9U4lbEvsSx07QSqi63x">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Mass Appellate Courts - Public Case Search</title>
+		<link rel="shortcut icon"    href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="icon"		     href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+
+		<link href="https://www.ma-appellatecourts.org/css/material.css" rel="stylesheet" type="text/css" />
+
+		            <link href="https://www.ma-appellatecourts.org/css/mysjc.css" rel="stylesheet" type="text/css" />
+		
+        <script src="https://www.ma-appellatecourts.org/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://www.ma-appellatecourts.org/js/popper.min.js"></script>
+        
+        <script src="https://www.ma-appellatecourts.org/js/app.js" ></script>
+        <script src="https://www.ma-appellatecourts.org/js/material.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			
+			<nav id="sidebar">
+
+				
+
+				<div class="sidebar-header text-center">
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><div class="pt-2 pb-2"><img src="https://www.ma-appellatecourts.org/images/seal_comm_gray.png" class="nav-seal" alt="Home"></div></a>
+				</div>
+
+				<ul class="sidenav">
+
+											<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/home.png" alt="Home">Home</li></a>
+					
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/case.png" alt="Case Search">Case Search</li></a>
+						<ul class="sidenav-search">
+							<a target="_top" href="https://www.ma-appellatecourts.org/party" data-context="party"><li><img src="https://www.ma-appellatecourts.org/images/party.png" alt="Party Search"><span>Involved Party</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/docket" data-context="docket"><li><img src="https://www.ma-appellatecourts.org/images/number.png" alt="Docket Number Search"><span>Docket Number</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/attorney" data-context="attorney"><li><img src="https://www.ma-appellatecourts.org/images/attorney.png" alt="Attorney Search"><span>Attorney Appearance</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/ljudge" data-context="ljudge"><li><img src="https://www.ma-appellatecourts.org/images/judge.png" alt="Lower Court Judge Search"><span>Lower Court Judge</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/lcourt" data-context="lcourt"><li><img src="https://www.ma-appellatecourts.org/images/court.png" alt="Lower Court Search"><span>Lower Court</span></li></a>
+						</ul>
+
+					<a target="_top" href="https://www.ma-appellatecourts.org/calendar" data-context="calendar"><li><img src="https://www.ma-appellatecourts.org/images/calendar.png" alt="Court Calendars">Court Calendars</li></a>
+
+						<ul class="sidenav-calendar">
+							<a href="https://www.ma-appellatecourts.org/calendar/fc" data-context="calendarfc"><li><span>SJC Full Court</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/sj" data-context="calendarsj"><li><span>SJC Single Justice</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/ac" data-context="calendarac"><li><span>Appeals Court Panel</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/aj" data-context="calendaraj"><li><span>Appeals Court Single Justice</span></li></a>
+						</ul>
+
+					<a target="_blank" href="https://www.ma-appellatecourts.org/help"><li><img src="https://www.ma-appellatecourts.org/images/menu-help.png" alt="More Help">More Help <img id="help-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="More Help"></li></a>
+				</ul>
+
+				<div class="sidebar-footer">
+					<a class="copyright" target="_blank" href="https://www.rsi.com/state-judicial-solutions/public-access/">&copy; 2019 RSI</a>
+				</div>
+
+			</nav>
+			
+
+			<div id="content">
+
+				<nav class="navbar navbar-full navbar-light text-center py-0" id="header">
+					<div class="my-auto">
+						<button type="button" id="sidebarCollapse" class="btn btn-info">
+							<span>
+								<img src="https://www.ma-appellatecourts.org/images/top-menu.png" title="Menu"  alt="Menu" >
+							</span>
+						</button>
+					</div>
+					<div class="text-center my-auto page-title">
+						<span class="page-title">
+							<a href="https://www.ma-appellatecourts.org" class="page-title">
+																		<h4 class="page-header">
+											<span class="page-title-1 text-nowrap">Massachusetts Appellate Courts</span><br>
+											<span class="page-title-2 text-nowrap">Public Case Search</span>
+										</h4>
+																</a>
+						</span>
+					</div>
+					<div class="text-right my-auto">
+						
+						<a target="_blank" data-toggle="modal" href="#help-modal">
+							<button type="button" id="info_button" class="btn">
+								<span>
+									<img src="https://www.ma-appellatecourts.org/images/top-help.png" title="More Help"  alt="More Help" >
+								</span>
+							</button>
+						</a>
+					</div>
+				</nav>
+
+				<main id='main-content' class="col text-center">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col pl-0">
+								
+							</div>
+							<div class="col-7">
+																	<div class="content-header">
+										
+    <div class="docket-header">
+	
+    	<div class="docket-header-1">
+    	    		    		    			SUPREME JUDICIAL COURT<br>for the Commonwealth
+    			    	</div>
+    	<div class="docket-header-2">Case Docket</div>
+
+    	<hr class="short">
+
+    	<div class="docket-header-1">In the Matter of: Gregory M. Olchowski</div>
+    	    		<div class="docket-header-2">THIS CASE CONTAINS IMPOUNDED MATERIAL OR PID</div>
+    	    	<div class="docket-header-2">SJC-12730</div>
+
+    	<hr class="short">
+
+    </div>
+									</div>
+															</div>
+							<div class="col pr-0">
+								 									<div class="page-bottom-link hidden-print">
+										<a href="#bottom"><span class="text-nowrap">Bottom &#9662;</span></a>
+									</div>
+															</div>
+						</div>
+					</div>
+
+					
+					
+					
+					
+					
+					
+
+					<div class="content-body">
+						
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			<span class="align-middle">CASE HEADER</span>
+		</div>
+
+	</div>
+
+	<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Status
+		<span class="flex_rt ds-normal">Blue brief(s) filed, awaiting red</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Status Date
+		<span class="flex_rt ds-normal">08/05/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Nature
+		<span class="flex_rt ds-normal">211/3 reservat&#039;n &amp; report</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Entry Date
+		<span class="flex_rt ds-normal">04/26/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Appellant
+		<span class="flex_rt ds-normal">Other</span></span>
+	</div>
+
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Type
+		<span class="flex_rt ds-normal">Civil</span></span>
+	</div>
+
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Status
+		<span class="flex_rt ds-normal">Awaiting red brief</span></span>
+	</div>
+
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Due
+		<span class="flex_rt ds-normal">12/20/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12">
+		<span class="flex_span_wide ds-bold">Quorum
+		<span class="flex_rt_wide ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+   	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Argued Date
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+   	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Decision Date
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+  	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">AC/SJ Number
+		<span class="flex_rt ds-normal">
+		<a class="docket-number-link" target="_top" href="https://www.ma-appellatecourts.org/docket/BD-2012-090">BD-2012-090</a>
+		</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Citation
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+ 	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">DAR/FAR Number
+		<span class="flex_rt ds-normal">
+				</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Number
+		<span class="flex_rt ds-normal">BD-2012-090</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+  	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court
+		<span class="flex_rt ds-normal">SJC for Suffolk County</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Judge
+		<span class="flex_rt ds-normal">Ralph D. Gants, C.J.</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+  	<div class="col-12">
+		<span class="flex_span_wide ds-bold">Route to SJC
+		<span class="flex_rt_wide ds-normal">Direct Entry: Single Justice Reservation &amp; Report</span></span>
+	</div>
+</div>
+
+</section>
+
+
+	
+	
+	<section class="docket">
+
+    <div class="row mx-0" id="one_col_title">
+         <div class="col-12 parties_section_title"><span class="flex_span align-middle"><b>PARTY &nbsp;/&nbsp; ATTORNEY</b></span></div>
+    </div>
+    <div class="row mx-0" id="two_col_title">   
+         <div class="col-5 col-sm-6 parties_section_title1"><span class="flex_span align-middle"><b>INVOLVED PARTY</b></span></div>
+         <div class="col-7 col-sm-6 parties_section_title2 pl-4"><span class="flex_span align-middle"><b>ATTORNEY APPEARANCE</b></span></div>
+    </div>
+
+
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Office of Bar Counsel
+                        </b>
+                        <br>
+                        Petitioner/Appellant
+                                        <br>
+
+                    
+                                                                                                        Blue brief filed
+                                <br>
+                                                                                                                2 Exts, 52 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/556388">Robert M. Daniszewski,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/508540">Constance Vecchione,
+							Bar Counsel
+                            </a>
+						
+                        							- Inactive
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/544384">Nancy E. Kaufman,
+							Ass&#039;t Bar Counsel
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/445040">Dorothy Anderson,
+							Acting Bar Counsel
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Gregory M. Olchowski
+                        </b>
+                        <br>
+                        Respondent/Appellant
+                                        <br>
+
+                    
+                                                                                                        Blue brief &amp; appendix filed
+                                <br>
+                                                                                                                2 Exts, 52 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/451890">Michael J. Serduck,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Massachusetts IOLTA Committee
+                        </b>
+                        <br>
+                        Intervener/Appellant
+                                        <br>
+
+                    
+                                                                                                        Blue brief &amp; appendix filed
+                                <br>
+                                                                                                                3 Exts, 57 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/556482">Maureen Mulligan,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/693787">Kristyn Kelley,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Office of the State Treasurer and Receiver General
+                        </b>
+                        <br>
+                        Intervener/Appellee
+                                        <br>
+
+                    
+                                                                                                        Awaiting red brief
+                                <br>
+                                                                                                                Due 12/20/2019
+                                <br>
+                                                                                                                2 Exts, 51 Days
+                                <br>
+                                                                                                                1 Enl, 56 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/659220">Crystal L. Matthews,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/657852">Sarah G. Kim,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/650913">Timothy J. Casey,
+							A.A.G.
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Board of Bar Overseers
+                        </b>
+                        <br>
+                        Other interested party
+                                        <br>
+
+                    
+                                                                                                                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/566006">Joseph S. Berman,
+							Board Counsel
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/678801">Michelle Yu,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/534360">Jeffrey D. Woolf,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Massachusetts Client&#039;s Security Board
+                        </b>
+                        <br>
+                        Invited to file amicus brief
+                                        <br>
+
+                    
+                                                                                                                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/548907">Karen Doran O&#039;Toole,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+</section>
+
+
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			DOCUMENTS
+		</div>
+	</div>
+
+    <div class="documents_list pl-2">
+        <ul>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12730/SJC-12730_01_Appellant_MA_IOLTA_Committee_Brief.pdf">Appellant MA IOLTA Committee Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12730/SJC-12730_01_Appellant_MA_IOLTA_Committee_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+        </ul>
+    </div>
+
+</section>
+
+
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+	    <div class="docket_entries_title">
+			<span class="align-middle">DOCKET ENTRIES</span>
+	    </div>
+	</div>
+
+   	<table class="docket_entries">
+
+		<tbody>
+
+			<tr class="subhead">
+				<td nowrap><b>Entry Date</b>&nbsp;</td>
+				<td nowrap><b>Paper 	</b>&nbsp;</td>
+				<td nowrap width=100%><b>Entry Text</b></td>
+			</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/26/2019</td>
+					<td nowrap valign=top>#1</td>
+					<td valign=top>Entered. Notice to counsel.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/26/2019</td>
+					<td nowrap valign=top>#2</td>
+					<td valign=top>Letter of Entry, filed for the IOLTA Committee by Maureen Mulligan, Esquire.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/29/2019</td>
+					<td nowrap valign=top>#3</td>
+					<td valign=top>Letter of Entry, filed for Gregory M. Olchowski by Michael J. Serduck, Esquire.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/30/2019</td>
+					<td nowrap valign=top>#4</td>
+					<td valign=top>ORDER: The parties shall file a joint proposed briefing schedule by May 10, 2019. By the Court.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/30/2019</td>
+					<td nowrap valign=top>#5</td>
+					<td valign=top>ANNOUNCEMENT: The Justices are soliciting amicus briefs. 1. Do unidentified client funds on deposit in an IOLTA account fall within the statutory definition of "abandoned property" under G. L. c. 200A? 2. Does Mass. R. Prof. C. 1.15, or any other rule of this court, govern the disposition of such funds? 3. Are any constitutional issues raised by the parties' proposed disposition(s) of the funds?
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/07/2019</td>
+					<td nowrap valign=top>#6</td>
+					<td valign=top>Joint Proposed Briefing Schedule filed for Massachusetts IOLTA Committee by Attorney Maureen Mulligan.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/07/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>ORDER: The joint proposed briefing schedule is ALLOWED. The appellant's brief is due on or before July 1, 2019; the appellee's brief is due on or before July 31, 2019; the reply brief, if any, is due on or before August 14, 2019; the sur-reply, subject to a motion for leave to file a sur-reply, may be filed on or before August 28, 2019. This matter may be scheduled for the September 2019 sitting of the court. By the Court
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/20/2019</td>
+					<td nowrap valign=top>#7</td>
+					<td valign=top>Appearance filed for Office of the State Treasurer and Receiver General by Timothy Casey, A.A.G..
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/24/2019</td>
+					<td nowrap valign=top>#8</td>
+					<td valign=top>Motion to extend to date for filing of appellant's brief filed for Massachusetts IOLTA Committee by Attorney Maureen Mulligan. (ALLOWED to August 1, 2019. Further enlargements should not be anticipated.)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/01/2019</td>
+					<td nowrap valign=top>#9</td>
+					<td valign=top>Bar Counsel's Partial Joinder in Brief of Appellants the Massachusetts IOLTA Committee and Gregory Olchowski filed for Office of Bar Counsel by Attorney Robert Daniszewski.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/02/2019</td>
+					<td nowrap valign=top>#10</td>
+					<td valign=top>Motion to file brief late filed for Massachusetts IOLTA Committee by Attorney Maureen Mulligan. (ALLOWED to August 6, 2019).
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/05/2019</td>
+					<td nowrap valign=top>#11</td>
+					<td valign=top>Appellant brief filed for Gregory M. Olchowski and Massachusetts IOLTA Committee by Attorney Maureen Mulligan.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/05/2019</td>
+					<td nowrap valign=top>#12</td>
+					<td valign=top>Appendix filed for Gregory M. Olchowski and Massachusetts IOLTA Committee by Attorney Maureen Mulligan.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/05/2019</td>
+					<td nowrap valign=top>#13</td>
+					<td valign=top>Motion to file brief late filed for Gregory M. Olchowski and Massachusetts IOLTA Committee by Attorney Maureen Mulligan. (ALLOWED)
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/05/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>The clerk's office has received the appellant's brief and record appendix through e-fileMA. The brief has been accepted for filing and entered on the docket. The<b> </b>appellant<b> </b>shall file with the clerk 4 copies of the brief and 3 copies of the record appendix within 5 days. The clerk's office may require additional copies if necessary.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/07/2019</td>
+					<td nowrap valign=top>#14</td>
+					<td valign=top>Additional 4 copies of appellant's brief and 3 copies of appellant's record appendix, filed for Gregory M. Olchowski and the Massachusetts IOLTA Committee.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/07/2019</td>
+					<td nowrap valign=top>#15</td>
+					<td valign=top>Joint Motion to Modify Remaining Briefing Schedule filed for Office of the State Treasurer and Receiver General by Timothy Casey, A.A.G. and the Massachusetts IOLTA Committee by Attorney Maureen Mulligan. (ALLOWED. The appellee's brief is due on or before October 25, 2019. The reply brief, if any, is due on or before November 18, 2019).
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/08/2019</td>
+					<td nowrap valign=top>#16</td>
+					<td valign=top>Appearance filed for Massachusetts IOLTA Committee by Attorney Kristyn Kelley.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/18/2019</td>
+					<td nowrap valign=top>#17</td>
+					<td valign=top>NOTICE of December argument sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/25/2019</td>
+					<td nowrap valign=top>#18</td>
+					<td valign=top>Motion to extend to date for filing of appellee's brief filed for Office of the State Treasurer and Receiver General by Timothy Casey, A.A.G..
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/25/2019</td>
+					<td nowrap valign=top>#19</td>
+					<td valign=top>ORDER: The assented-to motion to modify the remaining briefing schedule is ALLOWED, conditioned upon an oral argument date scheduled for the February 2020 sitting. The appellee's brief would be due by December 20, 2019; the reply brief, if any, would be due by January 24, 2020. The court will sit on February 10, 11, and 13, 2020. Further requests for enlargements of time for briefing or for postponement of argument will not be allowed. By the Court.
+											</td>
+
+				</tr>
+
+			
+		</tbody>
+
+	</table>
+
+</section>
+
+
+					</div>
+
+					
+
+					<div class="content-footer">
+											</div>
+
+					<div class="page-footer pb-3" style="min-height:2em;" >
+						<span class="publish-date">
+		As of 11/04/2019 8:00pm
+	</span>
+													<div class="page-top-link hidden-print">
+								<a href="#top" id="bottom">Top &#9652;</a>
+							</div>
+											</div>
+
+				</main>
+
+			</div> 
+		</div>     
+
+		
+        <div class="modal" tabindex="-1" role="dialog" id="help-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" >
+                    <div class="context-help">   <!-- style="text-align:center;"-->
+                        <div class="help-container">
+
+	<table>
+
+	
+
+	<tr>
+	<td>
+	<div class="help-content">
+		For more information about how to search for court cases, visit the
+<a target="_blank" href="https://www.ma-appellatecourts.org/help">court website</a>.
+	</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<div class="help-footer">
+		<div class="modal-footer">
+			<a target="_blank" href="https://www.ma-appellatecourts.org/help"> More Help <img id="modal-help-link" src="https://www.ma-appellatecourts.org/images/external.png"  alt="More Help"></a>
+			<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+		</div>
+
+	</div>
+	</td>
+	</tr>
+
+	</table>
+
+</div> 
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+
+		
+		<div class="overlay"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#dismiss, .overlay').on('click', function () {
+					// hide sidebar
+					$('#sidebar').removeClass('active');
+					$('#sidebar').css('overflow', 'hidden');
+					// hide overlay
+					$('.overlay').removeClass('active');
+				});
+
+				$('#sidebarCollapse').on('click', function () {
+					// open sidebar
+					$('#sidebar').css('overflow', 'auto');
+					$('#sidebar').addClass('active');
+					// fade in the overlay
+					$('.overlay').addClass('active');
+					$('.collapse.in').toggleClass('in');
+					$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+				});
+
+				// Highlight the last search in the menu
+				var menu_context = "docket";
+				var currentMenu = $("a[data-context=" + menu_context + "]");
+				currentMenu.addClass('menu-context');
+				// Detect ie11.
+				var mq=window.matchMedia("(-ms-high-contrast: none)");
+				if (mq.matches) {
+					// Don't focus the field if it's IE, focus kills the place holder
+					// console.log("is IE 11");
+					$('form').find('*').filter(':input:visible:first').blur();
+				}
+			});  // document.ready
+		</script>
+
+					<!-- Include Court Tracking Software -->
+			<script src="https://rum-static.pingdom.net/pa-5bed916cdb2aac0016000085.js" async></script>
+		
+		
+	</body>
+
+</html>
+

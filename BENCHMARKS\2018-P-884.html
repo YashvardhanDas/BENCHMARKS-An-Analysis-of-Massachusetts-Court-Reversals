@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<!--
+// Copyright (C) 1988-2019 Relational Semantics, Inc. (RSI), Newton MA USA
+// This Module contains Proprietary Information of Relational Semantics, Inc.
+// and should be treated as Confidential. All rights reserved.
+// RSI, PARAGON, and FORECOURT are registered trademarks of Relational Semantics, Inc.
+-->
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="csrf-token" content="5hVSngqALHdeLNohyxi18N6vlVEOjF42rLR13qVF">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Mass Appellate Courts - Public Case Search</title>
+		<link rel="shortcut icon"    href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="icon"		     href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+
+		<link href="https://www.ma-appellatecourts.org/css/material.css" rel="stylesheet" type="text/css" />
+
+		            <link href="https://www.ma-appellatecourts.org/css/mysjc.css" rel="stylesheet" type="text/css" />
+		
+        <script src="https://www.ma-appellatecourts.org/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://www.ma-appellatecourts.org/js/popper.min.js"></script>
+        
+        <script src="https://www.ma-appellatecourts.org/js/app.js" ></script>
+        <script src="https://www.ma-appellatecourts.org/js/material.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			
+			<nav id="sidebar">
+
+				
+
+				<div class="sidebar-header text-center">
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><div class="pt-2 pb-2"><img src="https://www.ma-appellatecourts.org/images/seal_comm_gray.png" class="nav-seal" alt="Home"></div></a>
+				</div>
+
+				<ul class="sidenav">
+
+											<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/home.png" alt="Home">Home</li></a>
+					
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/case.png" alt="Case Search">Case Search</li></a>
+						<ul class="sidenav-search">
+							<a target="_top" href="https://www.ma-appellatecourts.org/party" data-context="party"><li><img src="https://www.ma-appellatecourts.org/images/party.png" alt="Party Search"><span>Involved Party</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/docket" data-context="docket"><li><img src="https://www.ma-appellatecourts.org/images/number.png" alt="Docket Number Search"><span>Docket Number</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/attorney" data-context="attorney"><li><img src="https://www.ma-appellatecourts.org/images/attorney.png" alt="Attorney Search"><span>Attorney Appearance</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/ljudge" data-context="ljudge"><li><img src="https://www.ma-appellatecourts.org/images/judge.png" alt="Lower Court Judge Search"><span>Lower Court Judge</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/lcourt" data-context="lcourt"><li><img src="https://www.ma-appellatecourts.org/images/court.png" alt="Lower Court Search"><span>Lower Court</span></li></a>
+						</ul>
+
+					<a target="_top" href="https://www.ma-appellatecourts.org/calendar" data-context="calendar"><li><img src="https://www.ma-appellatecourts.org/images/calendar.png" alt="Court Calendars">Court Calendars</li></a>
+
+						<ul class="sidenav-calendar">
+							<a href="https://www.ma-appellatecourts.org/calendar/fc" data-context="calendarfc"><li><span>SJC Full Court</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/sj" data-context="calendarsj"><li><span>SJC Single Justice</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/ac" data-context="calendarac"><li><span>Appeals Court Panel</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/aj" data-context="calendaraj"><li><span>Appeals Court Single Justice</span></li></a>
+						</ul>
+
+					<a target="_blank" href="https://www.ma-appellatecourts.org/help"><li><img src="https://www.ma-appellatecourts.org/images/menu-help.png" alt="More Help">More Help <img id="help-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="More Help"></li></a>
+				</ul>
+
+				<div class="sidebar-footer">
+					<a class="copyright" target="_blank" href="https://www.rsi.com/state-judicial-solutions/public-access/">&copy; 2019 RSI</a>
+				</div>
+
+			</nav>
+			
+
+			<div id="content">
+
+				<nav class="navbar navbar-full navbar-light text-center py-0" id="header">
+					<div class="my-auto">
+						<button type="button" id="sidebarCollapse" class="btn btn-info">
+							<span>
+								<img src="https://www.ma-appellatecourts.org/images/top-menu.png" title="Menu"  alt="Menu" >
+							</span>
+						</button>
+					</div>
+					<div class="text-center my-auto page-title">
+						<span class="page-title">
+							<a href="https://www.ma-appellatecourts.org" class="page-title">
+																		<h4 class="page-header">
+											<span class="page-title-1 text-nowrap">Massachusetts Appellate Courts</span><br>
+											<span class="page-title-2 text-nowrap">Public Case Search</span>
+										</h4>
+																</a>
+						</span>
+					</div>
+					<div class="text-right my-auto">
+						
+						<a target="_blank" data-toggle="modal" href="#help-modal">
+							<button type="button" id="info_button" class="btn">
+								<span>
+									<img src="https://www.ma-appellatecourts.org/images/top-help.png" title="More Help"  alt="More Help" >
+								</span>
+							</button>
+						</a>
+					</div>
+				</nav>
+
+				<main id='main-content' class="col text-center">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col pl-0">
+								
+							</div>
+							<div class="col-7">
+																	<div class="content-header">
+										
+    <div class="docket-header">
+	
+    	<div class="docket-header-1">
+    	    			APPEALS COURT<br>Full Court Panel Case
+    			    	</div>
+    	<div class="docket-header-2">Case Docket</div>
+
+    	<hr class="short">
+
+    	<div class="docket-header-1">JOHN MCPHERSON &amp; another vs. TOWN OF PLYMOUTH PLANNING BOARD &amp; others</div>
+    	    	<div class="docket-header-2">2018-P-0884</div>
+
+    	<hr class="short">
+
+    </div>
+									</div>
+															</div>
+							<div class="col pr-0">
+								 									<div class="page-bottom-link hidden-print">
+										<a href="#bottom"><span class="text-nowrap">Bottom &#9662;</span></a>
+									</div>
+															</div>
+						</div>
+					</div>
+
+					
+					
+					
+					
+					
+					
+
+					<div class="content-body">
+						
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			<span class="align-middle">CASE HEADER</span>
+		</div>
+
+	</div>
+
+	<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Status
+		<span class="flex_rt ds-normal">Closed: Rescript issued</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Status Date
+		<span class="flex_rt ds-normal">05/17/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Nature
+		<span class="flex_rt ds-normal">Land Use - Zoning, Wetlands ...</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Entry Date
+		<span class="flex_rt ds-normal">06/15/2018</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Sub-Nature
+		<span class="flex_rt ds-normal">Special permit</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">SJ Number
+		<span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Appellant
+		<span class="flex_rt ds-normal">Plaintiff</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Type
+		<span class="flex_rt ds-normal">Civil</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Status
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Due
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Panel
+		<span class="flex_rt ds-normal">Vuono, Massing, Ditkoff, JJ.</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Argued/Submitted
+		<span class="flex_rt ds-normal">03/11/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Citation
+		<span class="flex_rt ds-normal">95 Mass. App. Ct. 1108</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Decision Date
+		<span class="flex_rt ds-normal">04/19/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court
+		<span class="flex_rt ds-normal">Plymouth Superior (Brockton)</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Number
+		<span class="flex_rt ds-normal"></span></span> 
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Judge
+		<span class="flex_rt ds-normal">Robert C. Cosgrove, J.</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Entry Date
+		<span class="flex_rt ds-normal">09/06/2013</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">FAR Number
+	    <span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">SJC Number
+		<span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+</div>
+
+</section>
+
+
+	
+	
+	<section class="docket">
+
+    <div class="row mx-0" id="one_col_title">
+         <div class="col-12 parties_section_title"><span class="flex_span align-middle"><b>PARTY &nbsp;/&nbsp; ATTORNEY</b></span></div>
+    </div>
+    <div class="row mx-0" id="two_col_title">   
+         <div class="col-5 col-sm-6 parties_section_title1"><span class="flex_span align-middle"><b>INVOLVED PARTY</b></span></div>
+         <div class="col-7 col-sm-6 parties_section_title2 pl-4"><span class="flex_span align-middle"><b>ATTORNEY APPEARANCE</b></span></div>
+    </div>
+
+
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        John McPherson
+                        </b>
+                        <br>
+                        Plaintiff/Appellant
+                                        <br>
+
+                    
+                                                                                                        Blue brief &amp; appendix filed
+                                <br>
+                                                                                                                1 Enl, 62 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/561397">Robert W. Galvin,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/698582">Anthony Riley,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Brenda McPherson
+                        </b>
+                        <br>
+                        Plaintiff/Appellant
+                                        <br>
+
+                    
+                                                                                                        Blue brief &amp; appendix filed
+                                <br>
+                                                                                                                1 Enl, 62 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/561397">Robert W. Galvin,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/698582">Anthony Riley,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Town of Plymouth Planning Board
+                        </b>
+                        <br>
+                        Defendant/Appellee
+                                        <br>
+
+                    
+                                                                                                        No brief expected
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/438030">Barbara J. Saint Andre,
+							Esquire
+                            </a>
+						
+                        							- Withdrawn
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/653873">Carolyn M. Murray,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Edward P. Kennedy
+                        </b>
+                        <br>
+                        Defendant/Appellee
+                                        <br>
+
+                    
+                                                                                                        No brief expected
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/512120">Richard L. Wainwright,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Mary A. Kennedy
+                        </b>
+                        <br>
+                        Defendant/Appellee
+                                        <br>
+
+                    
+                                                                                                        No brief expected
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/512120">Richard L. Wainwright,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Milton Morris
+                        </b>
+                        <br>
+                        Defendant/Appellee
+                                        <br>
+
+                    
+                                                                                                        No brief expected
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/512120">Richard L. Wainwright,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+</section>
+
+
+	
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+	    <div class="docket_entries_title">
+			<span class="align-middle">DOCKET ENTRIES</span>
+	    </div>
+	</div>
+
+   	<table class="docket_entries">
+
+		<tbody>
+
+			<tr class="subhead">
+				<td nowrap><b>Entry Date</b>&nbsp;</td>
+				<td nowrap><b>Paper 	</b>&nbsp;</td>
+				<td nowrap width=100%><b>Entry Text</b></td>
+			</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/15/2018</td>
+					<td nowrap valign=top>#1</td>
+					<td valign=top>Lower Court Assembly of the Record Package
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/15/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Notice of entry sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/18/2018</td>
+					<td nowrap valign=top>#2</td>
+					<td valign=top>Motion to waive additional entry fees, filed by Brenda McPherson.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/19/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#2: Allowed. Appellants are to file a unitary brief and appendix. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/28/2018</td>
+					<td nowrap valign=top>#3</td>
+					<td valign=top>Notice of withdrawal as counsel for Town of Plymouth Planning Board, filed by Barbara J. Saint Andre, Esquire.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/28/2018</td>
+					<td nowrap valign=top>#4</td>
+					<td valign=top>Notice of appearance of Carolyn M. Murray for Town of Plymouth Planning Board.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/02/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top><b>Returned Mail:</b> Notice of entry of appeal sent to Richard L. Wainwright returned as unable to forward. Notice resent to correct address.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/02/2018</td>
+					<td nowrap valign=top>#5</td>
+					<td valign=top>Docketing Statement received from John McPherson, Brenda McPherson.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/02/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#5: The within document is to be filed forthwith by emailing a PDF including any attachments and certificate of service to <u>emotions@appct.state.ma.us</u> or online at efilema.com *Notice sent
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/03/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>PDF of paper #5 received.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/19/2018</td>
+					<td nowrap valign=top>#6</td>
+					<td valign=top>Motion of Appellant to extend date for filing brief and appendix filed for John McPherson and Brenda McPherson by Attorney Robert Galvin.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/23/2018</td>
+					<td nowrap valign=top>#7</td>
+					<td valign=top>Copy of Paper #6 received from John McPherson, Brenda McPherson.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/23/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#6: Allowed to 09/25/2018. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/25/2018</td>
+					<td nowrap valign=top>#8</td>
+					<td valign=top>Notice of appearance filed for John McPherson and Brenda McPherson by Attorney Anthony Riley.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/25/2018</td>
+					<td nowrap valign=top>#9</td>
+					<td valign=top>Appellant brief filed for John McPherson, Brenda McPherson by Attorney Anthony Riley.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/25/2018</td>
+					<td nowrap valign=top>#10</td>
+					<td valign=top>Appendix filed for John McPherson, Brenda McPherson by Attorney Anthony Riley.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/26/2018</td>
+					<td nowrap valign=top>#11</td>
+					<td valign=top>Notice to Edward P. Kennedy, Mary A. Kennedy, Milton Morris that brief is non-conforming for the reasons indicated on the checklist: 16 - missing certificate of compliance; 19 = Motion required for the supplemental appendix; 30 - brief is required to be electronically filed. The party has until 11/02/2018 to file, and re-serve upon all parties, a conforming brief and appendix or a motion to accept nonconforming brief and appendix.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/02/2018</td>
+					<td nowrap valign=top>#12</td>
+					<td valign=top>MOTION to file supplemental appendix, filed for Milton Morris, Edward P. Kennedy, Mary A. Kennedy by Attorney Richard L. Wainwright.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/05/2018</td>
+					<td nowrap valign=top>#13</td>
+					<td valign=top>OPPOSITION to paper #12 filed for John McPherson and Brenda McPherson by Attorney Anthony Riley.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/06/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#12: The motion is denied without prejudice to renewal on or before 11/13/18. To date, the court has not received an efiled brief or proposed supplemental appendix on behalf of the appellee. Any renewed motion to file a supplemental appendix is to accompany such efiled documents and is to address the points raised in opposition filed on 11/5/18. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/19/2018</td>
+					<td nowrap valign=top>#14</td>
+					<td valign=top>Motion for argument filed for John McPherson and Brenda McPherson by Attorney Anthony Riley.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/20/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>ORDER: Town of Plymouth Planning Board has neither filed a brief nor sought an enlargement of time to file a brief. Accordingly, on or before 12/04/2018, Town of Plymouth Planning Board is to submit a motion to enlarge the time to file the appellee's brief to a date certain. If the Town of Plymouth Planning Board does not intend to file a brief, Town of Plymouth Planning Board should notify the Court, in writing, by that date. If no timely submission is received from Town of Plymouth Planning Board this appeal shall be placed in ready status to be considered by a panel. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/20/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#14: See order issued 11/20/18. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/20/2018</td>
+					<td nowrap valign=top>#15</td>
+					<td valign=top>Response to November 15, 2018 rejoinder, filed for John McPherson and Brenda McPherson by Attorney Anthony Riley.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/19/2018</td>
+					<td nowrap valign=top>#16</td>
+					<td valign=top>Rejoinder, filed for Milton Morris by Attorney Richard L. Wainwright.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/21/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>ORDER: Edward P. Kennedy, Mary A. Kennedy, Milton Morris has neither filed a brief nor sought an enlargement of time to file a brief. Accordingly, on or before 12/05/2018, Edward P. Kennedy, Mary A. Kennedy, Milton Morris is to submit a motion to enlarge the time to file the appellee's brief to a date certain. If the Edward P. Kennedy, Mary A. Kennedy, Milton Morris does not intend to file a brief, Edward P. Kennedy, Mary A. Kennedy, Milton Morris should notify the Court, in writing, by that date. If no timely submission is received from Edward P. Kennedy, Mary A. Kennedy, Milton Morris this appeal shall be placed in ready status to be considered by a panel. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/21/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#16: See ORDER issued 11/21/18. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/28/2018</td>
+					<td nowrap valign=top>#17</td>
+					<td valign=top>Response to order re: does not intend to file brief, filed for Town of Plymouth Planning Board by Attorney Carolyn M. Murray.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/29/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#17: Noted. *Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>12/24/2018</td>
+					<td nowrap valign=top>#18</td>
+					<td valign=top>MOTION to Dismiss, filed for Milton Morris by Attorney Richard L. Wainwright.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>12/28/2018</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#18: Denied without prejudice to renewal in the appellees' brief, which may be filed in compliance with the applicable rules of appellate procedure on or before 01/18/2019. The case shall remain in ready status. (Henry, J.). *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>01/24/2019</td>
+					<td nowrap valign=top>#19</td>
+					<td valign=top>Notice from the Appeals Court to Milton Morris, Mary A. Kennedy, Edward P. Kennedy re: This notice is to inform you that your nonconforming brief and/or appendix received by this Court on 10/26/2018, but which was not accepted for filing, will be discarded within 10 days from today unless you retrieve it prior to that date.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/11/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Under consideration by Panel. (Vuono, J., Massing, J., Ditkoff, J).
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/19/2019</td>
+					<td nowrap valign=top>#20</td>
+					<td valign=top>Decision: Rule 1:28 Judgment affirmed. (Vuono, Massing, Ditkoff, JJ.). *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/22/2019</td>
+					<td nowrap valign=top>#21</td>
+					<td valign=top>Motion for Reconsideration or modification of decision filed for John McPherson and Brenda McPherson by Attorney Anthony Riley.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/22/2019</td>
+					<td nowrap valign=top>#22</td>
+					<td valign=top>Transcript filed for John McPherson and Brenda McPherson by Attorney Anthony Riley.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/24/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#21: The motion is allowed to the extent the transcript is accepted for filing. Having reviewed the transcript, we discern adequate support, especially in the testimony of Milton Morris and Sean Paul Hardy, for the judge's findings concerning the minimal impact on town services from the proposed development and that the purposes of the town's village centers plan are incorporated into the bylaws. Accordingly, the remaining requests for relief are denied. (Vuono, Massing, Ditkoff, JJ.) *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/17/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RESCRIPT to Trial Court.
+											</td>
+
+				</tr>
+
+			
+		</tbody>
+
+	</table>
+
+</section>
+
+
+					</div>
+
+					
+
+					<div class="content-footer">
+											</div>
+
+					<div class="page-footer pb-3" style="min-height:2em;" >
+						<span class="publish-date">
+		As of 11/04/2019 8:00pm
+	</span>
+													<div class="page-top-link hidden-print">
+								<a href="#top" id="bottom">Top &#9652;</a>
+							</div>
+											</div>
+
+				</main>
+
+			</div> 
+		</div>     
+
+		
+        <div class="modal" tabindex="-1" role="dialog" id="help-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" >
+                    <div class="context-help">   <!-- style="text-align:center;"-->
+                        <div class="help-container">
+
+	<table>
+
+	
+
+	<tr>
+	<td>
+	<div class="help-content">
+		For more information about how to search for court cases, visit the
+<a target="_blank" href="https://www.ma-appellatecourts.org/help">court website</a>.
+	</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<div class="help-footer">
+		<div class="modal-footer">
+			<a target="_blank" href="https://www.ma-appellatecourts.org/help"> More Help <img id="modal-help-link" src="https://www.ma-appellatecourts.org/images/external.png"  alt="More Help"></a>
+			<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+		</div>
+
+	</div>
+	</td>
+	</tr>
+
+	</table>
+
+</div> 
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+
+		
+		<div class="overlay"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#dismiss, .overlay').on('click', function () {
+					// hide sidebar
+					$('#sidebar').removeClass('active');
+					$('#sidebar').css('overflow', 'hidden');
+					// hide overlay
+					$('.overlay').removeClass('active');
+				});
+
+				$('#sidebarCollapse').on('click', function () {
+					// open sidebar
+					$('#sidebar').css('overflow', 'auto');
+					$('#sidebar').addClass('active');
+					// fade in the overlay
+					$('.overlay').addClass('active');
+					$('.collapse.in').toggleClass('in');
+					$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+				});
+
+				// Highlight the last search in the menu
+				var menu_context = "docket";
+				var currentMenu = $("a[data-context=" + menu_context + "]");
+				currentMenu.addClass('menu-context');
+				// Detect ie11.
+				var mq=window.matchMedia("(-ms-high-contrast: none)");
+				if (mq.matches) {
+					// Don't focus the field if it's IE, focus kills the place holder
+					// console.log("is IE 11");
+					$('form').find('*').filter(':input:visible:first').blur();
+				}
+			});  // document.ready
+		</script>
+
+					<!-- Include Court Tracking Software -->
+			<script src="https://rum-static.pingdom.net/pa-5bed916cdb2aac0016000085.js" async></script>
+		
+		
+	</body>
+
+</html>
+

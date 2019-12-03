@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<!--
+// Copyright (C) 1988-2019 Relational Semantics, Inc. (RSI), Newton MA USA
+// This Module contains Proprietary Information of Relational Semantics, Inc.
+// and should be treated as Confidential. All rights reserved.
+// RSI, PARAGON, and FORECOURT are registered trademarks of Relational Semantics, Inc.
+-->
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="csrf-token" content="otXPvAOX42bFplzg5zbzMuscFRV3IFHhQu43NnF8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Mass Appellate Courts - Public Case Search</title>
+		<link rel="shortcut icon"    href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="icon"		     href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+
+		<link href="https://www.ma-appellatecourts.org/css/material.css" rel="stylesheet" type="text/css" />
+
+		            <link href="https://www.ma-appellatecourts.org/css/mysjc.css" rel="stylesheet" type="text/css" />
+		
+        <script src="https://www.ma-appellatecourts.org/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://www.ma-appellatecourts.org/js/popper.min.js"></script>
+        
+        <script src="https://www.ma-appellatecourts.org/js/app.js" ></script>
+        <script src="https://www.ma-appellatecourts.org/js/material.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			
+			<nav id="sidebar">
+
+				
+
+				<div class="sidebar-header text-center">
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><div class="pt-2 pb-2"><img src="https://www.ma-appellatecourts.org/images/seal_comm_gray.png" class="nav-seal" alt="Home"></div></a>
+				</div>
+
+				<ul class="sidenav">
+
+											<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/home.png" alt="Home">Home</li></a>
+					
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/case.png" alt="Case Search">Case Search</li></a>
+						<ul class="sidenav-search">
+							<a target="_top" href="https://www.ma-appellatecourts.org/party" data-context="party"><li><img src="https://www.ma-appellatecourts.org/images/party.png" alt="Party Search"><span>Involved Party</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/docket" data-context="docket"><li><img src="https://www.ma-appellatecourts.org/images/number.png" alt="Docket Number Search"><span>Docket Number</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/attorney" data-context="attorney"><li><img src="https://www.ma-appellatecourts.org/images/attorney.png" alt="Attorney Search"><span>Attorney Appearance</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/ljudge" data-context="ljudge"><li><img src="https://www.ma-appellatecourts.org/images/judge.png" alt="Lower Court Judge Search"><span>Lower Court Judge</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/lcourt" data-context="lcourt"><li><img src="https://www.ma-appellatecourts.org/images/court.png" alt="Lower Court Search"><span>Lower Court</span></li></a>
+						</ul>
+
+					<a target="_top" href="https://www.ma-appellatecourts.org/calendar" data-context="calendar"><li><img src="https://www.ma-appellatecourts.org/images/calendar.png" alt="Court Calendars">Court Calendars</li></a>
+
+						<ul class="sidenav-calendar">
+							<a href="https://www.ma-appellatecourts.org/calendar/fc" data-context="calendarfc"><li><span>SJC Full Court</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/sj" data-context="calendarsj"><li><span>SJC Single Justice</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/ac" data-context="calendarac"><li><span>Appeals Court Panel</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/aj" data-context="calendaraj"><li><span>Appeals Court Single Justice</span></li></a>
+						</ul>
+
+					<a target="_blank" href="https://www.ma-appellatecourts.org/help"><li><img src="https://www.ma-appellatecourts.org/images/menu-help.png" alt="More Help">More Help <img id="help-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="More Help"></li></a>
+				</ul>
+
+				<div class="sidebar-footer">
+					<a class="copyright" target="_blank" href="https://www.rsi.com/state-judicial-solutions/public-access/">&copy; 2019 RSI</a>
+				</div>
+
+			</nav>
+			
+
+			<div id="content">
+
+				<nav class="navbar navbar-full navbar-light text-center py-0" id="header">
+					<div class="my-auto">
+						<button type="button" id="sidebarCollapse" class="btn btn-info">
+							<span>
+								<img src="https://www.ma-appellatecourts.org/images/top-menu.png" title="Menu"  alt="Menu" >
+							</span>
+						</button>
+					</div>
+					<div class="text-center my-auto page-title">
+						<span class="page-title">
+							<a href="https://www.ma-appellatecourts.org" class="page-title">
+																		<h4 class="page-header">
+											<span class="page-title-1 text-nowrap">Massachusetts Appellate Courts</span><br>
+											<span class="page-title-2 text-nowrap">Public Case Search</span>
+										</h4>
+																</a>
+						</span>
+					</div>
+					<div class="text-right my-auto">
+						
+						<a target="_blank" data-toggle="modal" href="#help-modal">
+							<button type="button" id="info_button" class="btn">
+								<span>
+									<img src="https://www.ma-appellatecourts.org/images/top-help.png" title="More Help"  alt="More Help" >
+								</span>
+							</button>
+						</a>
+					</div>
+				</nav>
+
+				<main id='main-content' class="col text-center">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col pl-0">
+								
+							</div>
+							<div class="col-7">
+																	<div class="content-header">
+										
+    <div class="docket-header">
+	
+    	<div class="docket-header-1">
+    	    			APPEALS COURT<br>Full Court Panel Case
+    			    	</div>
+    	<div class="docket-header-2">Case Docket</div>
+
+    	<hr class="short">
+
+    	<div class="docket-header-1">TOWN OF WINCHESTER vs. ENERGY FACILITIES SITTING BOARD</div>
+    	    		<div class="docket-header-2">THIS CASE CONTAINS IMPOUNDED MATERIAL OR PID</div>
+    	    	<div class="docket-header-2">2019-P-0300</div>
+
+    	<hr class="short">
+
+    </div>
+									</div>
+															</div>
+							<div class="col pr-0">
+								 									<div class="page-bottom-link hidden-print">
+										<a href="#bottom"><span class="text-nowrap">Bottom &#9662;</span></a>
+									</div>
+															</div>
+						</div>
+					</div>
+
+					
+					
+					
+					
+					
+					
+
+					<div class="content-body">
+						
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			<span class="align-middle">CASE HEADER</span>
+		</div>
+
+	</div>
+
+	<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Status
+		<span class="flex_rt ds-normal">Red &amp; Blue briefs filed</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Status Date
+		<span class="flex_rt ds-normal">10/25/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Nature
+		<span class="flex_rt ds-normal">Governmental/municipal</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Entry Date
+		<span class="flex_rt ds-normal">02/26/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Sub-Nature
+		<span class="flex_rt ds-normal">Final decision of Energy Facilities Sitting Board</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">SJ Number
+		<span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Appellant
+		<span class="flex_rt ds-normal">Plaintiff</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Type
+		<span class="flex_rt ds-normal">Civil</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Status
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Due
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Panel
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Argued/Submitted
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Citation
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Decision Date
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court
+		<span class="flex_rt ds-normal">SJC for Suffolk County</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Number
+		<span class="flex_rt ds-normal"></span></span> 
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Judge
+		<span class="flex_rt ds-normal">Mary T. Sullivan, J.</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">TC Entry Date
+		<span class="flex_rt ds-normal">03/29/2018</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">FAR Number
+	    <span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">SJC Number
+		<span class="flex_rt ds-normal">
+					</span></span>
+	</div>
+</div>
+
+</section>
+
+
+	
+	
+	<section class="docket">
+
+    <div class="row mx-0" id="one_col_title">
+         <div class="col-12 parties_section_title"><span class="flex_span align-middle"><b>PARTY &nbsp;/&nbsp; ATTORNEY</b></span></div>
+    </div>
+    <div class="row mx-0" id="two_col_title">   
+         <div class="col-5 col-sm-6 parties_section_title1"><span class="flex_span align-middle"><b>INVOLVED PARTY</b></span></div>
+         <div class="col-7 col-sm-6 parties_section_title2 pl-4"><span class="flex_span align-middle"><b>ATTORNEY APPEARANCE</b></span></div>
+    </div>
+
+
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Town of Winchester
+                        </b>
+                        <br>
+                        Plaintiff/Appellant
+                                        <br>
+
+                    
+                                                                                                        Blue brief &amp; appendix filed
+                                <br>
+                                                                                                                5 Enls, 91 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/522160">Wade M. Welch,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Energy Facilities Sitting Board
+                        </b>
+                        <br>
+                        Defendant/Appellee
+                                        <br>
+
+                    
+                                                                                                        Red brief filed
+                                <br>
+                                                                                                                3 Enls, 78 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/564299">Joan Foster Evans,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/559062">Samuel M. Furgang,
+							A.A.G.
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/546795">Robert J. Shea,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        NSTAR Electric Company
+                        </b>
+                        <br>
+                        Intervener/Appellee
+                                        <br>
+
+                    
+                                                                                                        Red brief filed
+                                <br>
+                                                                                                                3 Enls, 78 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/552495">David S. Rosenzweig,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/647574">Erika J. Hafner,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/670179">Michael J. Koehler,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        New England Power Company
+                        </b>
+                        <br>
+                        Intervener/Appellee
+                                        <br>
+
+                    
+                                                                                                        Red brief filed
+                                <br>
+                                                                                                                2 Enls, 78 Days
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/552495">David S. Rosenzweig,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/670179">Michael J. Koehler,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+</section>
+
+
+	
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+	    <div class="docket_entries_title">
+			<span class="align-middle">DOCKET ENTRIES</span>
+	    </div>
+	</div>
+
+   	<table class="docket_entries">
+
+		<tbody>
+
+			<tr class="subhead">
+				<td nowrap><b>Entry Date</b>&nbsp;</td>
+				<td nowrap><b>Paper 	</b>&nbsp;</td>
+				<td nowrap width=100%><b>Entry Text</b></td>
+			</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/26/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top><b>IMPOUNDED INFORMATION</b>: Confidential information and Critical Energy Infrastructure Information (CEII) by ruling of Presiding Officer on Motion of Companies per docketing statement
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/26/2019</td>
+					<td nowrap valign=top>#1</td>
+					<td valign=top>Lower Court Assembly of the Record Package
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/26/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Notice of entry sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>02/26/2019</td>
+					<td nowrap valign=top>#2</td>
+					<td valign=top>Letter from SJC re: Memorandum of Order of Transfer to Appeals Court.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/07/2019</td>
+					<td nowrap valign=top>#3</td>
+					<td valign=top>Docketing Statement filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/08/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>ORDER: The docketing statement refers to "Confidential information and Critical Energy Infrastructure Information (CEII) by ruling of Presiding Officer on Motion of Companies". To the extent any part of this case is impounded, appellant is to provide the order of impoundment from the Energy Facilities Sitting Board, due on or before 3/15/19 otherwise the case designation will be changed to public. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/12/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Copy of Exhibits A-C and CDs of Case Exhibits and Docket Documents received from SJC for Suffolk County.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/13/2019</td>
+					<td nowrap valign=top>#4</td>
+					<td valign=top>Copy of ruling on motion for protective treatment.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/13/2019</td>
+					<td nowrap valign=top>#5</td>
+					<td valign=top>Copy of CEII non-disclosure agreement.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/14/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>ORDER: This appeal will remain partially impounded as designated on the docket. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/15/2019</td>
+					<td nowrap valign=top>#6</td>
+					<td valign=top>Motion of Appellant to extend date for filing brief and appendix filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>03/18/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#6: Allowed to 04/16/2019. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/16/2019</td>
+					<td nowrap valign=top>#7</td>
+					<td valign=top>Motion of Appellant to extend date for filing brief and appendix filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/19/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#7: Allowed to 04/30/2019. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>04/30/2019</td>
+					<td nowrap valign=top>#8</td>
+					<td valign=top>Motion of Appellant to extend date for filing brief and appendix filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/01/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#8: Allowed to 05/10/2019. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/06/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Copy of Order of Transfer and Consolidation with Assembly of Record Package including 2 CDs received from SJC for Suffolk County.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/09/2019</td>
+					<td nowrap valign=top>#9</td>
+					<td valign=top>MOTION of Appellee to extend brief due date filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/09/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#9: Allowed to 06/19/2019. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/17/2019</td>
+					<td nowrap valign=top>#10</td>
+					<td valign=top>MOTION to file non-conforming brief filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/17/2019</td>
+					<td nowrap valign=top>#11</td>
+					<td valign=top>Motion of Appellant to extend date for filing brief and appendix filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/26/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#10: Denied. Appellant shall file a brief of no more than 50 pages and the appendix on or before July 8, 2019. (Rubin, J.). *Notice
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>06/26/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#11: See order on paper #10. (Rubin, J.). *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/09/2019</td>
+					<td nowrap valign=top>#12</td>
+					<td valign=top>Notice of rejection of e-filed brief/appendix of Town of Winchester as noncompliant for the reasons indicated on the checklist: 9(cover pages on brief & appendix volume 1), 12, 26(incomplete), OTHER: Table of contents to the addendum page numbering.. Accordingly, on or before 07/12/2019, you must correct the above-listed nonconformities and submit a conforming brief and/or appendix.*Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/09/2019</td>
+					<td nowrap valign=top>#13</td>
+					<td valign=top>Appellant brief filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/09/2019</td>
+					<td nowrap valign=top>#14</td>
+					<td valign=top>Appendix Vol 1 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#15</td>
+					<td valign=top>Appendix Vol 2 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#16</td>
+					<td valign=top>Appendix Vol 3 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#17</td>
+					<td valign=top>Appendix Vol 4 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#18</td>
+					<td valign=top>Appendix Vol 5 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#19</td>
+					<td valign=top>Appendix Vol 6 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#20</td>
+					<td valign=top>Appendix Vol 7 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#21</td>
+					<td valign=top>Appendix Vol 8 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#22</td>
+					<td valign=top>Appendix Vol 9 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#23</td>
+					<td valign=top>Appendix Vol 10 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#24</td>
+					<td valign=top>Appendix Vol 11 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#25</td>
+					<td valign=top>Appendix Vol 12 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#26</td>
+					<td valign=top>Appendix Vol 13 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#27</td>
+					<td valign=top>Appendix Vol 14 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#28</td>
+					<td valign=top>Appendix Vol 15 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#29</td>
+					<td valign=top>Appendix Vol 16 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#30</td>
+					<td valign=top>Appendix Vol 17 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#31</td>
+					<td valign=top>Appendix Vol 18 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#32</td>
+					<td valign=top>Appendix Vol 19 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#33</td>
+					<td valign=top>Appendix Vol 20 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#34</td>
+					<td valign=top>Appendix Vol 21 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#35</td>
+					<td valign=top>Appendix Vol 22 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#36</td>
+					<td valign=top>Appendix Vol 23 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#37</td>
+					<td valign=top>Appendix Vol 24 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#38</td>
+					<td valign=top>Appendix Vol 25 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#39</td>
+					<td valign=top>Appendix Vol 26 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#40</td>
+					<td valign=top>Appendix Vol 27 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#41</td>
+					<td valign=top>Appendix Vol 28 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#42</td>
+					<td valign=top>Appendix Vol 29 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#43</td>
+					<td valign=top>Appendix Vol 30 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#44</td>
+					<td valign=top>Appendix Vol 31 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#45</td>
+					<td valign=top>Appendix Vol 32 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#46</td>
+					<td valign=top>Appendix Vol 33 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#47</td>
+					<td valign=top>Appendix Vol 34 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#48</td>
+					<td valign=top>Appendix Vol 35 of 35 filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/05/2019</td>
+					<td nowrap valign=top>#49</td>
+					<td valign=top>Transcript filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/30/2019</td>
+					<td nowrap valign=top>#50</td>
+					<td valign=top>MOTION of Appellee to extend brief due date filed for Energy Facilities Sitting Board by Attorney Samuel Furgang.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/31/2019</td>
+					<td nowrap valign=top>#51</td>
+					<td valign=top>MOTION of Appellee to extend brief due date filed for NSTAR Electric Company and New England Power Company by Attorney David Rosenzweig.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/31/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#50: Allowed to 09/09/2019. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>07/31/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#51: Allowed to 09/09/2019. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/28/2019</td>
+					<td nowrap valign=top>#52</td>
+					<td valign=top>MOTION of Appellee to extend brief due date filed for Energy Facilities Sitting Board by Attorney Samuel Furgang.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/28/2019</td>
+					<td nowrap valign=top>#53</td>
+					<td valign=top>MOTION of Appellee to extend brief due date filed for NSTAR Electric Company and New England Power Company by Attorney David Rosenzweig.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/29/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#52 & 53: Allowed to 10/09/2019. *Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/08/2019</td>
+					<td nowrap valign=top>#54</td>
+					<td valign=top>Joint motion for further enlargement of time to file briefs filed for Town of Winchester, Energy Facilities Sitting Board, NSTAR Electric Company and New England Power Company by Attorney Samuel Furgang.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/09/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#54: Allowed to 10/25/19 for the filing of all appellee briefs. To the extent the motion seeks an extension of time to file the reply brief, it is denied without prejudice to renewal subsequent to the filing of the last appellee's brief. *Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/25/2019</td>
+					<td nowrap valign=top>#55</td>
+					<td valign=top>Appellee brief filed for NSTAR Electric Company and New England Power Company by Attorney David Rosenzweig.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/25/2019</td>
+					<td nowrap valign=top>#56</td>
+					<td valign=top>Appellee brief filed for Energy Facilities Sitting Board by Attorney Samuel Furgang.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/30/2019</td>
+					<td nowrap valign=top>#57</td>
+					<td valign=top>Motion of Appellant to extend date for filing Reply Brief filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/01/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#57: Allowed to 11/25/19. *Notice.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/19/2019</td>
+					<td nowrap valign=top>#58</td>
+					<td valign=top>Motion of Appellant to extend date for filing Reply Brief filed for Town of Winchester by Attorney Wade Welch.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>11/20/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>RE#58: Allowed to 12/5/19. *Notice
+											</td>
+
+				</tr>
+
+			
+		</tbody>
+
+	</table>
+
+</section>
+
+
+					</div>
+
+					
+
+					<div class="content-footer">
+											</div>
+
+					<div class="page-footer pb-3" style="min-height:2em;" >
+						<span class="publish-date">
+		As of 11/20/2019 12:15pm
+	</span>
+													<div class="page-top-link hidden-print">
+								<a href="#top" id="bottom">Top &#9652;</a>
+							</div>
+											</div>
+
+				</main>
+
+			</div> 
+		</div>     
+
+		
+        <div class="modal" tabindex="-1" role="dialog" id="help-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" >
+                    <div class="context-help">   <!-- style="text-align:center;"-->
+                        <div class="help-container">
+
+	<table>
+
+	
+
+	<tr>
+	<td>
+	<div class="help-content">
+		For more information about how to search for court cases, visit the
+<a target="_blank" href="https://www.ma-appellatecourts.org/help">court website</a>.
+	</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<div class="help-footer">
+		<div class="modal-footer">
+			<a target="_blank" href="https://www.ma-appellatecourts.org/help"> More Help <img id="modal-help-link" src="https://www.ma-appellatecourts.org/images/external.png"  alt="More Help"></a>
+			<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+		</div>
+
+	</div>
+	</td>
+	</tr>
+
+	</table>
+
+</div> 
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+
+		
+		<div class="overlay"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#dismiss, .overlay').on('click', function () {
+					// hide sidebar
+					$('#sidebar').removeClass('active');
+					$('#sidebar').css('overflow', 'hidden');
+					// hide overlay
+					$('.overlay').removeClass('active');
+				});
+
+				$('#sidebarCollapse').on('click', function () {
+					// open sidebar
+					$('#sidebar').css('overflow', 'auto');
+					$('#sidebar').addClass('active');
+					// fade in the overlay
+					$('.overlay').addClass('active');
+					$('.collapse.in').toggleClass('in');
+					$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+				});
+
+				// Highlight the last search in the menu
+				var menu_context = "docket";
+				var currentMenu = $("a[data-context=" + menu_context + "]");
+				currentMenu.addClass('menu-context');
+				// Detect ie11.
+				var mq=window.matchMedia("(-ms-high-contrast: none)");
+				if (mq.matches) {
+					// Don't focus the field if it's IE, focus kills the place holder
+					// console.log("is IE 11");
+					$('form').find('*').filter(':input:visible:first').blur();
+				}
+			});  // document.ready
+		</script>
+
+					<!-- Include Court Tracking Software -->
+			<script src="https://rum-static.pingdom.net/pa-5bed916cdb2aac0016000085.js" async></script>
+		
+		
+	</body>
+
+</html>
+

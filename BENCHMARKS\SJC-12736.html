@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<!--
+// Copyright (C) 1988-2019 Relational Semantics, Inc. (RSI), Newton MA USA
+// This Module contains Proprietary Information of Relational Semantics, Inc.
+// and should be treated as Confidential. All rights reserved.
+// RSI, PARAGON, and FORECOURT are registered trademarks of Relational Semantics, Inc.
+-->
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="csrf-token" content="rRE4pdoBEitBkNIWQ5MljoXDwZUjVmcPGoTibQBL">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Mass Appellate Courts - Public Case Search</title>
+		<link rel="shortcut icon"    href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="icon"		     href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="https://www.ma-appellatecourts.org/images/favicon.png" type="image/png" />
+
+		<link href="https://www.ma-appellatecourts.org/css/material.css" rel="stylesheet" type="text/css" />
+
+		            <link href="https://www.ma-appellatecourts.org/css/mysjc.css" rel="stylesheet" type="text/css" />
+		
+        <script src="https://www.ma-appellatecourts.org/js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://www.ma-appellatecourts.org/js/popper.min.js"></script>
+        
+        <script src="https://www.ma-appellatecourts.org/js/app.js" ></script>
+        <script src="https://www.ma-appellatecourts.org/js/material.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			
+			<nav id="sidebar">
+
+				
+
+				<div class="sidebar-header text-center">
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><div class="pt-2 pb-2"><img src="https://www.ma-appellatecourts.org/images/seal_comm_gray.png" class="nav-seal" alt="Home"></div></a>
+				</div>
+
+				<ul class="sidenav">
+
+											<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/home.png" alt="Home">Home</li></a>
+					
+					<a target="_top" href="https://www.ma-appellatecourts.org" data-context="case"><li><img src="https://www.ma-appellatecourts.org/images/case.png" alt="Case Search">Case Search</li></a>
+						<ul class="sidenav-search">
+							<a target="_top" href="https://www.ma-appellatecourts.org/party" data-context="party"><li><img src="https://www.ma-appellatecourts.org/images/party.png" alt="Party Search"><span>Involved Party</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/docket" data-context="docket"><li><img src="https://www.ma-appellatecourts.org/images/number.png" alt="Docket Number Search"><span>Docket Number</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/attorney" data-context="attorney"><li><img src="https://www.ma-appellatecourts.org/images/attorney.png" alt="Attorney Search"><span>Attorney Appearance</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/ljudge" data-context="ljudge"><li><img src="https://www.ma-appellatecourts.org/images/judge.png" alt="Lower Court Judge Search"><span>Lower Court Judge</span></li></a>
+							<a target="_top" href="https://www.ma-appellatecourts.org/lcourt" data-context="lcourt"><li><img src="https://www.ma-appellatecourts.org/images/court.png" alt="Lower Court Search"><span>Lower Court</span></li></a>
+						</ul>
+
+					<a target="_top" href="https://www.ma-appellatecourts.org/calendar" data-context="calendar"><li><img src="https://www.ma-appellatecourts.org/images/calendar.png" alt="Court Calendars">Court Calendars</li></a>
+
+						<ul class="sidenav-calendar">
+							<a href="https://www.ma-appellatecourts.org/calendar/fc" data-context="calendarfc"><li><span>SJC Full Court</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/sj" data-context="calendarsj"><li><span>SJC Single Justice</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/ac" data-context="calendarac"><li><span>Appeals Court Panel</span></li></a>
+							<a href="https://www.ma-appellatecourts.org/calendar/aj" data-context="calendaraj"><li><span>Appeals Court Single Justice</span></li></a>
+						</ul>
+
+					<a target="_blank" href="https://www.ma-appellatecourts.org/help"><li><img src="https://www.ma-appellatecourts.org/images/menu-help.png" alt="More Help">More Help <img id="help-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="More Help"></li></a>
+				</ul>
+
+				<div class="sidebar-footer">
+					<a class="copyright" target="_blank" href="https://www.rsi.com/state-judicial-solutions/public-access/">&copy; 2019 RSI</a>
+				</div>
+
+			</nav>
+			
+
+			<div id="content">
+
+				<nav class="navbar navbar-full navbar-light text-center py-0" id="header">
+					<div class="my-auto">
+						<button type="button" id="sidebarCollapse" class="btn btn-info">
+							<span>
+								<img src="https://www.ma-appellatecourts.org/images/top-menu.png" title="Menu"  alt="Menu" >
+							</span>
+						</button>
+					</div>
+					<div class="text-center my-auto page-title">
+						<span class="page-title">
+							<a href="https://www.ma-appellatecourts.org" class="page-title">
+																		<h4 class="page-header">
+											<span class="page-title-1 text-nowrap">Massachusetts Appellate Courts</span><br>
+											<span class="page-title-2 text-nowrap">Public Case Search</span>
+										</h4>
+																</a>
+						</span>
+					</div>
+					<div class="text-right my-auto">
+						
+						<a target="_blank" data-toggle="modal" href="#help-modal">
+							<button type="button" id="info_button" class="btn">
+								<span>
+									<img src="https://www.ma-appellatecourts.org/images/top-help.png" title="More Help"  alt="More Help" >
+								</span>
+							</button>
+						</a>
+					</div>
+				</nav>
+
+				<main id='main-content' class="col text-center">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col pl-0">
+								
+							</div>
+							<div class="col-7">
+																	<div class="content-header">
+										
+    <div class="docket-header">
+	
+    	<div class="docket-header-1">
+    	    		    		    			SUPREME JUDICIAL COURT<br>for the Commonwealth
+    			    	</div>
+    	<div class="docket-header-2">Case Docket</div>
+
+    	<hr class="short">
+
+    	<div class="docket-header-1">JANICE MAGLIACANE vs. CITY OF GARDNER &amp; others</div>
+    	    	<div class="docket-header-2">SJC-12736</div>
+
+    	<hr class="short">
+
+    </div>
+									</div>
+															</div>
+							<div class="col pr-0">
+								 									<div class="page-bottom-link hidden-print">
+										<a href="#bottom"><span class="text-nowrap">Bottom &#9662;</span></a>
+									</div>
+															</div>
+						</div>
+					</div>
+
+					
+					
+					
+					
+					
+					
+
+					<div class="content-body">
+						
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			<span class="align-middle">CASE HEADER</span>
+		</div>
+
+	</div>
+
+	<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Status
+		<span class="flex_rt ds-normal">Argued, under advisement</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Status Date
+		<span class="flex_rt ds-normal">10/02/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Nature
+		<span class="flex_rt ds-normal">Tort: General</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Entry Date
+		<span class="flex_rt ds-normal">05/16/2019</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Appellant
+		<span class="flex_rt ds-normal">Plaintiff</span></span>
+	</div>
+
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Case Type
+		<span class="flex_rt ds-normal">Civil</span></span>
+	</div>
+
+</div>
+
+<div class="row pl-2">
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Status
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Brief Due
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+	<div class="col-12">
+		<span class="flex_span_wide ds-bold">Quorum
+		<span class="flex_rt_wide ds-normal">Gants, C.J., Lenk, Gaziano, Lowy, Budd, Cypher, Kafker, JJ.</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+   	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Argued Date
+		<span class="flex_rt ds-normal">10/02/2019</span></span>
+	</div>
+   	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Decision Date
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+  	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">AC/SJ Number
+		<span class="flex_rt ds-normal">
+		<a class="docket-number-link" target="_top" href="https://www.ma-appellatecourts.org/docket/2018-P-1308">2018-P-1308</a>
+		</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Citation
+		<span class="flex_rt ds-normal"></span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+ 	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">DAR/FAR Number
+		<span class="flex_rt ds-normal">
+				</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Number
+		<span class="flex_rt ds-normal">1785CV02005</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+  	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Court
+		<span class="flex_rt ds-normal">Worcester Superior Court</span></span>
+	</div>
+	<div class="col-12 col-md-6">
+		<span class="flex_span ds-bold">Lower Ct Judge
+		<span class="flex_rt ds-normal">Susan E. Sullivan, J.</span></span>
+	</div>
+</div>
+
+<div class="row pl-2">
+  	<div class="col-12">
+		<span class="flex_span_wide ds-bold">Route to SJC
+		<span class="flex_rt_wide ds-normal">Sua Sponte Transfer from Appeals Court</span></span>
+	</div>
+</div>
+
+</section>
+
+
+	
+	
+	<section class="docket">
+
+    <div class="row mx-0" id="one_col_title">
+         <div class="col-12 parties_section_title"><span class="flex_span align-middle"><b>PARTY &nbsp;/&nbsp; ATTORNEY</b></span></div>
+    </div>
+    <div class="row mx-0" id="two_col_title">   
+         <div class="col-5 col-sm-6 parties_section_title1"><span class="flex_span align-middle"><b>INVOLVED PARTY</b></span></div>
+         <div class="col-7 col-sm-6 parties_section_title2 pl-4"><span class="flex_span align-middle"><b>ATTORNEY APPEARANCE</b></span></div>
+    </div>
+
+
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Janice Magliacane
+                        </b>
+                        <br>
+                        Plaintiff/Appellant
+                                        <br>
+
+                    
+                                                                                                        Blue br &amp; appendix transf w/case
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/549049">Michelle H. Blauner,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/215620">Edward F. Haber,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/661090">Adam M. Stewart,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/696004">Jonathan Fread Dinerstein,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/562321">Patrick R. Bunnell,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        City of Gardner
+                        </b>
+                        <br>
+                        Defendant/Appellee
+                                        <br>
+
+                    
+                                                                                                        Red brief transferred w case
+                                <br>
+                                                                                        </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/656313">Jason W. Crotty,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/115890">John J. Davis,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Suez Water Environmental Services, Inc.
+                        </b>
+                        <br>
+                        Defendant
+                                        <br>
+
+                    
+                                                                                                                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/634883">Joseph M. Desmond,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        AECOM Technical Services, Inc.
+                        </b>
+                        <br>
+                        Defendant
+                                        <br>
+
+                    
+                                                                                                                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/670007">Matthew Lindenbaum,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/690997">Michael E. Steinberg,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Massachusetts Municipal Lawyers Association
+                        </b>
+                        <br>
+                        Amicus
+                                        <br>
+
+                    
+                                                                                                                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/542338">Cynthia L. Amara,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Town of Wellesley Department of Public Works
+                        </b>
+                        <br>
+                        Amicus
+                                        <br>
+
+                    
+                                                                                                                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/350120">J. Raymond Miyares,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/667102">Bryan F. Bertram,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                    
+                        <span class="flex_span">
+                                                    <br>
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/688177">Ivria Glass Fried,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        Massachusetts Water Works Association
+                        </b>
+                        <br>
+                        Amicus
+                                        <br>
+
+                    
+                                                                                                                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/564906">Michele E. Randazzo,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+        <div class="row party pl-2">
+            <div class="col-12 col-sm-6">
+                <span class="flex_span">
+                                            <b>
+                        City of Haverhill
+                        </b>
+                        <br>
+                        Amicus
+                                        <br>
+
+                    
+                                                                                                                                    </span>
+            </div>
+
+                    <div class="col-12 col-sm-6 indent">
+
+                    
+                        <span class="flex_span">
+                        
+                                                    <a class="attorney-number-link" target="_top" href="https://www.ma-appellatecourts.org/attorney/564906">Michele E. Randazzo,
+							Esquire
+                            </a>
+						
+                                                </span>
+
+                                        </div>
+
+        </div>
+    
+</section>
+
+
+	<section class="docket">
+
+	<div class="row mx-0">
+
+		<div class="section_title">
+			DOCUMENTS
+		</div>
+	</div>
+
+    <div class="documents_list pl-2">
+        <ul>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_01_Appellant_Magliacane_Brief.pdf">Appellant Magliacane Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_01_Appellant_Magliacane_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_03_Appellant_Magliacane_Supplemental_Brief.pdf">Appellant Magliacane Supplemental Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_03_Appellant_Magliacane_Supplemental_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_03_Appellee_City_of_Gardner_Brief.pdf">Appellee City of Gardner Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_03_Appellee_City_of_Gardner_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_04_Amicus_Town_of_Wellesley_Brief.pdf">Amicus Town of Wellesley Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_04_Amicus_Town_of_Wellesley_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_05_Amicus_MA_Water_Works_Brief.pdf">Amicus MA Water Works Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_05_Amicus_MA_Water_Works_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_05_Appellee_City_of_Gardner_Supplemental_Brief.pdf">Appellee City of Gardner Supplemental Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_05_Appellee_City_of_Gardner_Supplemental_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+                <li>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_08_Amicus_MA_Municipal_Lawyers_Association_Brief.pdf">Amicus MA Municipal Lawyers Association Brief</a>
+                    <a target="_blank" href="https://www.ma-appellatecourts.org/pdf/SJC-12736/SJC-12736_08_Amicus_MA_Municipal_Lawyers_Association_Brief.pdf"><img src="https://www.ma-appellatecourts.org/images/pdf.png" alt="Document File" style="vertical-align:baseline;"></a>
+                </li>
+
+            
+        </ul>
+    </div>
+
+</section>
+
+
+	
+	<section class="docket">
+
+	<div class="row mx-0">
+	    <div class="docket_entries_title">
+			<span class="align-middle">DOCKET ENTRIES</span>
+	    </div>
+	</div>
+
+   	<table class="docket_entries">
+
+		<tbody>
+
+			<tr class="subhead">
+				<td nowrap><b>Entry Date</b>&nbsp;</td>
+				<td nowrap><b>Paper 	</b>&nbsp;</td>
+				<td nowrap width=100%><b>Entry Text</b></td>
+			</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/16/2019</td>
+					<td nowrap valign=top>#1</td>
+					<td valign=top>Entered. Notice to counsel.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/16/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Transferred from Appeals Court: Appellant's brief and record appendix were electronically filed in Appeals Court. Appellee's brief was electronically filed in Appeals Court.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/17/2019</td>
+					<td nowrap valign=top>#2</td>
+					<td valign=top>Appellee brief filed for City of Gardner by Attorney Jason W. Crotty.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/17/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>The clerk's office has received the Appellee's Brief through e-fileMA. The brief has been accepted for filing and entered on the docket. The<b> </b>Appellee<b> </b>shall file with the clerk 4 copies of the brief within 7 days. The clerk's office may require additional copies if necessary.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/17/2019</td>
+					<td nowrap valign=top>#3</td>
+					<td valign=top>Appellant brief filed for Janice Magliacane by Attorney Adam Stewart.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/17/2019</td>
+					<td nowrap valign=top>#4</td>
+					<td valign=top>Appendix filed for Janice Magliacane by Attorney Adam Stewart.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/17/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>The clerk's office has received the Appellant's Brief and Record Appendix through e-fileMA. The brief has been accepted for filing and entered on the docket. The<b> </b>Appellant<b> </b>shall file with the clerk 4 copies of the brief and 2 copies of the record appendix within 7 days. The clerk's office may require additional copies if necessary.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/22/2019</td>
+					<td nowrap valign=top>#5</td>
+					<td valign=top>Additional 4 copies of appellant's brief and 2 copies of record appendix filed by Janice Magliacane.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/23/2019</td>
+					<td nowrap valign=top>#6</td>
+					<td valign=top>Additional 4 copies of appellee's brief filed by City of Gardner.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>05/28/2019</td>
+					<td nowrap valign=top>#7</td>
+					<td valign=top>ANNOUNCEMENT: The Justices are soliciting amicus briefs. Whether the Massachusetts Tort Claims Act, G. L. c. 258, applies to claims by municipality residents of injury or damage stemming from the municipality's distribution of water to the residents; whether, by selling and distributing water, a municipality is engaging in commerce rather than performing a government function pursuant to the act.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/06/2019</td>
+					<td nowrap valign=top>#8</td>
+					<td valign=top>NOTICE of October argument sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/08/2019</td>
+					<td nowrap valign=top>#9</td>
+					<td valign=top>Appearance filed for City of Gardner by Attorney John Davis.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/08/2019</td>
+					<td nowrap valign=top>#10</td>
+					<td valign=top>Motion for leave to file supplemental brief filed for City of Gardner by Attorney John Davis.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/13/2019</td>
+					<td nowrap valign=top>#11</td>
+					<td valign=top>ORDERED for argument on October 2, 2019, 9:30 AM argument at Barnstable County Superior Court, Courtroom 1. Notice sent.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>08/13/2019</td>
+					<td nowrap valign=top>#12</td>
+					<td valign=top>ORDER: The motion to file supplemental briefs is ALLOWED for the reasons stated in the motion. The parties' supplemental briefs shall not exceed 10 pages and shall be filed within 30 days of this Order. By the Court.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/06/2019</td>
+					<td nowrap valign=top>#13</td>
+					<td valign=top>Motion to extend deadline for filing amicus brief filed for Massachusetts Municipal Lawyers Association by Attorney Cynthia Amara. (ALLOWED to September 14, 2019. No further enlargements).
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/09/2019</td>
+					<td nowrap valign=top>#14</td>
+					<td valign=top>(AMENDED) Motion to extend deadline for filing amicus brief filed for Massachusetts Municipal Lawyers Association by Attorney Cynthia Amara. (ALLOWED to September 16, 2019. No further enlargements).
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/11/2019</td>
+					<td nowrap valign=top>#15</td>
+					<td valign=top>Amicus brief filed for Town of Wellesley Department of Public Works by Attorney Bryan Bertram, Attorney J. Raymond Miyares, and Attorney Ivria Glass Fried.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/11/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>The clerk's office has received the amicus brief filed for Town of Wellesley Department of Public Works through e-fileMA. The brief has been accepted for filing and entered on the docket. Four copies of the brief shall be filed with the clerk's office within 5 days. The clerk's office may require additional copies if necessary.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/11/2019</td>
+					<td nowrap valign=top>#16</td>
+					<td valign=top>Amicus brief filed for the Massachusetts Water Works Association and the City of Haverhill by Attorney Michele Randazzo.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/12/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>The clerk's office has received the amicus brief filed for the Massachusetts Water Works Association and the City of Haverhill through e-fileMA. The brief has been accepted for filing and entered on the docket. Four copies of the brief shall be filed with the clerk's office within 5 days. The clerk's office may require additional copies if necessary.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/12/2019</td>
+					<td nowrap valign=top>#17</td>
+					<td valign=top>(Supplemental) Appellant brief filed for Janice Magliacane by Attorney Adam Stewart, Attorney Edward F. Haber, Attorney Michelle H. Blauner, Attorney Jonathan Dinerstein, and Attorney Patrick Bunnell.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/13/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>The clerk's office has received the appellant's supplemental brief through e-fileMA. The brief has been accepted for filing and entered on the docket. The<b> </b>appellant<b> </b>shall file with the clerk 4 copies of the brief within 5 days. The clerk's office may require additional copies if necessary.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/13/2019</td>
+					<td nowrap valign=top>#18</td>
+					<td valign=top>Motion to extend to date for filing of appellee's supplemental brief filed for City of Gardner by Attorney John Davis. (ALLOWED to September 13, 2019).
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/13/2019</td>
+					<td nowrap valign=top>#19</td>
+					<td valign=top>(Supplemental) Appellee brief filed for City of Gardner by Attorney John Davis.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/13/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>The clerk's office has received the appellee's supplemental brief through e-fileMA. The brief has been accepted for filing and entered on the docket. The<b> </b>appellee<b> </b>shall file with the clerk 4 copies of the brief within 5 days. The clerk's office may require additional copies if necessary.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/13/2019</td>
+					<td nowrap valign=top>#20</td>
+					<td valign=top>Certificate of service for Paper #16 filed for Massachusetts Water Works Association and City of Haverhill by Attorney Michele Randazzo.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/13/2019</td>
+					<td nowrap valign=top>#21</td>
+					<td valign=top>Additional 4 copies of amicus brief filed by Massachusetts Water Works Association.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/16/2019</td>
+					<td nowrap valign=top>#22</td>
+					<td valign=top>Additional 4 copies of amicus brief filed by Town of Wellesley Department of Public Works.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/16/2019</td>
+					<td nowrap valign=top>#23</td>
+					<td valign=top>Additional 4 copies of appellant's supplemental brief filed by Janice Magliacane.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/16/2019</td>
+					<td nowrap valign=top>#24</td>
+					<td valign=top>Amicus brief filed for Massachusetts Municipal Lawyers Association by Attorney Cynthia Amara.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/16/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>The clerk's office has received the amicus brief filed for the Massachusetts Municipal Lawyers Association through e-fileMA. The brief has been accepted for filing and entered on the docket. Four copies of the brief shall be filed with the clerk's office within 5 days. The clerk's office may require additional copies if necessary.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>09/19/2019</td>
+					<td nowrap valign=top>#25</td>
+					<td valign=top>Additional 4 copies of appellee's supplemental brief filed by City of Gardner.
+											</td>
+
+				</tr>
+
+			
+				<tr>
+
+					<td nowrap valign=top>10/02/2019</td>
+					<td nowrap valign=top></td>
+					<td valign=top>Oral argument held. (Gants, C.J., Lenk, J., Gaziano, J., Lowy, J., Budd, J., Cypher, J., Kafker, J.).
+													&nbsp;
+							<a target="_blank" alt="View Webcast" href="https://boston.suffolk.edu/sjc/pop.php?csnum=SJC_12736">View Webcast </a>
+							<a target="_blank" alt="View Webcast" href="https://boston.suffolk.edu/sjc/pop.php?csnum=SJC_12736"><img id="webcast-link" src="https://www.ma-appellatecourts.org/images/external.png" alt="View Webcast"></a>
+											</td>
+
+				</tr>
+
+			
+		</tbody>
+
+	</table>
+
+</section>
+
+
+					</div>
+
+					
+
+					<div class="content-footer">
+											</div>
+
+					<div class="page-footer pb-3" style="min-height:2em;" >
+						<span class="publish-date">
+		As of 11/04/2019 8:00pm
+	</span>
+													<div class="page-top-link hidden-print">
+								<a href="#top" id="bottom">Top &#9652;</a>
+							</div>
+											</div>
+
+				</main>
+
+			</div> 
+		</div>     
+
+		
+        <div class="modal" tabindex="-1" role="dialog" id="help-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" >
+                    <div class="context-help">   <!-- style="text-align:center;"-->
+                        <div class="help-container">
+
+	<table>
+
+	
+
+	<tr>
+	<td>
+	<div class="help-content">
+		For more information about how to search for court cases, visit the
+<a target="_blank" href="https://www.ma-appellatecourts.org/help">court website</a>.
+	</div>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<div class="help-footer">
+		<div class="modal-footer">
+			<a target="_blank" href="https://www.ma-appellatecourts.org/help"> More Help <img id="modal-help-link" src="https://www.ma-appellatecourts.org/images/external.png"  alt="More Help"></a>
+			<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+		</div>
+
+	</div>
+	</td>
+	</tr>
+
+	</table>
+
+</div> 
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+
+		
+		<div class="overlay"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#dismiss, .overlay').on('click', function () {
+					// hide sidebar
+					$('#sidebar').removeClass('active');
+					$('#sidebar').css('overflow', 'hidden');
+					// hide overlay
+					$('.overlay').removeClass('active');
+				});
+
+				$('#sidebarCollapse').on('click', function () {
+					// open sidebar
+					$('#sidebar').css('overflow', 'auto');
+					$('#sidebar').addClass('active');
+					// fade in the overlay
+					$('.overlay').addClass('active');
+					$('.collapse.in').toggleClass('in');
+					$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+				});
+
+				// Highlight the last search in the menu
+				var menu_context = "docket";
+				var currentMenu = $("a[data-context=" + menu_context + "]");
+				currentMenu.addClass('menu-context');
+				// Detect ie11.
+				var mq=window.matchMedia("(-ms-high-contrast: none)");
+				if (mq.matches) {
+					// Don't focus the field if it's IE, focus kills the place holder
+					// console.log("is IE 11");
+					$('form').find('*').filter(':input:visible:first').blur();
+				}
+			});  // document.ready
+		</script>
+
+					<!-- Include Court Tracking Software -->
+			<script src="https://rum-static.pingdom.net/pa-5bed916cdb2aac0016000085.js" async></script>
+		
+		
+	</body>
+
+</html>
+
